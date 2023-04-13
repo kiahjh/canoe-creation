@@ -16,8 +16,8 @@ const Waves: React.FC<Props> = ({ className }) => {
     >
       <defs>
         <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="sssurf-grad">
-          <stop stop-color="#0891b2" stop-opacity="1" offset="0%"></stop>
-          <stop stop-color="#0891b2" stop-opacity="1" offset="100%"></stop>
+          <stop stopColor="#0891b2" stopOpacity="1" offset="0%"></stop>
+          <stop stopColor="#0891b2" stopOpacity="1" offset="100%"></stop>
         </linearGradient>
       </defs>
       <g fill="url(#sssurf-grad)" transform="matrix(1,0,0,1,0,-80.86688232421875)">

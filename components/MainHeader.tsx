@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import cx from 'classnames';
 import NavLink from './NavLink';
+import ProgramsDropdown from './ProgramsDropdown';
 
 interface Props {}
 
@@ -12,7 +13,6 @@ const MainHeader: React.FC<Props> = ({}) => {
       setScrollY(window.scrollY);
     };
     window.addEventListener('scroll', handleScroll);
-    console.log('scrollY', scrollY);
     return () => window.removeEventListener('scroll', handleScroll);
   }, [scrollY]);
 
@@ -29,7 +29,7 @@ const MainHeader: React.FC<Props> = ({}) => {
       </div>
       <nav
         className={cx(
-          'flex items-center py-2 px-4 space-x-2 rounded-xl bg-white/60 backdrop-blur fixed right-4 transition duration-300',
+          'flex items-center py-2 px-4 space-x-2 rounded-xl bg-white/90 backdrop-blur-lg fixed right-4 transition duration-300',
           scrollY > 0 && 'shadow-lg',
         )}
       >
@@ -39,10 +39,7 @@ const MainHeader: React.FC<Props> = ({}) => {
         <NavLink to="/" selected={false}>
           About
         </NavLink>
-        <NavLink to="/" selected={false}>
-          Programs
-          <i className="ml-2 fas fa-chevron-down" />
-        </NavLink>
+        <ProgramsDropdown />
         <NavLink to="/" selected={false}>
           Contact us
         </NavLink>

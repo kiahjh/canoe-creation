@@ -1,10 +1,8 @@
 import React from 'react';
-import Image from 'next/image';
-import NavLink from '../components/NavLink';
-import IslandImage from '../public/island.jpg';
 import MainHeader from '../components/MainHeader';
 import HeroBlock from '../components/HeroBlock';
 import Waves from '../components/Waves';
+import InfoBlock from '../components/InfoBlock';
 
 const Home: React.FC = () => {
   return (
@@ -13,7 +11,7 @@ const Home: React.FC = () => {
       <HeroBlock />
       <div className="z-10 relative mt-96">
         <Waves />
-        <div className="h-176 bg-cyan-600"></div>
+        <InfoBlock />
       </div>
     </main>
   );
