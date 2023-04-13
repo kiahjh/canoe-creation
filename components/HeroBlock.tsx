@@ -1,20 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import cx from 'classnames';
 import { Raleway } from 'next/font/google';
 import Link from 'next/link';
 import Sparkle from './Sparkle';
+import { useScrollY } from '../lib/hooks';
 
 const raleway = Raleway({ subsets: ['latin'], weight: '800' });
 
 const HeroBlock: React.FC = () => {
-  const [scrollY, setScrollY] = useState(0);
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [scrollY]);
+  const scrollY = useScrollY();
 
   return (
     <div className="px-12 pt-20 flex items-center justify-center z-0 fixed w-full">

@@ -14,14 +14,14 @@ const Arrow: React.FC<Props> = ({ className }) => {
       className={className}
     >
       <g
-        stroke-width="12"
+        strokeWidth="12"
         stroke="#059669"
         fill="none"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
         transform="matrix(0.7660444431189779,-0.6427876096865396,0.6427876096865396,0.7660444431189779,-185.532821122207,350.69726662702465)"
       >
-        <path d="M355 050Q188 150 755 450 " marker-end="url(#SvgjsMarker1411)"></path>
+        <path d="M355 050Q188 150 755 450 " markerEnd="url(#SvgjsMarker1411)"></path>
       </g>
       <defs>
         <marker
@@ -36,11 +36,11 @@ const Arrow: React.FC<Props> = ({ className }) => {
           <polyline
             points="0,5 5,2.5 0,0"
             fill="none"
-            stroke-width="1.6666666666666667"
+            strokeWidth="1.6666666666666667"
             stroke="#059669"
-            stroke-linecap="round"
+            strokeLinecap="round"
             transform="matrix(1,0,0,1,1.6666666666666667,2.5)"
-            stroke-linejoin="round"
+            strokeLinejoin="round"
           ></polyline>
         </marker>
       </defs>

@@ -9,6 +9,7 @@ import RappellingImage from '../public/rappelling.jpg';
 import FeaturedProgram from './FeaturedProgram';
 import Arrow from './Arrow';
 import Link from 'next/link';
+import { ArrowRightCircleIcon, ListBulletIcon } from '@heroicons/react/24/outline';
 
 const raleway = Raleway({ subsets: ['latin'], weight: '800' });
 
@@ -45,15 +46,16 @@ const InfoBlock: React.FC<Props> = ({}) => {
             encounter their Creator.
           </p>
         </div>
-        <div className="bg-emerald-50 p-10 rounded-xl flex flex-col items-center">
+        <div className="bg-emerald-50 p-10 rounded-b-xl flex flex-col items-center">
           <h3 className="text-2xl font-bold text-emerald-600 text-center">
             Check out some of our featured programs!
           </h3>
           <Arrow className="h-40 -mt-8 -mb-10" />
         </div>
       </div>
-      <div className="flex flex-col flex-grow space-y-12">
+      <div className="flex flex-col items-center flex-grow space-y-12">
         <FeaturedProgram
+          slug="river-schools"
           price={60}
           ageRange={[8, 18]}
           name={'River schools'}
@@ -63,6 +65,7 @@ const InfoBlock: React.FC<Props> = ({}) => {
           img={IslandImage.src}
         />
         <FeaturedProgram
+          slug="wilderness-camps"
           price={80}
           ageRange={[12, 16]}
           name={'Wilderness camps'}
@@ -72,6 +75,7 @@ const InfoBlock: React.FC<Props> = ({}) => {
           img={CampsiteImage.src}
         />
         <FeaturedProgram
+          slug="rappelling"
           price={120}
           ageRange={[14, 25]}
           name={'Rappelling'}
@@ -80,6 +84,13 @@ const InfoBlock: React.FC<Props> = ({}) => {
           }
           img={RappellingImage.src}
         />
+        <Link
+          href="/programs"
+          className="bg-emerald-50 text-emerald-600 font-medium text-lg shadow-lg shadow-black/5 px-8 py-4 rounded-full cursor-pointer inline-flex items-center transition duration-150 hover:bg-emerald-100"
+        >
+          <ArrowRightCircleIcon className="h-6 mr-2" />
+          View all programs
+        </Link>
       </div>
     </div>
   );

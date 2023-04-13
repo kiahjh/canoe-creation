@@ -18,6 +18,7 @@ interface Props {
   name: string;
   description: string;
   img: string;
+  slug: string;
 }
 
 const FeaturedProgram: React.FC<Props> = ({
@@ -26,17 +27,18 @@ const FeaturedProgram: React.FC<Props> = ({
   name,
   description,
   img,
+  slug,
 }) => {
   const { intersected, ref } = useIntersectionObserver({
     rootMargin: '0px',
-    threshold: 0.8,
+    threshold: 0.9,
   });
 
   return (
     <div
       className={cx(
         'bg-white rounded-2xl overflow-hidden shadow-xl transition duration-500',
-        intersected ? 'opacity-100' : 'translate-x-40 opacity-0',
+        intersected ? 'opacity-100' : 'translate-x-12 opacity-0',
       )}
       ref={ref}
     >
@@ -61,14 +63,14 @@ const FeaturedProgram: React.FC<Props> = ({
       </div>
       <div className="flex items-center justify-end p-8 pt-0 space-x-6">
         <Link
-          href="#"
+          href="/calendar"
           className="flex items-center bg-emerald-50 px-6 py-3 rounded-full text-emerald-600 font-medium hover:bg-emerald-100 transition duration-100"
         >
           <CalendarIcon className="h-6 mr-2" />
           View calendar
         </Link>
         <Link
-          href="#"
+          href={`/programs/${slug}`}
           className="flex items-center bg-emerald-500 px-6 py-3 rounded-full text-white font-medium hover:bg-emerald-600 transition duration-100"
         >
           <ArrowRightCircleIcon className="h-6 mr-2" />
