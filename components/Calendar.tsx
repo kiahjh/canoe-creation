@@ -9,16 +9,17 @@ import {
 import EVENTS, { Event } from '../lib/events';
 import { summerMonths } from '../lib/dates';
 import Link from 'next/link';
+import { useIntersectionObserver } from '../lib/hooks';
 
 const Calendar: React.FC = () => {
   return (
-    <div className="grid grid-cols-3 gap-8">
+    <div className="lg+:grid lg+:grid-cols-3 lg+:gap-8 space-y-4 lg+:space-y-0">
       {summerMonths.map((month) => (
         <div className="bg-emerald-50 p-4 rounded-xl">
           <h3 className="font-black text-2xl bg-gradient-to-r from-emerald-700 to-emerald-600 w-min bg-clip-text text-transparent mb-4">
             {month}
           </h3>
-          <div className="flex flex-col space-y-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg+:flex lg+:flex-col lg+:space-y-4">
             {EVENTS.filter((event) => event.dateRange[0].includes(month)).map((event) => {
               return <EventCard event={event} />;
             })}
@@ -36,6 +37,11 @@ interface Props {
 }
 
 const EventCard: React.FC<Props> = ({ event }) => {
+  const { intersected, ref } = useIntersectionObserver({
+    rootMargin: '0px',
+    threshold: 0.9,
+  });
+
   let badgeColors = '';
   switch (event.status) {
     case 'open':
@@ -50,7 +56,13 @@ const EventCard: React.FC<Props> = ({ event }) => {
   }
 
   return (
-    <div className="bg-white shadow rounded-xl flex flex-col relative overflow-hidden">
+    <div
+      className={cx(
+        'bg-white shadow rounded-xl flex flex-col relative overflow-hidden transition duration-200',
+        intersected ? 'opacity-100' : 'opacity-0 translate-y-2 scale-75',
+      )}
+      ref={ref}
+    >
       <div className="w-full h-full absolute top-0 left-0 bg-white/80 opacity-0 hover:opacity-100 transition-opacity duration-300 flex justify-center items-center group">
         <Link
           href="#"

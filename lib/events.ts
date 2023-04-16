@@ -18,7 +18,7 @@ const EVENTS: Event[] = [
   {
     numDays: 1,
     type: 'pollywog_float',
-    costPerPerson: 60,
+    costPerPerson: 45,
     dateRange: ['June 29', 'June 29'],
     ageRange: [12, 18],
     status: 'open',
@@ -43,7 +43,8 @@ const EVENTS: Event[] = [
   {
     numDays: 3,
     title: 'Wilderness River School',
-    type: 'wilderness_camp',
+    type: 'river_school',
+    costPerPerson: 140,
     dateRange: ['July 20', 'July 22'],
     ageRange: [12, 18],
     specialNotes: 'For experienced campers only',
@@ -52,6 +53,7 @@ const EVENTS: Event[] = [
   {
     numDays: 1,
     type: 'river_rangers',
+    costPerPerson: 60,
     dateRange: ['July 28', 'July 28'],
     ageRange: [12, 18],
     status: 'open',
@@ -68,6 +70,7 @@ const EVENTS: Event[] = [
     numDays: 1,
     type: 'rappelling',
     location: 'Hocking Hills, Ohio',
+    costPerPerson: 70,
     dateRange: ['August 5', 'August 5'],
     ageRange: [12, 18],
     status: 'open',

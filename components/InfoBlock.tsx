@@ -22,38 +22,60 @@ const InfoBlock: React.FC<Props> = ({}) => {
   });
 
   return (
-    <div className="bg-gradient-to-b from-cyan-600 to-emerald-500 relative -mt-24 p-12 pt-12 flex items-start space-x-12">
-      <div
-        className={cx(
-          'bg-white shadow-xl rounded-2xl transition duration-700 sticky top-12 w-128 shrink-0 overflow-hidden',
-          missionIntersected ? 'opacity-100' : 'opacity-0 translate-y-4',
-        )}
-        ref={missionRef}
-      >
-        <Sparkle size={20} position={'right-10 bottom-64'} color={'yellow'} />
-        <Sparkle size={28} position={'right-4 bottom-72'} color={'emerald'} />
-        <Sparkle size={18} position={'right-32 top-4'} color={'yellow'} />
-        <div className="relative p-10">
-          <h2 className={cx('text-4xl font-black relative', raleway.className)}>
-            Our mission
-          </h2>
-          <p className="mt-4 text-lg leading-8 text-slate-700 relative">
-            Canoe Creation exists to declare the glory of God by studying His works in
-            creation and discipling youth in their Christian faith. Floating classrooms
-            led by expert instructor/guides instill academic excellence, while teaching
-            critical thinking. Rappelling adventures, retreats and classes for young
-            children provide families with wholesome learning, fun and opportunity to
-            encounter their Creator.
-          </p>
-        </div>
-        <div className="bg-emerald-50 p-10 rounded-b-xl flex flex-col items-center">
-          <h3 className="text-2xl font-bold text-emerald-600 text-center">
-            Check out some of our featured programs!
-          </h3>
-          <Arrow className="h-40 -mt-8 -mb-10" />
+    <div className="bg-gradient-to-b from-cyan-600 to-emerald-500 relative -mt-24 p-6 xs:p-8 sm:p-12 flex flex-col lg+:flex-row items-stretch lg+:space-x-12 space-y-8 sm:space-y-12 lg+:space-y-0">
+      <div>
+        <div
+          className={cx(
+            'bg-white shadow-xl rounded-2xl transition duration-700 sticky top-12 lg+:w-128 shrink-0 overflow-hidden',
+            missionIntersected ? 'opacity-100' : 'lg+:opacity-0 lg+:translate-y-4',
+          )}
+          ref={missionRef}
+        >
+          <Sparkle
+            size={20}
+            position={'right-10 bottom-64 lg+:block hidden'}
+            color={'yellow'}
+          />
+          <Sparkle
+            size={28}
+            position={'right-4 bottom-72 lg+:block hidden'}
+            color={'emerald'}
+          />
+          <Sparkle
+            size={18}
+            position={'right-32 top-4 lg+:block hidden'}
+            color={'yellow'}
+          />
+          <div className="relative p-6 xs:p-8 sm:p-10">
+            <h2
+              className={cx(
+                'text-3xl sm:text-4xl font-black relative',
+                raleway.className,
+              )}
+            >
+              Our mission
+            </h2>
+            <p className="mt-2 sm:mt-4 sm:text-lg leading-7 sm:leading-8 text-slate-700 relative">
+              Canoe Creation exists to declare the glory of God by studying His works in
+              creation and discipling youth in their Christian faith. Floating classrooms
+              led by expert instructor/guides instill academic excellence, while teaching
+              critical thinking. Rappelling adventures, retreats and classes for young
+              children provide families with wholesome learning, fun and opportunity to
+              encounter their Creator.
+            </p>
+          </div>
+          <div className="bg-emerald-50 p-10 rounded-b-xl flex flex-col items-center">
+            <h3 className="text-2xl font-bold text-emerald-600 text-center">
+              Check out some of our featured programs!
+            </h3>
+            <Arrow className="h-40 -mt-8 -mb-10 hidden lg+:block" />
+            <div className="lg+:hidden">
+              <i className="fa-solid fa-arrow-down text-4xl text-emerald-600 mt-6" />
+            </div>
+          </div>
         </div>
       </div>
-      <div className="flex flex-col items-center flex-grow space-y-12">
+      <div className="flex flex-col items-center flex-grow space-y-8 sm:space-y-12">
         <FeaturedProgram
           slug="river-schools"
           price={60}

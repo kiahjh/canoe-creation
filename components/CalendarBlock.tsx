@@ -11,15 +11,27 @@ interface Props {}
 
 const CalendarBlock: React.FC<Props> = ({}) => {
   return (
-    <div className={cx('flex flex-col p-20 relative')}>
-      <Sparkle size={22} position={'left-10 bottom-24'} color={'cyan'} />
-      <Sparkle size={20} position={'right-10 bottom-64'} color={'yellow'} />
-      <Sparkle size={28} position={'right-4 bottom-72'} color={'emerald'} />
-      <Sparkle size={18} position={'left-32 top-4'} color={'yellow'} />
-      <Sparkle size={16} position={'right-32 top-40'} color={'yellow'} />
-      <Sparkle size={20} position={'right-40 top-20'} color={'yellow'} />
-      <Sparkle size={24} position={'right-48 top-32'} color={'cyan'} />
-      <h2 className={cx('text-5xl', raleway.className)}>
+    <div
+      className={cx(
+        'flex flex-col px-6 xs:px-8 py-12 sm:py-20 sm:px-12 lg:px-20 relative',
+      )}
+    >
+      <Sparkle size={22} position={'lg+:block hidden left-10 bottom-24'} color={'cyan'} />
+      <Sparkle
+        size={20}
+        position={'lg+:block hidden right-10 bottom-64'}
+        color={'yellow'}
+      />
+      <Sparkle
+        size={28}
+        position={'lg+:block hidden right-4 bottom-72'}
+        color={'emerald'}
+      />
+      <Sparkle size={18} position={'lg:block hidden left-32 top-4'} color={'yellow'} />
+      <Sparkle size={16} position={'lg:block hidden right-32 top-40'} color={'yellow'} />
+      <Sparkle size={20} position={'lg:block hidden right-40 top-20'} color={'yellow'} />
+      <Sparkle size={24} position={'lg:block hidden right-48 top-32'} color={'cyan'} />
+      <h2 className={cx('text-4xl sm:text-5xl', raleway.className)}>
         Calendar of events{' '}
         <span className="bg-gradient-to-r from-cyan-700 to-cyan-500 bg-clip-text text-transparent">
           for 2023

@@ -11,7 +11,7 @@ const HeroBlock: React.FC = () => {
   const scrollY = useScrollY();
 
   return (
-    <div className="px-12 pt-20 flex items-center justify-center z-0 fixed w-full">
+    <div className="px-8 sm:px-12 pt-12 sm:pt-20 flex items-center justify-center z-0 fixed w-full">
       <div
         className="flex flex-col justify-center items-center relative"
         style={{
@@ -33,7 +33,7 @@ const HeroBlock: React.FC = () => {
         <h1
           className={cx(
             raleway.className,
-            'text-7xl max-w-3xl text-center leading-tight relative',
+            'text-4xl xs:text-5xl sm:text-6xl lg:text-7xl max-w-3xl text-center leading-tight relative',
           )}
         >
           Experience His glory through{' '}
@@ -41,17 +41,17 @@ const HeroBlock: React.FC = () => {
             Creation
           </span>
         </h1>
-        <div className="mt-10 space-x-4 relative">
+        <div className="mt-6 lg:mt-10 md:space-x-4 relative flex md:flex-row flex-col space-y-4 md:space-y-0 w-full max-w-sm md:w-auto md:max-w-none">
           <Link
             href="/"
-            className="bg-emerald-500 text-white font-medium text-lg shadow-lg shadow-emerald-500/30 px-8 py-4 rounded-full cursor-pointer inline-flex items-center transition duration-150 hover:bg-emerald-600"
+            className="bg-emerald-500 text-white font-medium xs:text-lg shadow-lg shadow-emerald-500/30 px-6 lg:px-8 py-3 lg:py-4 rounded-full cursor-pointer inline-flex items-center justify-center transition duration-150 hover:bg-emerald-600"
           >
             <i className="mr-3 fa-brands fa-youtube text-xl" />
             Watch the video
           </Link>
           <Link
             href="/"
-            className="bg-emerald-50 text-emerald-600 font-medium text-lg shadow-lg shadow-black/5 px-8 py-4 rounded-full cursor-pointer inline-flex items-center transition duration-150 hover:bg-emerald-100"
+            className="bg-emerald-50 text-emerald-600 font-medium xs:text-lg shadow-lg shadow-black/5 px-6 lg:px-8 py-3 lg:py-4 rounded-full cursor-pointer inline-flex items-center justify-center transition duration-150 hover:bg-emerald-100"
           >
             <i className="mr-3 fa-solid fa-arrow-right text-xl" />
             View programs
