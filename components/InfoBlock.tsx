@@ -1,5 +1,4 @@
 import cx from 'classnames';
-
 import { Raleway, Inter } from 'next/font/google';
 import { useIntersectionObserver } from '../lib/hooks';
 import Sparkle from './Sparkle';
@@ -10,6 +9,7 @@ import FeaturedProgram from './FeaturedProgram';
 import Arrow from './Arrow';
 import Link from 'next/link';
 import { ArrowRightCircleIcon, ListBulletIcon } from '@heroicons/react/24/outline';
+import Button from './Button';
 
 const raleway = Raleway({ subsets: ['latin'], weight: '800' });
 
@@ -106,13 +106,16 @@ const InfoBlock: React.FC<Props> = ({}) => {
           }
           img={RappellingImage.src}
         />
-        <Link
-          href="/programs"
-          className="bg-emerald-50 text-emerald-600 font-medium text-lg shadow-lg shadow-black/5 px-8 py-4 rounded-full cursor-pointer inline-flex items-center transition duration-150 hover:bg-emerald-100"
+        <Button
+          type="link"
+          to="/programs"
+          color="secondary"
+          size="lg"
+          icon="arrow-circle-right"
+          shadow
         >
-          <ArrowRightCircleIcon className="h-6 mr-2" />
           View all programs
-        </Link>
+        </Button>
       </div>
     </div>
   );

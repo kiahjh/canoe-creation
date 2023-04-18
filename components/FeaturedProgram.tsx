@@ -1,14 +1,10 @@
 import React from 'react';
 import cx from 'classnames';
 import { Inter } from 'next/font/google';
-import {
-  ArrowRightCircleIcon,
-  CalendarIcon,
-  CurrencyDollarIcon,
-  UserGroupIcon,
-} from '@heroicons/react/24/outline';
+import { CurrencyDollarIcon, UserGroupIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 import { useIntersectionObserver } from '../lib/hooks';
+import Button from './Button';
 
 const inter = Inter({ subsets: ['latin'], weight: '700' });
 
@@ -65,20 +61,18 @@ const FeaturedProgram: React.FC<Props> = ({
         <p className="mt-4 text-slate-600 text-[15px] sm:text-[17px]">{description}</p>
       </div>
       <div className="flex flex-col sm:flex-row sm:items-center justify-end p-6 sm:p-8 pt-0 sm:space-x-6 space-y-4 sm:space-y-0">
-        <Link
-          href="/calendar"
-          className="flex justify-center items-center bg-emerald-50 px-6 py-3 rounded-full text-emerald-600 font-medium hover:bg-emerald-100 transition duration-100"
-        >
-          <CalendarIcon className="h-6 mr-2" />
+        <Button type="link" to="/calendar" size="md" color="secondary" icon="calendar">
           View calendar
-        </Link>
-        <Link
-          href={`/programs/${slug}`}
-          className="flex justify-center items-center bg-emerald-500 px-6 py-3 rounded-full text-white font-medium hover:bg-emerald-600 transition duration-100"
+        </Button>
+        <Button
+          type="link"
+          to={`/programs/${slug}`}
+          size="md"
+          color="primary"
+          icon="arrow-circle-right"
         >
-          <ArrowRightCircleIcon className="h-6 mr-2" />
           Find out more
-        </Link>
+        </Button>
       </div>
     </div>
   );

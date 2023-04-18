@@ -71,9 +71,19 @@ const EVENTS: Event[] = [
     type: 'rappelling',
     location: 'Hocking Hills, Ohio',
     costPerPerson: 70,
+    dateRange: ['August 4', 'August 4'],
+    ageRange: [12, 18],
+    status: 'private',
+  },
+  {
+    numDays: 1,
+    title: 'Akron Fossils Rappelling Trip',
+    type: 'rappelling',
+    location: 'Hocking Hills, Ohio',
+    costPerPerson: 70,
     dateRange: ['August 5', 'August 5'],
     ageRange: [12, 18],
-    status: 'open',
+    status: 'private',
   },
 ];
 export default EVENTS;
