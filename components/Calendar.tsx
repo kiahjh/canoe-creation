@@ -6,12 +6,16 @@ import {
   CurrencyDollarIcon,
   UsersIcon,
 } from '@heroicons/react/24/outline';
-import EVENTS, { Event } from '../lib/events';
-import { summerMonths } from '../lib/dates';
+import { months, summerMonths } from '../lib/dates';
 import Link from 'next/link';
 import { useIntersectionObserver } from '../lib/hooks';
+import { CCEvent } from '../lib/types';
 
-const Calendar: React.FC = () => {
+interface Props {
+  events: CCEvent[];
+}
+
+const Calendar: React.FC<Props> = ({ events }) => {
   return (
     <div className="lg+:grid lg+:grid-cols-3 lg+:gap-8 space-y-4 lg+:space-y-0">
       {summerMonths.map((month) => (
@@ -20,9 +24,13 @@ const Calendar: React.FC = () => {
             {month}
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg+:flex lg+:flex-col lg+:space-y-4">
-            {EVENTS.filter((event) => event.dateRange[0].includes(month)).map((event) => {
-              return <EventCard event={event} key={event.dateRange[0]} />;
-            })}
+            {events
+              .filter(
+                (event) => months[new Date(event.dateRange[0]).getMonth()] === month,
+              )
+              .map((event) => {
+                return <EventCard event={event} key={event.dateRange[0]} />;
+              })}
           </div>
         </div>
       ))}
@@ -32,11 +40,11 @@ const Calendar: React.FC = () => {
 
 export default Calendar;
 
-interface Props {
-  event: Event;
+interface EventCardProps {
+  event: CCEvent;
 }
 
-const EventCard: React.FC<Props> = ({ event }) => {
+const EventCard: React.FC<EventCardProps> = ({ event }) => {
   const { intersected, ref } = useIntersectionObserver({
     rootMargin: '0px',
     threshold: 0.9,
@@ -54,6 +62,14 @@ const EventCard: React.FC<Props> = ({ event }) => {
       badgeColors = 'bg-yellow-100 text-yellow-600';
       break;
   }
+
+  const startDate = new Date(event.dateRange[0]);
+  const formattedStartDate = `${months[startDate.getMonth()]} ${startDate.getDate() + 1}`;
+  const endDate = new Date(event.dateRange[1]);
+  const formattedEndDate = `${months[endDate.getMonth()]} ${endDate.getDate() + 1}`;
+
+  const formattedEventType = event.type.replace(/_/g, ` `);
+  const eventIsSpecial = !event.title.startsWith(formattedStartDate);
 
   return (
     <div
@@ -75,11 +91,11 @@ const EventCard: React.FC<Props> = ({ event }) => {
       <div className="flex justify-between items-start p-4 pb-2">
         <div className="mr-8">
           <h4 className="capitalize text-xl font-bold">
-            {event.title || event.type.replace(/_/g, ` `)}
+            {eventIsSpecial ? event.title : formattedEventType}
           </h4>
           {event.title && (
             <h5 className="capitalize font-medium text-slate-600">
-              {event.type.replace(/_/g, ` `)}
+              {eventIsSpecial && formattedEventType}
             </h5>
           )}
         </div>
@@ -95,8 +111,8 @@ const EventCard: React.FC<Props> = ({ event }) => {
       <div className="flex flex-col space-y-1 p-4 pt-2">
         <span className="font-medium text-slate-800 flex items-center">
           <CalendarDaysIcon className="h-6 text-slate-800 mr-2" />
-          {event.dateRange[0]}
-          {event.numDays > 1 && ` - ${event.dateRange[1]}`}
+          {formattedStartDate}
+          {formattedEndDate !== formattedStartDate && ` - ${formattedEndDate}`}
         </span>
         {event.costPerPerson && (
           <span className="font-medium text-slate-800 flex items-center">
@@ -104,10 +120,14 @@ const EventCard: React.FC<Props> = ({ event }) => {
             {event.costPerPerson} per person
           </span>
         )}
-        <span className="font-medium text-slate-800 flex items-center">
-          <UsersIcon className="h-6 text-slate-800 mr-2" />
-          Ages {event.ageRange[0]} to {event.ageRange[1]}
-        </span>
+        {(event.ageRange[0] || event.ageRange[1]) && (
+          <span className="font-medium text-slate-800 flex items-center">
+            <UsersIcon className="h-6 text-slate-800 mr-2" />
+            Ages {event.ageRange[0]} {!event.ageRange[0] && 'up'}{' '}
+            {event.ageRange[1] && 'to'} {event.ageRange[1]}{' '}
+            {!event.ageRange[1] && 'and up'}
+          </span>
+        )}
       </div>
       {(event.location || event.specialNotes) && (
         <div className="p-4 pt-2 flex justify-between italic text-sm text-slate-500">

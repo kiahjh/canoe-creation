@@ -37,11 +37,11 @@ const ProgramsDropdown: React.FC = () => {
         leaveTo="transform opacity-0 -translate-y-1"
       >
         <Menu.Items className="absolute z-10 mt-14 w-56 origin-top-right rounded-xl bg-white/90 shadow-lg focus:outline-none overflow-hidden backdrop-blur-lg">
-          <LinkOption to="/">River Rangers</LinkOption>
-          <LinkOption to="/">Pollywogs</LinkOption>
-          <LinkOption to="/">River schools</LinkOption>
-          <LinkOption to="/">Little Solomon Classes</LinkOption>
-          <LinkOption to="/">Rappelling</LinkOption>
+          <LinkOption to="/programs/river-rangers">River Rangers</LinkOption>
+          <LinkOption to="/programs/pollywogs">Pollywogs</LinkOption>
+          <LinkOption to="/programs/river-schools">River schools</LinkOption>
+          <LinkOption to="/programs/little-solomons">Little Solomon Classes</LinkOption>
+          <LinkOption to="/programs/rappelling">Rappelling</LinkOption>
         </Menu.Items>
       </Transition>
     </Menu>

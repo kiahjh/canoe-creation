@@ -4,16 +4,19 @@ import { Raleway } from 'next/font/google';
 import Link from 'next/link';
 import Sparkle from './Sparkle';
 import Calendar from './Calendar';
+import { CCEvent } from '../lib/types';
 
 const raleway = Raleway({ subsets: ['latin'], weight: '800' });
 
-interface Props {}
+interface Props {
+  events: CCEvent[];
+}
 
-const CalendarBlock: React.FC<Props> = ({}) => {
+const CalendarBlock: React.FC<Props> = ({ events }) => {
   return (
     <div
       className={cx(
-        'flex flex-col px-6 xs:px-8 py-12 sm:py-20 sm:px-12 lg:px-20 relative',
+        'flex flex-col px-6 xs:px-8 py-12 sm:py-20 sm:px-12 lg:px-20 relative bg-white',
       )}
     >
       <Sparkle size={22} position={'lg+:block hidden left-10 bottom-24'} color={'cyan'} />
@@ -48,7 +51,7 @@ const CalendarBlock: React.FC<Props> = ({}) => {
         </Link>
         !
       </p>
-      <Calendar />
+      <Calendar events={events} />
     </div>
   );
 };

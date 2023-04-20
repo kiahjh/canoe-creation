@@ -6,9 +6,11 @@ import ProgramsDropdown from './ProgramsDropdown';
 import { useScrollY } from '../lib/hooks';
 import { Bars3Icon } from '@heroicons/react/24/outline';
 
-interface Props {}
+interface Props {
+  page: string;
+}
 
-const MainHeader: React.FC<Props> = ({}) => {
+const MainHeader: React.FC<Props> = ({ page }) => {
   const scrollY = useScrollY();
 
   return (
@@ -31,17 +33,17 @@ const MainHeader: React.FC<Props> = ({}) => {
           scrollY > 0 && 'shadow-lg',
         )}
       >
-        <NavLink to="/" selected={true}>
+        <NavLink to="/" selected={page === '/'}>
           Home
         </NavLink>
         <ProgramsDropdown />
-        <NavLink to="/" selected={false}>
+        <NavLink to="/calendar" selected={page === '/calendar'}>
           Calendar
         </NavLink>
-        <NavLink to="/" selected={false}>
+        <NavLink to="/blog" selected={page === '/blog'}>
           Blog
         </NavLink>
-        <NavLink to="/" selected={false}>
+        <NavLink to="/contact" selected={page === '/contact'}>
           Contact us
         </NavLink>
       </nav>
