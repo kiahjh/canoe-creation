@@ -13,7 +13,7 @@ export function apiToBlogPost(apiPost: APIBlogPost): BlogPost {
       apiPost.metadata.image2?.url,
       apiPost.metadata.image3?.url,
     ].filter(Boolean) as string[],
-    publishedAt: apiPost.published_at,
+    createdAt: apiPost.created_at,
   };
 }
 

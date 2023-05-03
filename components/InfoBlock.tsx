@@ -1,5 +1,4 @@
 import cx from 'classnames';
-import { Raleway, Inter } from 'next/font/google';
 import { useIntersectionObserver } from '../lib/hooks';
 import Sparkle from './Sparkle';
 import IslandImage from '../public/island.jpg';
@@ -7,11 +6,7 @@ import CampsiteImage from '../public/campsite.jpg';
 import RappellingImage from '../public/rappelling.jpg';
 import FeaturedProgram from './FeaturedProgram';
 import Arrow from './Arrow';
-import Link from 'next/link';
-import { ArrowRightCircleIcon, ListBulletIcon } from '@heroicons/react/24/outline';
 import Button from './Button';
-
-const raleway = Raleway({ subsets: ['latin'], weight: '800' });
 
 interface Props {}
 
@@ -47,12 +42,7 @@ const InfoBlock: React.FC<Props> = ({}) => {
             color={'yellow'}
           />
           <div className="relative p-6 xs:p-8 sm:p-10">
-            <h2
-              className={cx(
-                'text-3xl sm:text-4xl font-black relative',
-                raleway.className,
-              )}
-            >
+            <h2 className={cx('text-3xl sm:text-4xl font-black relative font-raleway')}>
               Our mission
             </h2>
             <p className="mt-2 sm:mt-4 sm:text-lg leading-7 sm:leading-8 text-slate-700 relative">

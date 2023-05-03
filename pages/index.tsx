@@ -27,8 +27,9 @@ const Home: React.FC<Props> = ({ events }) => (
     <MainHeader page={'/'} />
     <HeroBlock />
     <div className="z-10 relative mt-[380px] xs:mt-[440px] md:mt-96">
-      <div className="overflow-hidden">
-        <Waves className="w-[190%] xs:w-[150%] sm:w-full" />
+      <div className="overflow-hidden flex">
+        <Waves className="w-[190%] xs:w-[150%] sm:w-full xl:w-3/4 shrink-0" />
+        <Waves className="w-3/4 shrink-0 mt-[16px]" />
       </div>
       <InfoBlock />
       <CalendarBlock events={events} />

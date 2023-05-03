@@ -1,12 +1,9 @@
 import React from 'react';
 import cx from 'classnames';
-import { Raleway } from 'next/font/google';
 import Link from 'next/link';
 import Sparkle from './Sparkle';
 import Calendar from './Calendar';
 import { CCEvent } from '../lib/types';
-
-const raleway = Raleway({ subsets: ['latin'], weight: '800' });
 
 interface Props {
   events: CCEvent[];
@@ -34,7 +31,7 @@ const CalendarBlock: React.FC<Props> = ({ events }) => {
       <Sparkle size={16} position={'lg:block hidden right-32 top-40'} color={'yellow'} />
       <Sparkle size={20} position={'lg:block hidden right-40 top-20'} color={'yellow'} />
       <Sparkle size={24} position={'lg:block hidden right-48 top-32'} color={'cyan'} />
-      <h2 className={cx('text-4xl sm:text-5xl', raleway.className)}>
+      <h2 className={cx('text-4xl sm:text-5xl font-raleway')}>
         Calendar of events{' '}
         <span className="bg-gradient-to-r from-cyan-700 to-cyan-500 bg-clip-text text-transparent">
           for 2023

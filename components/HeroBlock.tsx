@@ -1,12 +1,8 @@
 import React from 'react';
 import cx from 'classnames';
-import { Raleway } from 'next/font/google';
-import Link from 'next/link';
 import Sparkle from './Sparkle';
 import { useScrollY } from '../lib/hooks';
 import Button from './Button';
-
-const raleway = Raleway({ subsets: ['latin'], weight: '800' });
 
 const HeroBlock: React.FC = () => {
   const scrollY = useScrollY();
@@ -33,8 +29,7 @@ const HeroBlock: React.FC = () => {
         </div>
         <h1
           className={cx(
-            raleway.className,
-            'text-4xl xs:text-5xl sm:text-6xl lg:text-7xl max-w-3xl text-center relative',
+            'font-raleway text-4xl xs:text-5xl sm:text-6xl lg:text-7xl max-w-3xl text-center relative',
           )}
           style={{ lineHeight: '1.2em' }}
         >

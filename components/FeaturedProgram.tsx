@@ -1,12 +1,8 @@
 import React from 'react';
 import cx from 'classnames';
-import { Inter } from 'next/font/google';
 import { CurrencyDollarIcon, UserGroupIcon } from '@heroicons/react/24/outline';
-import Link from 'next/link';
 import { useIntersectionObserver } from '../lib/hooks';
 import Button from './Button';
-
-const inter = Inter({ subsets: ['latin'], weight: '700' });
 
 interface Props {
   price: number;
@@ -44,9 +40,7 @@ const FeaturedProgram: React.FC<Props> = ({
       />
       <div className="p-6 sm:p-8">
         <div className="flex flex-col space-y-2 md:space-y-0 md:flex-row lg+:flex-col lg+:space-y-2 xl:flex-row xl:space-y-0 justify-between items-start">
-          <h3 className={cx('text-2xl sm:text-3xl font-bold', inter.className)}>
-            {name}
-          </h3>
+          <h3 className={cx('text-2xl sm:text-3xl font-inter')}>{name}</h3>
           <div className="flex items-center space-x-6">
             <span className="flex items-center text-sm sm:text-base text-slate-600">
               <CurrencyDollarIcon className="h-5 sm:h-6 text-slate-500 mr-1" />${price} /

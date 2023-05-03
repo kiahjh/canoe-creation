@@ -60,7 +60,7 @@ const Button: React.FC<Props> = (props) => {
     }
   })();
   const Icon = (() => {
-    const iconStyles = cx('mr-2', props.size === 'sm' ? 'h-5' : 'h-6');
+    const iconStyles = cx('mr-2', props.size === 'sm' ? 'h-5' : 'h-6', props.size === "lg" && "mr-3");
     switch (props.icon) {
       case 'arrow-circle-right':
         return <ArrowRightCircleIcon className={iconStyles} />;

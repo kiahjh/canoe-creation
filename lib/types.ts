@@ -100,7 +100,7 @@ export type BlogPost = {
   id: string;
   thumbnail: string;
   images: string[];
-  publishedAt: string;
+  createdAt: string;
 };
 
 export type APIImage = {

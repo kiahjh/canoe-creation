@@ -10,8 +10,8 @@ interface Props {
 const Chrome: React.FC<Props> = ({ children, page }) => {
   return (
     <div className="min-h-screen flex flex-col">
-      <MainHeader page={page}/>
-      <div className="flex-grow">{children}</div>
+      <MainHeader page={page} />
+      <div className="flex-grow flex flex-col">{children}</div>
       <Footer />
     </div>
   );
