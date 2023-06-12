@@ -106,7 +106,7 @@ const BlogPost: React.FC<Props> = ({ post, recentPosts }) => {
             <div className="2xl:flex flex-col gap-8 hidden mt-8">
               <h3 className="font-inter text-3xl">More recent posts:</h3>
               {recentPosts.map((post) => (
-                <BlogPostPreview post={post} />
+                <BlogPostPreview post={post} key={post.id} />
               ))}
             </div>
           </div>
@@ -115,7 +115,7 @@ const BlogPost: React.FC<Props> = ({ post, recentPosts }) => {
           <h3 className="font-inter text-3xl">More recent posts:</h3>
           <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 flex-col mt-8">
             {recentPosts.map((post) => (
-              <BlogPostPreview post={post} />
+              <BlogPostPreview post={post} key={post.id} />
             ))}
           </div>
         </div>

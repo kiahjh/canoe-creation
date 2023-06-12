@@ -35,7 +35,7 @@ const Blog: React.FC<Props> = ({ blogPosts }) => {
         </p>
         <div className="mt-8 grid grid-cols-1 2xl:grid-cols-2 gap-8">
           {blogPosts.map((post) => (
-            <BlogPostPreview post={post} />
+            <BlogPostPreview post={post} key={post.id} />
           ))}
         </div>
       </div>

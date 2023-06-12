@@ -26,7 +26,7 @@ const Newsfeed: React.FC<Props> = ({ newsfeedPosts }) => {
       <div className="flex flex-col items-center pt-16 px-16 overflow-hidden mb-20">
         <h1 className="text-4xl mt-8 font-raleway">Newsfeed</h1>
         {newsfeedPosts.map((post, index) => (
-          <div className="flex">
+          <div className="flex" key={post.id}>
             <MegaphoneIcon
               className={cx(
                 'h-8 relative top-[96px] text-cyan-600',
