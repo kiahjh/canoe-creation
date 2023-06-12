@@ -19,6 +19,7 @@ module.exports = {
     },
   extend: {
       fontFamily: {
+        raleway: [`Raleway`],
         inter: [`Inter`],
         'reem-kufi': [`Reem Kufi`],
         lato: [`lato`],
