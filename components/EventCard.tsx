@@ -10,6 +10,7 @@ import {
   CurrencyDollarIcon,
   UsersIcon,
 } from '@heroicons/react/24/outline';
+import { eventTypeToSlug } from '../lib/data-conversion';
 
 interface Props {
   event: CCEvent;
@@ -52,7 +53,7 @@ const EventCard: React.FC<Props> = ({ event }) => {
     >
       <div className="w-full h-full absolute top-0 left-0 bg-white/80 opacity-0 hover:opacity-100 transition-opacity duration-300 flex justify-center items-center group">
         <Link
-          href="#"
+          href={`/programs/${eventTypeToSlug(event.type)}`}
           className="flex items-center bg-emerald-100 px-6 py-3 rounded-full text-emerald-700 font-medium hover:bg-emerald-200 opacity-0 group-hover:opacity-100 transition duration-500 translate-y-4 group-hover:translate-y-0 shadow-sm"
         >
           <ArrowRightCircleIcon className="h-6 mr-2" />

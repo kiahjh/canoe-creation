@@ -1,28 +1,31 @@
 import React from 'react';
 import { GetStaticProps } from 'next';
-import type { CCEvent } from '../lib/types';
+import type { CCEvent, NewsfeedPost } from '../lib/types';
 import MainHeader from '../components/MainHeader';
 import HeroBlock from '../components/HeroBlock';
 import Waves from '../components/Waves';
 import InfoBlock from '../components/InfoBlock';
 import CalendarBlock from '../components/CalendarBlock';
 import Footer from '../components/Footer';
-import { getAllEvents } from '../lib/getObjects';
+import { getAllEvents, getAllNewsfeedPosts } from '../lib/getObjects';
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const events = await getAllEvents();
+  const newsfeedPosts = await getAllNewsfeedPosts();
   return {
     props: {
       events,
+      mostRecentNewsfeedPost: newsfeedPosts[0],
     },
   };
 };
 
 interface Props {
   events: CCEvent[];
+  mostRecentNewsfeedPost: NewsfeedPost;
 }
 
-const Home: React.FC<Props> = ({ events }) => (
+const Home: React.FC<Props> = ({ events, mostRecentNewsfeedPost }) => (
   <main className="">
     <MainHeader page={'/'} />
     <HeroBlock />
@@ -31,7 +34,7 @@ const Home: React.FC<Props> = ({ events }) => (
         <Waves className="w-[190%] xs:w-[150%] sm:w-full xl:w-3/4 shrink-0" />
         <Waves className="w-3/4 shrink-0 mt-[16px]" />
       </div>
-      <InfoBlock />
+      <InfoBlock mostRecentNewsfeedPost={mostRecentNewsfeedPost} />
       <CalendarBlock events={events} />
       <Footer />
     </div>

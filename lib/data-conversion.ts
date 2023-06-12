@@ -1,4 +1,12 @@
-import { APIBlogPost, APIEvent, BlogPost, CCEvent } from './types';
+import {
+  APIBlogPost,
+  APIEvent,
+  APINewsfeedPost,
+  BlogPost,
+  CCEvent,
+  EventType,
+  NewsfeedPost,
+} from './types';
 
 export function apiToBlogPost(apiPost: APIBlogPost): BlogPost {
   return {
@@ -34,4 +42,29 @@ export function apiToEvent(apiEvent: APIEvent): CCEvent {
     costPerPerson: apiEvent.metadata.cost_per_person,
     description: apiEvent.metadata.description,
   };
+}
+
+export function apiToNewsfeedPost(apiNewsfeedPost: APINewsfeedPost): NewsfeedPost {
+  return {
+    title: apiNewsfeedPost.title,
+    content: apiNewsfeedPost.content,
+    slug: apiNewsfeedPost.slug,
+    id: apiNewsfeedPost.id,
+    createdAt: apiNewsfeedPost.created_at,
+  };
+}
+
+export function eventTypeToSlug(eventType: EventType): string {
+  switch (eventType) {
+    case 'pollywog_float':
+      return 'pollywog-float';
+    case 'rappelling':
+      return 'rappelling';
+    case 'river_rangers':
+      return 'river-rangers';
+    case 'river_school':
+      return 'river-school';
+    case 'wilderness_camp':
+      return 'wilderness-camp';
+  }
 }

@@ -1,10 +1,8 @@
 import React from 'react';
 import Chrome from '../../components/Chrome';
 
-interface Props {}
-
-const Rappeling: React.FC<Props> = ({}) => {
-  return <Chrome page="/river-schools">Rappelling</Chrome>;
+const Rappeling: React.FC = () => {
+  return <Chrome page="/rappelling">rappelling</Chrome>;
 };
 
 export default Rappeling;

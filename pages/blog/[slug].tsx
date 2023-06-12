@@ -6,6 +6,8 @@ import { getAllBlogPosts } from '../../lib/getObjects';
 import { BlogPost } from '../../lib/types';
 import { relativeTime } from '../../lib/dates';
 import BlogPostPreview from '../../components/BlogPostPreview';
+import Link from 'next/link';
+import { ChevronLeftIcon } from '@heroicons/react/24/outline';
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const blogPosts = await getAllBlogPosts();
@@ -40,6 +42,15 @@ interface Props {
 const BlogPost: React.FC<Props> = ({ post, recentPosts }) => {
   return (
     <Chrome page="/blog">
+      <div className="bg-emerald-50/80 p-[30px] sticky top-0 backdrop-blur-2xl mt-4">
+        <Link
+          href="/blog"
+          className="flex items-center space-x-2 text-emerald-700/70 p-2 hover:text-emerald-700 transition duration-100"
+        >
+          <ChevronLeftIcon className="h-5" />
+          <span className="font-medium">Back to blog</span>
+        </Link>
+      </div>
       <div className="">
         <div className="px-0 xs:px-4 sm:px-6 md:px-12 py-8 flex flex-col items-center xl:items-start xl:flex-row gap-8">
           <div className="bg-slate-50 p-6 sm:p-8 md:p-16 xs:rounded-3xl shrink-0">
@@ -55,7 +66,7 @@ const BlogPost: React.FC<Props> = ({ post, recentPosts }) => {
               <span>{relativeTime(post.createdAt)}</span>
             </h4>
             <p
-              className="prose mt-6 max-w-2xl xl:max-w-xl 2xl:max-w-2xl"
+              className="prose prose-p:text-slate-600 mt-6 max-w-2xl xl:max-w-xl 2xl:max-w-2xl"
               dangerouslySetInnerHTML={{ __html: post.content }}
             />
           </div>

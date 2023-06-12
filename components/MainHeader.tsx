@@ -15,7 +15,7 @@ const MainHeader: React.FC<Props> = ({ page }) => {
   const scrollY = useScrollY();
 
   return (
-    <header className="flex items-center justify-between p-4 relative z-20">
+    <header className={cx('flex items-center justify-between p-4 relative z-20')}>
       <Link href="/" className="flex items-center">
         <Image
           src="/logo.png"

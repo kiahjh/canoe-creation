@@ -40,36 +40,6 @@ export type APIEvent = {
   };
 };
 
-export type CCEvent = {
-  id: string;
-  title: string;
-  slug: string;
-  description: string | null;
-  type: EventType;
-  costPerPerson: number | null;
-  dateRange: [string, string];
-  ageRange: [number | null, number | null];
-  location: string | null;
-  status: Status;
-  specialNotes: string | null;
-};
-
-export type EventType =
-  | 'rappelling'
-  | 'river_school'
-  | 'pollywog_float'
-  | 'wilderness_camp'
-  | 'river_rangers';
-export type FormattedEventType =
-  | 'Rappelling'
-  | 'River School'
-  | 'Pollywog Float'
-  | 'Wilderness Camp'
-  | 'River Rangers';
-
-export type Status = 'open' | 'full' | 'private';
-export type FormattedStatus = 'Open' | 'Full' | 'Private';
-
 export type APIBlogPost = {
   type: 'blog-posts';
   status: 'published' | 'draft';
@@ -92,6 +62,36 @@ export type APIBlogPost = {
   };
 };
 
+export type APINewsfeedPost = {
+  type: 'newsfeed-posts';
+  status: 'published' | 'draft';
+  title: string;
+  slug: string;
+  published_at: string;
+  modified_at: string;
+  modified_by: string;
+  created_at: string;
+  created_by: string;
+  id: string;
+  content: string;
+  bucket: string;
+  metadata: {};
+};
+
+export type CCEvent = {
+  id: string;
+  title: string;
+  slug: string;
+  description: string | null;
+  type: EventType;
+  costPerPerson: number | null;
+  dateRange: [string, string];
+  ageRange: [number | null, number | null];
+  location: string | null;
+  status: Status;
+  specialNotes: string | null;
+};
+
 export type BlogPost = {
   title: string;
   content: string;
@@ -102,6 +102,30 @@ export type BlogPost = {
   images: string[];
   createdAt: string;
 };
+
+export type NewsfeedPost = {
+  title: string;
+  content: string;
+  slug: string;
+  id: string;
+  createdAt: string;
+};
+
+export type EventType =
+  | 'rappelling'
+  | 'river_school'
+  | 'pollywog_float'
+  | 'wilderness_camp'
+  | 'river_rangers';
+export type FormattedEventType =
+  | 'Rappelling'
+  | 'River School'
+  | 'Pollywog Float'
+  | 'Wilderness Camp'
+  | 'River Rangers';
+
+export type Status = 'open' | 'full' | 'private';
+export type FormattedStatus = 'Open' | 'Full' | 'Private';
 
 export type APIImage = {
   imgix_url: string;

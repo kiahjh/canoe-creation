@@ -42,7 +42,7 @@ const BlogPostPreview: React.FC<Props> = ({ post }) => {
             color="secondary"
             size="sm"
             icon="arrow-circle-right"
-            className="bg-emerald-200/40 hover:bg-emerald-200"
+            className="bg-emerald-200/40 hover:bg-emerald-200/60"
           >
             Read post
           </Button>
