@@ -25,7 +25,12 @@ const HeroBlock: React.FC = () => {
           <Sparkle size={16} position={'left-10 bottom-2'} color={'emerald'} />
           <Sparkle size={16} position={'-top-6 left-40'} color={'emerald'} />
           <Sparkle size={22} position={'-top-12 left-48'} color={'cyan'} />
-          <Sparkle size={20} position={'-top-16 right-48'} color={'yellow'} />
+          <Sparkle
+            size={20}
+            position={'-top-16 right-48'}
+            color={'yellow'}
+            className="sm:block hidden"
+          />
         </div>
         <h1
           className={cx(

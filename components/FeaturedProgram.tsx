@@ -29,7 +29,7 @@ const FeaturedProgram: React.FC<Props> = ({
   return (
     <div
       className={cx(
-        'bg-white rounded-2xl overflow-hidden shadow-xl transition duration-500',
+        'bg-white rounded-3xl overflow-hidden shadow-xl transition duration-500',
         intersected ? 'opacity-100' : 'lg+:translate-x-12 lg+:opacity-0',
       )}
       ref={ref}

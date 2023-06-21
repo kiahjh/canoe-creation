@@ -25,9 +25,11 @@ interface Props {
 const Blog: React.FC<Props> = ({ blogPosts }) => {
   return (
     <Chrome page="/blog">
-      <div className="px-16 py-12 flex-grow">
-        <h1 className="text-5xl font-raleway">Canoe Creation blog</h1>
-        <p className="mt-4 text-lg max-w-6xl text-slate-500">
+      <div className="px-8 md:px-16 py-12 flex-grow">
+        <h1 className="text-3xl xs:text-4xl md:text-5xl font-raleway">
+          Canoe Creation blog
+        </h1>
+        <p className="mt-4 xs:text-lg max-w-6xl text-slate-500">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus animi
           asperiores deleniti beatae illum possimus assumenda nam culpa corporis, magni
           molestias eius exercitationem. Officiis, similique! Aut error officia rem

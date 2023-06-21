@@ -11,7 +11,7 @@ const Calendar: React.FC<Props> = ({ events }) => {
   return (
     <div className="lg+:grid lg+:grid-cols-3 lg+:gap-8 space-y-4 lg+:space-y-0">
       {summerMonths.map((month) => (
-        <div className="bg-emerald-50 p-4 rounded-xl" key={month}>
+        <div className="bg-emerald-50 p-4 rounded-3xl" key={month}>
           <h3 className="font-black text-2xl bg-gradient-to-r from-emerald-700 to-emerald-600 w-min bg-clip-text text-transparent mb-4">
             {month}
           </h3>

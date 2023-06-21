@@ -8,15 +8,20 @@ import Logo from './Logo';
 
 interface Props {
   page: string;
+  sidebarOpen: boolean;
+  setSidebarOpen: (open: boolean) => void;
 }
 
-const MainHeader: React.FC<Props> = ({ page }) => {
+const MainHeader: React.FC<Props> = ({ page, sidebarOpen, setSidebarOpen }) => {
   const scrollY = useScrollY();
 
   return (
     <header className={cx('flex items-center justify-between p-4 relative z-20')}>
       <Logo />
-      <button className="p-2 bg-slate-50 hover:bg-slate-100 rounded-xl transition duration-100 md:hidden">
+      <button
+        className="p-2 bg-slate-50 hover:bg-slate-100 rounded-xl transition duration-100 md:hidden"
+        onClick={() => setSidebarOpen(!sidebarOpen)}
+      >
         <Bars3Icon className="h-8 text-slate-600" />
       </button>
       <nav
@@ -28,15 +33,15 @@ const MainHeader: React.FC<Props> = ({ page }) => {
         <NavLink to="/" selected={page === '/'}>
           Home
         </NavLink>
+        <NavLink to="/about" selected={page === '/about'}>
+          About
+        </NavLink>
         <ProgramsDropdown />
         <NavLink to="/calendar" selected={page === '/calendar'}>
           Calendar
         </NavLink>
         <NavLink to="/blog" selected={page === '/blog'}>
           Blog
-        </NavLink>
-        <NavLink to="/contact" selected={page === '/contact'}>
-          Contact us
         </NavLink>
       </nav>
     </header>

@@ -3,6 +3,7 @@ import striptags from 'striptags';
 import { BlogPost } from '../lib/types';
 import { relativeTime } from '../lib/dates';
 import Button from './Button';
+import Link from 'next/link';
 
 interface Props {
   post: BlogPost;
@@ -22,7 +23,12 @@ const BlogPostPreview: React.FC<Props> = ({ post }) => {
       />
       <div className="pt-4 flex flex-col justify-between">
         <div>
-          <h3 className="text-xl xs:text-2xl font-inter">{post.title}</h3>
+          <Link
+            href={`/blog/${post.slug}`}
+            className="text-xl xs:text-2xl font-inter hover:underline"
+          >
+            {post.title}
+          </Link>
           <h4 className="font-medium text-slate-600 text-sm xs:text-base">
             <span>by {post.author}</span>
             <span className="mx-2">•</span>
@@ -42,7 +48,7 @@ const BlogPostPreview: React.FC<Props> = ({ post }) => {
             color="secondary"
             size="sm"
             icon="arrow-circle-right"
-            className="bg-emerald-200/40 hover:bg-emerald-200/60"
+            className="!bg-emerald-200/40 hover:!bg-emerald-200/60"
           >
             Read post
           </Button>

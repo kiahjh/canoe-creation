@@ -5,9 +5,10 @@ interface Props {
   size: number;
   position: string;
   color: 'emerald' | 'cyan' | 'yellow';
+  className?: string;
 }
 
-const Sparkle: React.FC<Props> = ({ size, position, color }) => {
+const Sparkle: React.FC<Props> = ({ size, position, color, className }) => {
   let bgColor = '';
   switch (color) {
     case 'emerald':
@@ -23,7 +24,7 @@ const Sparkle: React.FC<Props> = ({ size, position, color }) => {
 
   return (
     <div
-      className={cx('absolute', bgColor, position)}
+      className={cx('absolute', bgColor, position, className)}
       style={{ width: size, height: size }}
     >
       <div

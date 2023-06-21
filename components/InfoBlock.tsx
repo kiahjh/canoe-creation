@@ -22,9 +22,9 @@ const InfoBlock: React.FC<Props> = ({ mostRecentNewsfeedPost }) => {
 
   return (
     <div className="bg-gradient-to-b from-cyan-600 to-emerald-500 relative -mt-24 p-6 xs:p-8 sm:p-12">
-      <div className="bg-cyan-500/70 p-3 rounded-2xl flex justify-between lg:items-center flex-col lg:flex-row">
+      <div className="bg-cyan-500/70 p-3 rounded-3xl flex justify-between lg:items-center flex-col lg:flex-row">
         <div className="flex items-center mr-8 mb-8 lg:mb-0">
-          <div className="w-12 h-12 rounded-xl bg-cyan-100 mr-6 flex justify-center items-center shrink-0">
+          <div className="w-12 h-12 rounded-2xl bg-cyan-100 mr-6 flex justify-center items-center shrink-0">
             <MegaphoneIcon className="h-7 text-cyan-800" />
           </div>
           <h3 className="text-xl sm:text-2xl font-inter text-white">
@@ -37,7 +37,7 @@ const InfoBlock: React.FC<Props> = ({ mostRecentNewsfeedPost }) => {
           color="secondary"
           size="md"
           icon="arrow-circle-right"
-          className="self-end lg:self-center bg-cyan-200/20 text-white hover:bg-cyan-200/30"
+          className="self-end lg:self-center !bg-cyan-200/20 !text-white hover:!bg-cyan-200/30"
         >
           Read announcement
         </Button>
@@ -46,19 +46,19 @@ const InfoBlock: React.FC<Props> = ({ mostRecentNewsfeedPost }) => {
         <div>
           <div
             className={cx(
-              'bg-white shadow-xl rounded-2xl transition duration-700 sticky top-12 lg+:w-128 shrink-0 overflow-hidden',
+              'bg-white shadow-xl rounded-3xl transition duration-700 sticky top-12 lg+:w-128 shrink-0 overflow-hidden',
               missionIntersected ? 'opacity-100' : 'lg+:opacity-0 lg+:translate-y-4',
             )}
             ref={missionRef}
           >
             <Sparkle
               size={20}
-              position={'right-10 bottom-64 lg+:block hidden'}
+              position={'right-10 bottom-72 lg+:block hidden'}
               color={'yellow'}
             />
             <Sparkle
               size={28}
-              position={'right-4 bottom-72 lg+:block hidden'}
+              position={'right-4 bottom-80 lg+:block hidden'}
               color={'emerald'}
             />
             <Sparkle
@@ -79,7 +79,7 @@ const InfoBlock: React.FC<Props> = ({ mostRecentNewsfeedPost }) => {
                 and opportunity to encounter their Creator.
               </p>
             </div>
-            <div className="bg-emerald-50 p-10 rounded-b-xl flex flex-col items-center">
+            <div className="bg-emerald-50 p-10 rounded-2xl flex flex-col items-center m-4">
               <h3 className="text-2xl font-bold text-emerald-600 text-center">
                 Check out some of our featured programs!
               </h3>

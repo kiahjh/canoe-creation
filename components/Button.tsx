@@ -4,13 +4,14 @@ import cx from 'classnames';
 import {
   ArrowRightCircleIcon,
   CalendarDaysIcon,
+  Squares2X2Icon,
   VideoCameraIcon,
 } from '@heroicons/react/24/outline';
 
 interface CommonProps {
   size?: 'sm' | 'md' | 'lg';
   color: 'primary' | 'secondary';
-  icon?: 'arrow-circle-right' | 'video-camera' | 'calendar';
+  icon?: 'arrow-circle-right' | 'video-camera' | 'calendar' | 'grid';
   shadow?: boolean;
   className?: string;
   sizeOverride?: string;
@@ -60,7 +61,11 @@ const Button: React.FC<Props> = (props) => {
     }
   })();
   const Icon = (() => {
-    const iconStyles = cx('mr-2', props.size === 'sm' ? 'h-5' : 'h-6', props.size === "lg" && "mr-3");
+    const iconStyles = cx(
+      'mr-2',
+      props.size === 'sm' ? 'h-5' : 'h-6',
+      props.size === 'lg' && 'mr-3',
+    );
     switch (props.icon) {
       case 'arrow-circle-right':
         return <ArrowRightCircleIcon className={iconStyles} />;
@@ -68,6 +73,8 @@ const Button: React.FC<Props> = (props) => {
         return <VideoCameraIcon className={iconStyles} />;
       case 'calendar':
         return <CalendarDaysIcon className={iconStyles} />;
+      case 'grid':
+        return <Squares2X2Icon className={iconStyles} />;
       default:
         return <ArrowRightCircleIcon className={iconStyles} />;
     }

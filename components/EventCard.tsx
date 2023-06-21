@@ -46,7 +46,7 @@ const EventCard: React.FC<Props> = ({ event }) => {
   return (
     <div
       className={cx(
-        'bg-white shadow rounded-xl flex flex-col relative overflow-hidden transition duration-200',
+        'bg-white shadow rounded-2xl flex flex-col relative overflow-hidden transition duration-200',
         intersected ? 'opacity-100' : 'opacity-0 translate-y-2 scale-75',
       )}
       ref={ref}
