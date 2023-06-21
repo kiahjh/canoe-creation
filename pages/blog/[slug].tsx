@@ -42,7 +42,7 @@ interface Props {
 const BlogPost: React.FC<Props> = ({ post, recentPosts }) => {
   return (
     <Chrome page="/blog">
-      <div className="bg-emerald-50/80 p-[30px] sticky top-0 backdrop-blur-2xl mt-4">
+      <div className="bg-emerald-50/80 p-[30px] sticky top-0 backdrop-blur-2xl border-b border-slate-200">
         <Link
           href="/blog"
           className="flex items-center space-x-2 text-emerald-700/70 p-2 hover:text-emerald-700 transition duration-100"

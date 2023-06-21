@@ -116,13 +116,15 @@ export type EventType =
   | 'river_school'
   | 'pollywog_float'
   | 'wilderness_camp'
-  | 'river_rangers';
+  | 'river_rangers'
+  | 'little_solomons';
 export type FormattedEventType =
   | 'Rappelling'
   | 'River School'
   | 'Pollywog Float'
   | 'Wilderness Camp'
-  | 'River Rangers';
+  | 'River Rangers'
+  | 'Little Solomons';
 
 export type Status = 'open' | 'full' | 'private';
 export type FormattedStatus = 'Open' | 'Full' | 'Private';

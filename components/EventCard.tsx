@@ -11,6 +11,7 @@ import {
   UsersIcon,
 } from '@heroicons/react/24/outline';
 import { eventTypeToSlug } from '../lib/data-conversion';
+import { formatAgeRange } from '../lib/strings';
 
 interface Props {
   event: CCEvent;
@@ -80,7 +81,7 @@ const EventCard: React.FC<Props> = ({ event }) => {
           {event.status}
         </span>
       </div>
-      <div className="flex flex-col space-y-1 p-4 pt-2">
+      <div className="flex flex-col space-y-1 p-4 pt-2 flex-grow">
         <span className="font-medium text-slate-800 flex items-center">
           <CalendarDaysIcon className="h-6 text-slate-800 mr-2" />
           {formattedStartDate}
@@ -95,9 +96,7 @@ const EventCard: React.FC<Props> = ({ event }) => {
         {(event.ageRange[0] || event.ageRange[1]) && (
           <span className="font-medium text-slate-800 flex items-center">
             <UsersIcon className="h-6 text-slate-800 mr-2" />
-            Ages {event.ageRange[0]} {!event.ageRange[0] && 'up'}{' '}
-            {event.ageRange[1] && 'to'} {event.ageRange[1]}{' '}
-            {!event.ageRange[1] && 'and up'}
+            {formatAgeRange(event.ageRange[0], event.ageRange[1])}
           </span>
         )}
       </div>

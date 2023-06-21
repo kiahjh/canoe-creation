@@ -16,9 +16,9 @@ const Footer: React.FC<Props> = ({}) => {
           <div>
             <h3 className="font-bold text-slate-800 text-lg mb-2">Programs</h3>
             <ul className="flex flex-col space-y-1">
+              <FooterLink to="/programs/river-schools">River Schools</FooterLink>
               <FooterLink to="/programs/river-rangers">River Rangers</FooterLink>
               <FooterLink to="/programs/pollywogs">Pollywogs</FooterLink>
-              <FooterLink to="/programs/river-schools">River Schools</FooterLink>
               <FooterLink to="/programs/little-solomons">
                 Little Solomon Classes
               </FooterLink>
