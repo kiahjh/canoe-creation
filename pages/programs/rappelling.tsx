@@ -1,11 +1,15 @@
 import React from 'react';
 import { GetStaticProps } from 'next';
-import IslandImage from '../../public/island.jpg';
-import RappellingImage from '../../public/rappelling.jpg';
-import CampsiteImage from '../../public/campsite.jpg';
 import ProgramTemplate from '../../components/ProgramTemplate';
 import { getAllEvents } from '../../lib/getObjects';
 import { CCEvent } from '../../lib/types';
+
+import GoingOverEdgeImage from '../../public/going-over-edge.jpg';
+import RappellingDescentImage from '../../public/rappelling-descent.jpg';
+import RappellingRockImage from '../../public/rappelling-rock.jpg';
+import RappellingSelfieImage from '../../public/rappelling-selfie.jpg';
+import RappellingWaterfallImage from '../../public/rappelling-waterfall.jpg';
+import VerticalRappellingImage from '../../public/vertical-rappelling.jpg';
 
 export const getStaticProps: GetStaticProps = async () => {
   const events = (await getAllEvents()).filter((event) => event.type === 'rappelling');
@@ -18,6 +22,15 @@ interface Props {
   events: CCEvent[];
 }
 
+const images = [
+  GoingOverEdgeImage.src,
+  RappellingDescentImage.src,
+  RappellingRockImage.src,
+  RappellingSelfieImage.src,
+  RappellingWaterfallImage.src,
+  VerticalRappellingImage.src,
+];
+
 const Rappelling: React.FC<Props> = ({ events }) => {
   return (
     <ProgramTemplate
@@ -25,13 +38,13 @@ const Rappelling: React.FC<Props> = ({ events }) => {
       page={'/rappelling'}
       events={events}
       paragraph1={
-        'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo vel tempora animi dignissimos doloremque, architecto quidem totam sint ut, fugiat repellendus? Veritatis saepe quam rem libero magnam, assumenda nemo dolores! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt ipsum dolor aspernatur cum possimus iste repellendus repudiandae ad corrupti. Sint, molestias quod? Illum sint doloremque magni nisi perferendis sed? Facere? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt dolorem, architecto, tempore placeat est aperiam soluta minus omnis veritatis facilis praesentium quam itaque vero reiciendis, fuga velit. Illum, animi consequatur!'
+        'While descending the cliffs of the stunningly beautiful Hocking Hills gorges, you’ll be blown away by the view. As you lower yourself down past boulders and trickling waterfalls, one cannot help but consider the Creator of it all.'
       }
       quote={{
-        text: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, blanditiis et, sapiente neque placeat sunt est, voluptas id corrupti ex aut dolor quod architecto suscipit obcaecati ullam illum beatae incidunt.`,
-        cite: `Homeschool mom`,
+        text: `I enjoyed the last talk we had after we had rappelled the 120 footer. What Al said about trusting God with the knowledge He's given us really stuck with me. It has always been a struggle for me to depend on anything other than myself, but God has really been dealing with me about this lately, and I think rappelling was a good analogy of what it looks like to put our lives in God's hands, and trust His counsel and direction, even if it goes against our own reason.`,
+        cite: `Eden, 19`,
       }}
-      paragraph2="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet laboriosam cumque consequatur inventore iusto iste aut quas, enim cupiditate! Quisquam voluptas veniam reiciendis facere numquam fugiat suscipit, aperiam eaque cumque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam necessitatibus aliquid magnam, tempore quae culpa quisquam eum explicabo distinctio laborum dolorum, natus eos delectus amet temporibus eius consequatur beatae provident! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit voluptatem provident explicabo at perferendis ipsum, mollitia cupiditate aperiam magnam recusandae debitis! Odio a deleniti iusto libero, consectetur pariatur ducimus ex!"
+      paragraph2="We’ll start out the morning with safety training, and get our feet wet by rappelling down a 30 foot high boulder. Once we’ve mastered the technique of rappelling, we ascend to the heights. Hiking along the ridges of the gorgeous Hocking Hills State Park Rappelling Area and discovering some amazing works of God’s hand along the way, we’ll try out some of the higher cliffs, working our way up to a 120 foot waterfall. Afraid of heights? No worries – trained staff will help you work through your fears, and you’ll be amazed at what you can do. We’ll finish the day gathered among the boulders at the base of the waterfall, talking about fears, obstacles in life, and the God of the universe who is bigger than it all and desires to guide us safely through."
       numDaysRange={{
         min: 1,
         max: 2,
@@ -44,7 +57,7 @@ const Rappelling: React.FC<Props> = ({ events }) => {
         min: 70,
         max: null,
       }}
-      images={[IslandImage.src, CampsiteImage.src, RappellingImage.src, 'foo']}
+      images={images}
     />
   );
 };

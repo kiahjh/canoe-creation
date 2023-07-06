@@ -12,7 +12,7 @@ interface Props {
   setSidebarOpen: (open: boolean) => void;
 }
 
-const MainHeader: React.FC<Props> = ({ page, sidebarOpen, setSidebarOpen }) => {
+const MainHeader: React.FC<Props> = ({ page, setSidebarOpen }) => {
   const scrollY = useScrollY();
 
   return (
@@ -25,7 +25,7 @@ const MainHeader: React.FC<Props> = ({ page, sidebarOpen, setSidebarOpen }) => {
       <Logo />
       <button
         className="p-2 bg-slate-50 hover:bg-slate-100 rounded-xl transition duration-100 md:hidden"
-        onClick={() => setSidebarOpen(!sidebarOpen)}
+        onClick={() => setSidebarOpen(true)}
       >
         <Bars3Icon className="h-8 text-slate-600" />
       </button>

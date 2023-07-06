@@ -8,6 +8,7 @@ import InfoBlock from '../components/InfoBlock';
 import CalendarBlock from '../components/CalendarBlock';
 import Footer from '../components/Footer';
 import { getAllEvents, getAllNewsfeedPosts } from '../lib/getObjects';
+import Chrome from '../components/Chrome';
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const events = await getAllEvents();
@@ -26,8 +27,7 @@ interface Props {
 }
 
 const Home: React.FC<Props> = ({ events, mostRecentNewsfeedPost }) => (
-  <main className="">
-    <MainHeader page={'/'} sidebarOpen={false} setSidebarOpen={() => {}} />
+  <Chrome page="/">
     <HeroBlock />
     <div className="z-10 relative mt-[380px] xs:mt-[480px] md:mt-112">
       <div className="overflow-hidden flex">
@@ -36,9 +36,8 @@ const Home: React.FC<Props> = ({ events, mostRecentNewsfeedPost }) => (
       </div>
       <InfoBlock mostRecentNewsfeedPost={mostRecentNewsfeedPost} />
       <CalendarBlock events={events} />
-      <Footer />
     </div>
-  </main>
+  </Chrome>
 );
 
 export default Home;
