@@ -1,8 +1,5 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
-import Button from './Button';
-import { ArrowRightCircleIcon } from '@heroicons/react/24/outline';
 import Logo from './Logo';
 
 interface Props {}
@@ -33,6 +30,7 @@ const Footer: React.FC<Props> = ({}) => {
               <FooterLink to="/calendar">Calendar</FooterLink>
               <FooterLink to="/blog">Blog</FooterLink>
               <FooterLink to="/newsfeed">Newsfeed</FooterLink>
+              <FooterLink to="/gallery">Gallery</FooterLink>
               <FooterLink to="/contact">Contact</FooterLink>
             </ul>
           </div>

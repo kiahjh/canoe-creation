@@ -5,9 +5,9 @@ import Testimonial from '../components/Testimonial';
 const About: React.FC = () => {
   return (
     <Chrome page="/about">
-      <div className="flex justify-center items-center py-12 sm:py-20 px-6 xs:px-8 sm:px-12 md:px-20">
+      <div className="flex justify-center items-center py-8 xs:py-12 sm:py-20 px-6 xs:px-8 sm:px-12 md:px-20">
         <div className="absolute w-full lg:w-5/6 h-1/2 bg-emerald-50 rounded-3xl" />
-        <div className="prose prose-p:text-slate-600 bg-slate-50 py-12 md:py-16 px-6 sm:px-12 md:px-16 max-w-3xl rounded-3xl relative bg-opacity-70 backdrop-blur-3xl shadow">
+        <div className="prose prose-p:text-slate-600 bg-slate-50 py-8 sm:py-12 md:py-16 px-6 sm:px-12 md:px-16 max-w-3xl rounded-3xl relative bg-opacity-70 backdrop-blur-3xl shadow">
           <h1>About Canoe Creation</h1>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio nemo
