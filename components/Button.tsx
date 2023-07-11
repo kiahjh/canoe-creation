@@ -11,7 +11,7 @@ import {
 interface CommonProps {
   size?: 'sm' | 'md' | 'lg';
   color: 'primary' | 'secondary';
-  icon?: 'arrow-circle-right' | 'video-camera' | 'calendar' | 'grid';
+  icon?: 'arrow-circle-right' | 'video-camera' | 'calendar' | 'grid' | 'paypal';
   shadow?: boolean;
   className?: string;
   sizeOverride?: string;

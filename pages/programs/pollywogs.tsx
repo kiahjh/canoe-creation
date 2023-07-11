@@ -1,26 +1,26 @@
 import React from 'react';
 import { GetStaticProps } from 'next';
 import ProgramTemplate from '../../components/ProgramTemplate';
-import IslandImage from '../../public/island.jpg';
-import RappellingImage from '../../public/rappelling.jpg';
-import CampsiteImage from '../../public/campsite.jpg';
 import { getAllEvents } from '../../lib/getObjects';
 import { CCEvent } from '../../lib/types';
+import getImages from '../../lib/get-images';
 
 export const getStaticProps: GetStaticProps = async () => {
   const events = (await getAllEvents()).filter(
     (event) => event.type === 'pollywog_float',
   );
+  const images = getImages(`**/public/pollywogs/*.jpg`);
   return {
-    props: { events },
+    props: { events, images },
   };
 };
 
 interface Props {
   events: CCEvent[];
+  images: string[];
 }
 
-const Pollywogs: React.FC<Props> = ({ events }) => {
+const Pollywogs: React.FC<Props> = ({ events, images }) => {
   return (
     <ProgramTemplate
       title={'Pollywog Float'}
@@ -36,7 +36,7 @@ const Pollywogs: React.FC<Props> = ({ events }) => {
       paragraph2="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet laboriosam cumque consequatur inventore iusto iste aut quas, enim cupiditate! Quisquam voluptas veniam reiciendis facere numquam fugiat suscipit, aperiam eaque cumque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam necessitatibus aliquid magnam, tempore quae culpa quisquam eum explicabo distinctio laborum dolorum, natus eos delectus amet temporibus eius consequatur beatae provident! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit voluptatem provident explicabo at perferendis ipsum, mollitia cupiditate aperiam magnam recusandae debitis! Odio a deleniti iusto libero, consectetur pariatur ducimus ex!"
       numDaysRange={{
         min: 1,
-        max: 1,
+        max: 2,
       }}
       ageRange={{
         min: 8,
@@ -44,9 +44,9 @@ const Pollywogs: React.FC<Props> = ({ events }) => {
       }}
       priceRange={{
         min: 45,
-        max: null,
+        max: 90,
       }}
-      images={[IslandImage.src, CampsiteImage.src, RappellingImage.src, 'foo']}
+      images={images}
     />
   );
 };

@@ -1,5 +1,14 @@
 import React from 'react';
 import Chrome from '../components/Chrome';
+import { GetStaticProps } from 'next';
+
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  return {
+    props: {},
+  };
+};
+
+interface Props {}
 
 const Gallery: React.FC = () => {
   return (

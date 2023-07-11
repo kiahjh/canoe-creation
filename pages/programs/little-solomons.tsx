@@ -1,26 +1,26 @@
 import React from 'react';
 import { GetStaticProps } from 'next';
-import IslandImage from '../../public/island.jpg';
-import RappellingImage from '../../public/rappelling.jpg';
-import CampsiteImage from '../../public/campsite.jpg';
 import ProgramTemplate from '../../components/ProgramTemplate';
 import { getAllEvents } from '../../lib/getObjects';
 import { CCEvent } from '../../lib/types';
+import getImages from '../../lib/get-images';
 
 export const getStaticProps: GetStaticProps = async () => {
   const events = (await getAllEvents()).filter(
     (event) => event.type === 'little_solomons',
   );
+  const images = getImages(`**/public/little-solomons/*.jpg`);
   return {
-    props: { events },
+    props: { events, images },
   };
 };
 
 interface Props {
   events: CCEvent[];
+  images: string[];
 }
 
-const LittleSolomons: React.FC<Props> = ({ events }) => {
+const LittleSolomons: React.FC<Props> = ({ events, images }) => {
   return (
     <ProgramTemplate
       title={'Little Solomons'}
@@ -47,7 +47,7 @@ const LittleSolomons: React.FC<Props> = ({ events }) => {
         min: 65,
         max: null,
       }}
-      images={[IslandImage.src, CampsiteImage.src, RappellingImage.src, 'foo']}
+      images={images}
     />
   );
 };

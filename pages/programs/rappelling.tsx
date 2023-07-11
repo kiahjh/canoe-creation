@@ -3,35 +3,23 @@ import { GetStaticProps } from 'next';
 import ProgramTemplate from '../../components/ProgramTemplate';
 import { getAllEvents } from '../../lib/getObjects';
 import { CCEvent } from '../../lib/types';
-
-import GoingOverEdgeImage from '../../public/going-over-edge.jpg';
-import RappellingDescentImage from '../../public/rappelling-descent.jpg';
-import RappellingRockImage from '../../public/rappelling-rock.jpg';
-import RappellingSelfieImage from '../../public/rappelling-selfie.jpg';
-import RappellingWaterfallImage from '../../public/rappelling-waterfall.jpg';
-import VerticalRappellingImage from '../../public/vertical-rappelling.jpg';
+import { glob } from 'glob';
+import getImages from '../../lib/get-images';
 
 export const getStaticProps: GetStaticProps = async () => {
   const events = (await getAllEvents()).filter((event) => event.type === 'rappelling');
+  const images = getImages('**/public/rappelling/*.jpg');
   return {
-    props: { events },
+    props: { events, images },
   };
 };
 
 interface Props {
   events: CCEvent[];
+  images: string[];
 }
 
-const images = [
-  GoingOverEdgeImage.src,
-  RappellingDescentImage.src,
-  RappellingRockImage.src,
-  RappellingSelfieImage.src,
-  RappellingWaterfallImage.src,
-  VerticalRappellingImage.src,
-];
-
-const Rappelling: React.FC<Props> = ({ events }) => {
+const Rappelling: React.FC<Props> = ({ events, images }) => {
   return (
     <ProgramTemplate
       title={'Rappelling'}
