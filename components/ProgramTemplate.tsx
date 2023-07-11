@@ -96,14 +96,16 @@ const ProgramTemplate: React.FC<Props> = ({
             <Testimonial text={quote.text} cite={quote.cite} className="mb-12 mt-16" />
           )}
           <p className="text-slate-500 text-lg leading-8">{paragraph2}</p>
-          <div className="mt-16 py-6 px-4 xs:py-8 xs:px-8 bg-emerald-50 rounded-3xl">
-            <h3 className="text-2xl font-inter text-emerald-900">Events this year:</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 2xl:grid-cols-2 gap-4 mt-4">
-              {events.map((e) => (
-                <EventCard key={e.id} event={e} />
-              ))}
+          {events.length > 0 && (
+            <div className="mt-16 py-6 px-4 xs:py-8 xs:px-8 bg-emerald-50 rounded-3xl">
+              <h3 className="text-2xl font-inter text-emerald-900">Events this year:</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 2xl:grid-cols-2 gap-4 mt-4">
+                {events.map((e) => (
+                  <EventCard key={e.id} event={e} />
+                ))}
+              </div>
             </div>
-          </div>
+          )}
         </div>
         <div
           className={cx(

@@ -7,7 +7,7 @@ import getImages from '../../lib/get-images';
 
 export const getStaticProps: GetStaticProps = async () => {
   const events = (await getAllEvents()).filter(
-    (event) => event.type === 'little_solomons',
+    (event) => event.type === 'little-solomons',
   );
   const images = getImages(`**/public/little-solomons/*.jpg`);
   return {

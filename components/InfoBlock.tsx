@@ -1,9 +1,9 @@
 import cx from 'classnames';
 import { useIntersectionObserver } from '../lib/hooks';
 import Sparkle from './Sparkle';
-import IslandImage from '../public/island.jpg';
-import CampsiteImage from '../public/campsite.jpg';
-import RappellingImage from '../public/rappelling.jpg';
+import RiverSchoolImage from '../public/river-schools/island.jpg';
+import PollywogImage from '../public/pollywogs/paddling-pollywogs.jpg';
+import RappellingImage from '../public/rappelling/rappelling-descent.jpg';
 import FeaturedProgram from './FeaturedProgram';
 import Arrow from './Arrow';
 import Button from './Button';
@@ -93,33 +93,33 @@ const InfoBlock: React.FC<Props> = ({ mostRecentNewsfeedPost }) => {
         <div className="flex flex-col items-center flex-grow space-y-8 sm:space-y-12">
           <FeaturedProgram
             slug="river-schools"
-            price={60}
-            ageRange={[8, 18]}
-            name={'River schools'}
+            priceRange={{ min: 65, max: 140 }}
+            ageRange={{ min: 12, max: 20 }}
+            title={'River schools'}
             description={
               'Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium ducimus quia autem nobis in possimus eaque est quo qui veniam! Delectus, voluptatem voluptatum nisi explicabo ducimus aliquam eos mollitia impedit.'
             }
-            img={IslandImage.src}
+            image={RiverSchoolImage.src}
           />
           <FeaturedProgram
-            slug="wilderness-camps"
-            price={80}
-            ageRange={[12, 16]}
-            name={'Wilderness camps'}
+            slug="pollywogs"
+            priceRange={{ min: 45, max: 90 }}
+            ageRange={{ min: 8, max: 12 }}
+            title={'Pollywog floats'}
             description={
               'Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium ducimus quia autem nobis in possimus eaque est quo qui veniam! Delectus, voluptatem voluptatum nisi explicabo ducimus aliquam eos mollitia impedit.'
             }
-            img={CampsiteImage.src}
+            image={PollywogImage.src}
           />
           <FeaturedProgram
             slug="rappelling"
-            price={120}
-            ageRange={[14, 25]}
-            name={'Rappelling'}
+            priceRange={{ min: 70, max: null }}
+            ageRange={{ min: 12, max: null }}
+            title={'Rappelling'}
             description={
               'Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium ducimus quia autem nobis in possimus eaque est quo qui veniam! Delectus, voluptatem voluptatum nisi explicabo ducimus aliquam eos mollitia impedit.'
             }
-            img={RappellingImage.src}
+            image={RappellingImage.src}
           />
           <Button
             type="link"

@@ -1,12 +1,10 @@
 import React from 'react';
 import { GetStaticProps } from 'next';
 import type { CCEvent, NewsfeedPost } from '../lib/types';
-import MainHeader from '../components/MainHeader';
 import HeroBlock from '../components/HeroBlock';
 import Waves from '../components/Waves';
 import InfoBlock from '../components/InfoBlock';
 import CalendarBlock from '../components/CalendarBlock';
-import Footer from '../components/Footer';
 import { getAllEvents, getAllNewsfeedPosts } from '../lib/getObjects';
 import Chrome from '../components/Chrome';
 import CTABlock from '../components/CTABlock';

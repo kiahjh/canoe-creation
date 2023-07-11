@@ -6,9 +6,7 @@ import { CCEvent } from '../../lib/types';
 import getImages from '../../lib/get-images';
 
 export const getStaticProps: GetStaticProps = async () => {
-  const events = (await getAllEvents()).filter(
-    (event) => event.type === 'pollywog_float',
-  );
+  const events = (await getAllEvents()).filter((event) => event.type === 'pollywogs');
   const images = getImages(`**/public/pollywogs/*.jpg`);
   return {
     props: { events, images },

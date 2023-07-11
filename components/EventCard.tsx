@@ -12,6 +12,7 @@ import {
 } from '@heroicons/react/24/outline';
 import { eventTypeToSlug } from '../lib/data-conversion';
 import { formatAgeRange } from '../lib/strings';
+import { formatEventType } from '../lib/events';
 
 interface Props {
   event: CCEvent;
@@ -40,9 +41,11 @@ const EventCard: React.FC<Props> = ({ event }) => {
   const formattedStartDate = `${months[startDate.getMonth()]} ${startDate.getDate() + 1}`;
   const endDate = new Date(event.dateRange[1]);
   const formattedEndDate = `${months[endDate.getMonth()]} ${endDate.getDate() + 1}`;
-
-  const formattedEventType = event.type.replace(/_/g, ` `);
   const eventIsSpecial = !event.title.startsWith(formattedStartDate);
+  const eventAlreadyHappened = endDate < new Date();
+  if (eventAlreadyHappened) {
+    badgeColors = 'bg-slate-100 text-slate-500';
+  }
 
   return (
     <div
@@ -64,11 +67,11 @@ const EventCard: React.FC<Props> = ({ event }) => {
       <div className="flex justify-between items-start p-4 pb-2">
         <div className="mr-8">
           <h4 className="capitalize text-xl font-bold">
-            {eventIsSpecial ? event.title : formattedEventType}
+            {eventIsSpecial ? event.title : formatEventType(event.type)}
           </h4>
           {event.title && (
             <h5 className="capitalize font-medium text-slate-600">
-              {eventIsSpecial && formattedEventType}
+              {eventIsSpecial && formatEventType(event.type)}
             </h5>
           )}
         </div>
@@ -78,7 +81,7 @@ const EventCard: React.FC<Props> = ({ event }) => {
             `px-4 rounded-full flex justify-center items-center py-0.5 text-sm uppercase font-medium`,
           )}
         >
-          {event.status}
+          {eventAlreadyHappened ? 'done' : event.status}
         </span>
       </div>
       <div className="flex flex-col space-y-1 p-4 pt-2 flex-grow">

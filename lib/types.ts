@@ -113,16 +113,14 @@ export type NewsfeedPost = {
 
 export type EventType =
   | 'rappelling'
-  | 'river_school'
-  | 'pollywog_float'
-  | 'wilderness_camp'
-  | 'river_rangers'
-  | 'little_solomons';
+  | 'river-schools'
+  | 'pollywogs'
+  | 'river-rangers'
+  | 'little-solomons';
 export type FormattedEventType =
   | 'Rappelling'
   | 'River School'
   | 'Pollywog Float'
-  | 'Wilderness Camp'
   | 'River Rangers'
   | 'Little Solomons';
 

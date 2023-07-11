@@ -3,22 +3,29 @@ import cx from 'classnames';
 import { CurrencyDollarIcon, UserGroupIcon } from '@heroicons/react/24/outline';
 import { useIntersectionObserver } from '../lib/hooks';
 import Button from './Button';
+import { formatAgeRange } from '../lib/strings';
 
 interface Props {
-  price: number;
-  ageRange: [number, number];
-  name: string;
-  description: string;
-  img: string;
+  title: string;
   slug: string;
+  description: string;
+  ageRange: {
+    min: number | null;
+    max: number | null;
+  };
+  priceRange: {
+    min: number;
+    max: number | null;
+  };
+  image: string;
 }
 
 const FeaturedProgram: React.FC<Props> = ({
-  price,
-  ageRange,
-  name,
+  title,
   description,
-  img,
+  ageRange,
+  priceRange,
+  image,
   slug,
 }) => {
   const { intersected, ref } = useIntersectionObserver({
@@ -35,26 +42,29 @@ const FeaturedProgram: React.FC<Props> = ({
       ref={ref}
     >
       <div
-        style={{ backgroundImage: `url(${img})` }}
+        style={{ backgroundImage: `url(${image})` }}
         className="w-full h-52 sm:h-72 bg-center bg-cover"
       />
       <div className="p-6 sm:p-8">
         <div className="flex flex-col space-y-2 md:space-y-0 md:flex-row lg+:flex-col lg+:space-y-2 xl:flex-row xl:space-y-0 justify-between items-start">
-          <h3 className={cx('text-2xl sm:text-3xl font-inter')}>{name}</h3>
+          <h3 className={cx('text-2xl sm:text-3xl font-inter')}>{title}</h3>
           <div className="flex items-center space-x-6">
             <span className="flex items-center text-sm sm:text-base text-slate-600">
-              <CurrencyDollarIcon className="h-5 sm:h-6 text-slate-500 mr-1" />${price} /
-              person
+              <CurrencyDollarIcon className="h-5 sm:h-6 text-slate-500 mr-1" />
+              <span>
+                {`$${priceRange.min}${priceRange.max ? `-$${priceRange.max}` : ``} /
+                person`}
+              </span>
             </span>
             <span className="flex items-center text-sm sm:text-base text-slate-600">
               <UserGroupIcon className="h-5 sm:h-6 text-slate-500 mr-1" />
-              Ages {ageRange[0]} - {ageRange[1]}
+              {formatAgeRange(ageRange.min, ageRange.max)}
             </span>
           </div>
         </div>
         <p className="mt-4 text-slate-600 text-[15px] sm:text-[17px]">{description}</p>
       </div>
-      <div className="flex flex-col sm:flex-row sm:items-center justify-end p-6 sm:p-8 pt-0 sm:space-x-6 space-y-4 sm:space-y-0">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-end p-6 sm:p-8 pt-0 sm:pt-0 sm:space-x-6 space-y-4 sm:space-y-0">
         <Button type="link" to="/calendar" size="md" color="secondary" icon="calendar">
           View calendar
         </Button>

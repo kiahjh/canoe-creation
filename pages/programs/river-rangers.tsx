@@ -6,7 +6,7 @@ import { CCEvent } from '../../lib/types';
 import getImages from '../../lib/get-images';
 
 export const getStaticProps: GetStaticProps = async () => {
-  const events = (await getAllEvents()).filter((event) => event.type === 'river_rangers');
+  const events = (await getAllEvents()).filter((event) => event.type === 'river-rangers');
   const images = getImages(`**/public/river-rangers/*.jpg`);
   return {
     props: { events, images },
