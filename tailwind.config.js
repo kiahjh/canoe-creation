@@ -8,6 +8,7 @@ module.exports = {
   ],
   theme: {
     screens: {
+     '2xs': `400px`,
       xs: `500px`,
       sm: `640px`,
       md: `768px`,
@@ -19,6 +20,7 @@ module.exports = {
     },
   extend: {
       fontFamily: {
+        raleway: [`Raleway`],
         inter: [`Inter`],
         'reem-kufi': [`Reem Kufi`],
         lato: [`lato`],
