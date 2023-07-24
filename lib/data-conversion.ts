@@ -56,15 +56,15 @@ export function apiToNewsfeedPost(apiNewsfeedPost: APINewsfeedPost): NewsfeedPos
 
 export function eventTypeToSlug(eventType: EventType): string {
   switch (eventType) {
-    case 'pollywog_float':
-      return 'pollywog-float';
+    case 'pollywogs':
+      return 'pollywogs';
+    case 'little-solomons':
+      return 'little-solomons';
+    case 'river-rangers':
+      return 'river-rangers';
+    case 'river-schools':
+      return 'river-schools';
     case 'rappelling':
       return 'rappelling';
-    case 'river_rangers':
-      return 'river-rangers';
-    case 'river_school':
-      return 'river-school';
-    case 'wilderness_camp':
-      return 'wilderness-camp';
   }
 }

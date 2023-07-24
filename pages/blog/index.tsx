@@ -35,7 +35,7 @@ const Blog: React.FC<Props> = ({ blogPosts }) => {
           molestias eius exercitationem. Officiis, similique! Aut error officia rem
           fugiat. Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem nulla.
         </p>
-        <div className="mt-8 grid grid-cols-1 2xl:grid-cols-2 gap-8">
+        <div className="mt-8 grid grid-cols-1 xl:grid-cols-2 gap-8">
           {blogPosts.map((post) => (
             <BlogPostPreview post={post} key={post.id} />
           ))}

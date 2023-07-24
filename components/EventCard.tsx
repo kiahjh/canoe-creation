@@ -16,9 +16,10 @@ import { formatEventType } from '../lib/events';
 
 interface Props {
   event: CCEvent;
+  withoutInfoButton?: boolean;
 }
 
-const EventCard: React.FC<Props> = ({ event }) => {
+const EventCard: React.FC<Props> = ({ event, withoutInfoButton }) => {
   const { intersected, ref } = useIntersectionObserver({
     rootMargin: '0px',
     threshold: 0.9,
@@ -55,7 +56,12 @@ const EventCard: React.FC<Props> = ({ event }) => {
       )}
       ref={ref}
     >
-      <div className="w-full h-full absolute top-0 left-0 bg-white/80 opacity-0 hover:opacity-100 transition-opacity duration-300 flex justify-center items-center group">
+      <div
+        className={cx(
+          'w-full h-full absolute top-0 left-0 bg-white/80 opacity-0 hover:opacity-100 transition-opacity duration-300 justify-center items-center group',
+          withoutInfoButton ? `hidden` : `flex`,
+        )}
+      >
         <Link
           href={`/programs/${eventTypeToSlug(event.type)}`}
           className="flex items-center bg-emerald-100 px-6 py-3 rounded-full text-emerald-700 font-medium hover:bg-emerald-200 opacity-0 group-hover:opacity-100 transition duration-500 translate-y-4 group-hover:translate-y-0 shadow-sm"

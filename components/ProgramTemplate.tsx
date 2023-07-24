@@ -26,7 +26,7 @@ interface Props {
   numDaysRange: {
     min: number;
     max: number;
-  };
+  } | null;
   ageRange: {
     min: number | null;
     max: number | null;
@@ -70,14 +70,16 @@ const ProgramTemplate: React.FC<Props> = ({
             {title}
           </h1>
           <div className="mt-4 mb-6 flex gap-2 flex-wrap">
-            <div className="border border-slate-400 rounded-full bg-white flex justify-center items-center space-x-2 px-2 py-1">
-              <CalendarDaysIcon className="h-5 text-slate-500" />
-              <span className="text-slate-500 text-sm">
-                {numDaysRange.min}
-                {numDaysRange.max !== numDaysRange.min && `-${numDaysRange.max}`} day
-                {numDaysRange.max !== 1 && 's'}
-              </span>
-            </div>
+            {numDaysRange && (
+              <div className="border border-slate-400 rounded-full bg-white flex justify-center items-center space-x-2 px-2 py-1">
+                <CalendarDaysIcon className="h-5 text-slate-500" />
+                <span className="text-slate-500 text-sm">
+                  {numDaysRange.min}
+                  {numDaysRange.max !== numDaysRange.min && `-${numDaysRange.max}`} day
+                  {numDaysRange.max !== 1 && 's'}
+                </span>
+              </div>
+            )}
             <div className="border border-slate-400 rounded-full bg-white flex justify-center items-center space-x-2 px-2 py-1">
               <UsersIcon className="h-5 text-slate-500" />
               <span className="text-slate-500 text-sm">
@@ -95,13 +97,15 @@ const ProgramTemplate: React.FC<Props> = ({
           {quote && (
             <Testimonial text={quote.text} cite={quote.cite} className="mb-12 mt-16" />
           )}
-          <p className="text-slate-500 text-lg leading-8">{paragraph2}</p>
+          <p className={cx('text-slate-500 text-lg leading-8', !quote && `mt-4`)}>
+            {paragraph2}
+          </p>
           {events.length > 0 && (
             <div className="mt-16 py-6 px-4 xs:py-8 xs:px-8 bg-emerald-50 rounded-3xl">
               <h3 className="text-2xl font-inter text-emerald-900">Events this year:</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 2xl:grid-cols-2 gap-4 mt-4">
                 {events.map((e) => (
-                  <EventCard key={e.id} event={e} />
+                  <EventCard key={e.id} event={e} withoutInfoButton />
                 ))}
               </div>
             </div>

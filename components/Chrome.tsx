@@ -113,6 +113,7 @@ const Chrome: React.FC<Props> = ({ children, page, imageViewer }) => {
                     <div className="w-full h-96 sm:h-[600px] flex justify-center items-center p-4 sm:p-8 flex-grow shrink-0 relative">
                       {imageViewer.images.map((image, i) => (
                         <div
+                          key={image}
                           className={cx(
                             'h-[calc(100%-32px)] sm:h-[calc(100%-64px)] w-full flex justify-center absolute [transition:300ms]',
                             i < imageViewer.index && '-left-[100%] opacity-0',

@@ -20,9 +20,9 @@ const Calendar: React.FC<Props> = ({ events }) => {
               .filter(
                 (event) => months[new Date(event.dateRange[0]).getMonth()] === month,
               )
-              .map((event) => {
-                return <EventCard event={event} key={event.dateRange[0]} />;
-              })}
+              .map((event) => (
+                <EventCard event={event} key={event.dateRange[0]} />
+              ))}
           </div>
         </div>
       ))}
