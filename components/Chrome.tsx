@@ -7,9 +7,10 @@ import Footer from './Footer';
 import {
   ChevronLeftIcon,
   ChevronRightIcon,
-  EllipsisHorizontalIcon,
   XMarkIcon,
 } from '@heroicons/react/24/outline';
+import Link from 'next/link';
+import Logo from './Logo';
 
 interface Props {
   children: React.ReactNode;
@@ -62,8 +63,32 @@ const Chrome: React.FC<Props> = ({ children, page, imageViewer }) => {
               leaveTo="translate-x-full scale-75 opacity-0"
             >
               <Dialog.Panel className="w-96">
-                <div className="h-[calc(100vh-32px)] rounded-3xl overflow-y-scroll bg-white m-4 shadow-xl p-8">
-                  nav
+                <div className="h-[calc(100vh-32px)] rounded-3xl overflow-y-scroll bg-white m-4 shadow-xl p-4 flex flex-col justify-between">
+                  <div>
+                    <div className="flex flex-col bg-slate-50 px-4 py-6 rounded-3xl">
+                      <SidebarLink to="/">Home</SidebarLink>
+                      <SidebarLink to="/about">About</SidebarLink>
+                      <SidebarLink to="/calendar">Calendar</SidebarLink>
+                      <SidebarLink to="/blog">Blog</SidebarLink>
+                      <SidebarLink to="/newsfeed">Newsfeed</SidebarLink>
+                      <SidebarLink to="/gallery">Gallery</SidebarLink>
+                      <SidebarLink to="/contact">Contact</SidebarLink>
+                    </div>
+                    <div className="flex flex-col bg-slate-50 px-4 py-6 rounded-3xl mt-4">
+                      <SidebarLink to="/programs/river-schools">
+                        River Schools
+                      </SidebarLink>
+                      <SidebarLink to="/programs/river-rangers">
+                        River Rangers
+                      </SidebarLink>
+                      <SidebarLink to="/programs/pollywogs">Pollywogs</SidebarLink>
+                      <SidebarLink to="/programs/little-solomons">
+                        Little Solomon Classes
+                      </SidebarLink>
+                      <SidebarLink to="/programs/rappelling">Rappelling</SidebarLink>
+                    </div>
+                  </div>
+                  <Logo className="self-center mb-6 mt-8" />
                 </div>
               </Dialog.Panel>
             </Transition.Child>
@@ -174,6 +199,22 @@ const Chrome: React.FC<Props> = ({ children, page, imageViewer }) => {
 };
 
 export default Chrome;
+
+interface SidebarLinkProps {
+  to: string;
+  children: React.ReactNode;
+}
+
+const SidebarLink: React.FC<SidebarLinkProps> = ({ to, children }) => {
+  return (
+    <Link
+      href={to}
+      className="rounded-full px-6 py-3 font-medium text-lg transition duration-100 hover:bg-slate-100 text-slate-600 hover:text-slate-900"
+    >
+      {children}
+    </Link>
+  );
+};
 
 interface ImagePreviewsProps {
   images: string[];

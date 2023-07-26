@@ -1,12 +1,16 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import cx from 'classnames';
 
-interface Props {}
+interface Props {
+  className?: string;
+  style?: React.CSSProperties;
+}
 
-const Logo: React.FC<Props> = ({}) => {
+const Logo: React.FC<Props> = ({ className, style }) => {
   return (
-    <Link href="/" className="flex items-center">
+    <Link href="/" className={cx('flex items-center', className)} style={style}>
       <Image
         src="/logo.png"
         width={200}

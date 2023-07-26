@@ -6,6 +6,7 @@ import { NewsfeedPost } from '../lib/types';
 import Chrome from '../components/Chrome';
 import { relativeTime } from '../lib/dates';
 import { MegaphoneIcon } from '@heroicons/react/24/outline';
+import Sparkle from '../components/Sparkle';
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const newsfeedPosts = await getAllNewsfeedPosts();
@@ -24,7 +25,13 @@ const Newsfeed: React.FC<Props> = ({ newsfeedPosts }) => {
   return (
     <Chrome page={'/newsfeed'}>
       <div className="flex flex-col items-center pt-16 pl-8 xs:pl-4 pr-8 md:pl-16 md:pr-16 overflow-hidden mb-20">
-        <h1 className="text-4xl mt-0 sm:mt-8 font-raleway">Newsfeed</h1>
+        <h1 className="text-4xl mt-0 sm:mt-8 font-raleway relative">
+          <Sparkle size={16} position={'right-8 -bottom-6'} color={'emerald'} />
+          <Sparkle size={16} position={'-right-8 bottom-6'} color={'cyan'} />
+          <Sparkle size={24} position={'-left-12 -top-2'} color={'emerald'} />
+          <Sparkle size={16} position={'-left-4 -top-8'} color={'yellow'} />
+          <span className="relative">Newsfeed</span>
+        </h1>
         {newsfeedPosts.map((post, index) => (
           <div className="flex max-w-3xl" key={post.id}>
             <MegaphoneIcon

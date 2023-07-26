@@ -22,7 +22,7 @@ const MainHeader: React.FC<Props> = ({ page, setSidebarOpen }) => {
         page !== `/` && `border-b border-slate-200`,
       )}
     >
-      <Logo />
+      <Logo style={{ opacity: `${100 - scrollY * 2}%` }} />
       <button
         className="p-2 bg-slate-50 hover:bg-slate-100 rounded-xl transition duration-100 md:hidden"
         onClick={() => setSidebarOpen(true)}
@@ -31,7 +31,7 @@ const MainHeader: React.FC<Props> = ({ page, setSidebarOpen }) => {
       </button>
       <nav
         className={cx(
-          'items-center py-2 px-4 space-x-2 rounded-xl bg-white/90 backdrop-blur-lg fixed right-4 transition duration-300 hidden md:flex',
+          'items-center py-2 px-4 space-x-2 rounded-xl bg-white fixed right-4 transition duration-300 hidden md:flex',
           scrollY > 0 && 'shadow-lg',
         )}
       >

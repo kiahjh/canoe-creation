@@ -18,6 +18,7 @@ interface Props {
     max: number | null;
   };
   image: string;
+  fadeIn?: boolean;
 }
 
 const FeaturedProgram: React.FC<Props> = ({
@@ -27,6 +28,7 @@ const FeaturedProgram: React.FC<Props> = ({
   priceRange,
   image,
   slug,
+  fadeIn = false,
 }) => {
   const { intersected, ref } = useIntersectionObserver({
     rootMargin: '0px',
@@ -37,7 +39,7 @@ const FeaturedProgram: React.FC<Props> = ({
     <div
       className={cx(
         'bg-white rounded-3xl overflow-hidden shadow-xl transition duration-500',
-        intersected ? 'opacity-100' : 'lg+:translate-x-12 lg+:opacity-0',
+        intersected || !fadeIn ? 'opacity-100' : 'lg+:translate-x-12 lg+:opacity-0',
       )}
       ref={ref}
     >
@@ -46,7 +48,7 @@ const FeaturedProgram: React.FC<Props> = ({
         className="w-full h-52 sm:h-72 bg-center bg-cover"
       />
       <div className="p-6 sm:p-8">
-        <div className="flex flex-col space-y-2 md:space-y-0 md:flex-row lg+:flex-col lg+:space-y-2 xl:flex-row xl:space-y-0 justify-between items-start">
+        <div className="flex flex-col space-y-2 md:space-y-0 md:flex-row lg+:flex-col lg+:space-y-2 2xl:flex-row 2xl:space-y-0 justify-between items-start">
           <h3 className={cx('text-2xl sm:text-3xl font-inter')}>{title}</h3>
           <div className="flex items-center space-x-6">
             <span className="flex items-center text-sm sm:text-base text-slate-600">
