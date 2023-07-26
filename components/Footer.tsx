@@ -6,7 +6,7 @@ interface Props {}
 
 const Footer: React.FC<Props> = ({}) => {
   return (
-    <footer className="bg-slate-50 border-t border-slate-200">
+    <footer className="bg-slate-50 border-t border-slate-200 z-10">
       <div className="py-8 xs:py-12 px-6 xs:px-8 md:px-20 lg:px-32 flex sm:flex-row flex-col sm:items-start justify-between">
         <Logo />
         <div className="flex space-x-16 justify-center mt-12 sm:mt-0">
