@@ -20,6 +20,7 @@ interface CommonProps {
 interface LinkProps {
   type: 'link';
   to: string;
+  openInNewTab?: boolean;
 }
 interface ButtonProps {
   type: 'button';
@@ -29,7 +30,7 @@ type Props = CommonProps & (LinkProps | ButtonProps);
 
 const Button: React.FC<Props> = (props) => {
   const commonStyles =
-    'flex justify-center items-center rounded-full font-medium transition duration-150';
+    'flex justify-center items-center rounded-full font-medium transition duration-150 active:scale-95';
   let colorStyles = (() => {
     switch (props.color) {
       case 'primary':
@@ -95,6 +96,7 @@ const Button: React.FC<Props> = (props) => {
     <Link
       href={props.to}
       className={cx(commonStyles, colorStyles, sizeStyles, props.className)}
+      target={props.openInNewTab ? '_blank' : '_self'}
     >
       {props.icon && Icon}
       {props.children}

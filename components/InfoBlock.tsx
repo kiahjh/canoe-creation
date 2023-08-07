@@ -21,8 +21,8 @@ const InfoBlock: React.FC<Props> = ({ mostRecentNewsfeedPost }) => {
   });
 
   return (
-    <div className="bg-gradient-to-b from-cyan-600 to-emerald-500 relative -mt-24 p-6 xs:p-8 sm:p-12">
-      <div className="bg-cyan-500/70 p-3 rounded-3xl flex justify-between lg:items-center flex-col lg:flex-row">
+    <div className="bg-gradient-to-b from-[#08A0b2] to-emerald-500 relative -mt-24 p-6 xs:p-8 sm:p-12">
+      <div className="bg-[#20b3c5] p-3 rounded-3xl flex justify-between lg:items-center flex-col lg:flex-row">
         <div className="flex items-center mr-8 mb-8 lg:mb-0">
           <div className="w-12 h-12 rounded-2xl bg-cyan-100 mr-6 flex justify-center items-center shrink-0">
             <MegaphoneIcon className="h-7 text-cyan-800" />
@@ -92,6 +92,7 @@ const InfoBlock: React.FC<Props> = ({ mostRecentNewsfeedPost }) => {
         </div>
         <div className="flex flex-col items-center flex-grow space-y-8 sm:space-y-12">
           <FeaturedProgram
+            fadeIn
             slug="river-schools"
             priceRange={{ min: 65, max: 140 }}
             ageRange={{ min: 12, max: 20 }}
@@ -102,6 +103,7 @@ const InfoBlock: React.FC<Props> = ({ mostRecentNewsfeedPost }) => {
             image={RiverSchoolImage.src}
           />
           <FeaturedProgram
+            fadeIn
             slug="pollywogs"
             priceRange={{ min: 45, max: 90 }}
             ageRange={{ min: 8, max: 12 }}
@@ -112,6 +114,7 @@ const InfoBlock: React.FC<Props> = ({ mostRecentNewsfeedPost }) => {
             image={PollywogImage.src}
           />
           <FeaturedProgram
+            fadeIn
             slug="rappelling"
             priceRange={{ min: 70, max: null }}
             ageRange={{ min: 12, max: null }}

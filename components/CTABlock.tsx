@@ -3,7 +3,7 @@ import Button from './Button';
 
 const CTABlock: React.FC = () => {
   return (
-    <section className="px-4 sm:px-8 pt-8 pb-16 -mt-12 relative">
+    <section className="px-4 sm:px-8 pt-8 pb-16 -mt-12 relative bg-white">
       <div className="bg-gradient-to-b from-emerald-500 to-emerald-600 rounded-3xl p-8 xs:p-12 sm:p-16 md:p-20 flex flex-col justify-center items-center">
         <h2 className="font-raleway text-4xl md:text-5xl text-white text-center leading-[1.2em]">
           Enroll today for an{' '}
