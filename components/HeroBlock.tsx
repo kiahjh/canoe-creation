@@ -1,9 +1,5 @@
 import React from 'react';
 import cx from 'classnames';
-import Sparkle from './Sparkle';
-import { useScrollY } from '../lib/hooks';
-import Button from './Button';
-import Image, { StaticImageData } from 'next/image';
 
 import CamperSterningImage from '../public/river-schools/camper-sterning.jpg';
 import RiverDramaShotImage from '../public/river-schools/river-drama-shot.jpg';
@@ -15,123 +11,112 @@ import SwimmingPollywogsImage from '../public/pollywogs/swimming-pollywogs.jpg';
 import RappellingDescentImage from '../public/rappelling/rappelling-descent.jpg';
 import GoingOverEdgeImage from '../public/rappelling/going-over-edge.jpg';
 import WaterfallImage from '../public/little-solomons/waterfall.jpg';
+import Image from 'next/image';
+import Button from './Button';
+import Sparkle from './Sparkle';
 
 const HeroBlock: React.FC = () => {
-  const scrollY = useScrollY();
-
   return (
-    <div className="px-8 sm:px-12 pt-12 sm:pt-20 flex items-center justify-center z-0 fixed w-full">
-      <div className="absolute -bottom-128 lg:-bottom-96 w-full h-152 hidden sm:block">
-        <MasonryImageColumn
-          style={{ bottom: `-${scrollY / 5}px` }}
-          images={[CamperSterningImage, RiverDramaShotImage, CanoeAwayImage]}
-          className="absolute px-2 h-[640px] md:h-[600px] w-1/3 md:w-1/4 lg:w-1/5 left-0"
-          padding="!pl-3 md:!pl-4"
-        />
-        <div className="hidden md:block">
-          <MasonryImageColumn
-            style={{ bottom: `-${scrollY / 10}px` }}
-            images={[FoggyCanoesImage, PurplePimplebacksImage, CamperSterningImage]}
-            className="absolute px-2 h-128 lg:h-112 w-1/4 lg:w-1/5 left-[25%] lg:left-[20%]"
-          />
-        </div>
-        <div className="hidden lg:block">
-          <MasonryImageColumn
-            style={{ bottom: `0px` }}
-            images={[IslandImage, RappellingDescentImage, CamperSterningImage]}
-            className="absolute px-2 h-80 w-1/4 lg:w-1/5 left-[40%]"
-          />
-        </div>
-        <MasonryImageColumn
-          style={{ bottom: `-${scrollY / 10}px` }}
-          images={[GoingOverEdgeImage, WaterfallImage, CamperSterningImage]}
-          className="absolute px-2 h-[580px] md:h-112 w-1/3 md:w-1/4 lg:w-1/5 left-[33.333%] md:left-[50%] lg:left-[60%]"
-        />
-        <MasonryImageColumn
-          style={{ bottom: `-${scrollY / 5}px` }}
-          images={[WaterfallImage, SwimmingPollywogsImage, CamperSterningImage]}
-          className="absolute px-2 h-[640px] md:h-96 lg:h-[600px] w-1/3 md:w-1/4 lg:w-1/5 right-0"
-          padding="!pr-3 md:!pr-4"
-        />
-      </div>
-      <div
-        className="flex flex-col justify-center items-center relative pointer-events-none"
-        style={{
-          opacity: `${1 - scrollY / 400}`,
-          transform: `translateY(${-scrollY / 4}px)`,
-        }}
-      >
-        <div className="absolute left-0 w-full h-full" style={{ top: scrollY / 8 }}>
+    <div className="flex flex-col lg+:flex-row pb-16 bg-gradient-to-b from-white to-slate-50 pt-12">
+      <div className="pl-8 lg:pl-16 xl:pl-24 pt-4 sm:pt-8 lg+:pt-20 xl:pt-20 pr-8 lg:pr-16 xl:pr-16 pb-20 lg+:pb-24 shrink-0 flex flex-col items-center lg+:items-start">
+        <h1 className="text-4xl xs:text-5xl md:text-6xl 2xl:text-7xl font-raleway text-center lg+:text-left max-w-2xl lg+:max-w-xl 2xl:max-w-3xl !leading-tight relative">
           <Sparkle
-            size={20}
-            position={'right-10 bottom-24'}
-            className="block sm:hidden xl:block"
+            size={24}
+            position={'-left-8 -top-6 hidden md:block'}
             color={'yellow'}
           />
+          <Sparkle size={18} position={'-left-16 top-4 hidden md:block'} color={'cyan'} />
           <Sparkle
-            size={28}
-            position={'right-4 bottom-32'}
-            className="block sm:hidden xl:block"
+            size={24}
+            position={'right-8 bottom-8 hidden md:block'}
             color={'emerald'}
           />
           <Sparkle
-            size={28}
-            position={'left-10 bottom-20'}
-            className="block sm:hidden xl:block"
+            size={16}
+            position={'right-0 bottom-0 hidden md:block'}
             color={'yellow'}
           />
           <Sparkle
-            size={20}
-            position={'left-4 2xl:-left-12 bottom-32'}
-            className="block sm:hidden xl:block"
+            size={18}
+            position={'right-20 -bottom-2 hidden md:block'}
+            color={'yellow'}
+          />
+          <Sparkle
+            size={16}
+            position={'right-56 -top-20 hidden lg+:block'}
             color={'emerald'}
           />
-          <Sparkle size={16} position={'-top-6 left-40'} color={'emerald'} />
-          <Sparkle size={22} position={'-top-12 left-48'} color={'cyan'} />
           <Sparkle
-            size={20}
-            position={'-top-16 right-48'}
+            size={18}
+            position={'right-40 -top-12 hidden md:block'}
             color={'yellow'}
-            className="sm:block hidden"
           />
-        </div>
-        <h1
-          className={cx(
-            'font-raleway text-4xl xs:text-5xl sm:text-6xl lg:text-7xl max-w-3xl text-center relative',
-          )}
-          style={{ lineHeight: '1.2em' }}
-        >
-          Explore God&apos;s glory through{' '}
-          <span className="bg-gradient-to-r from-emerald-500 to-cyan-500 bg-clip-text text-transparent">
-            Creation
+          <Sparkle
+            size={16}
+            position={'left-20 -bottom-4 hidden md:block'}
+            color={'yellow'}
+          />
+          <span className="relative">
+            Explore God&apos;s glory through{' '}
+            <span className="bg-gradient-to-r from-cyan-500 to-emerald-500 bg-clip-text text-transparent">
+              Creation
+            </span>
           </span>
         </h1>
-        <div className="mt-6 lg:mt-10 md:space-x-4 relative flex md:flex-row flex-col space-y-4 md:space-y-0 w-full max-w-sm md:w-auto md:max-w-none">
-          <Button
-            type="link"
-            to="https://www.youtube.com/watch?v=iJgqtlZu6g8"
-            color="primary"
-            size="lg"
-            icon="video-camera"
-            shadow
-            sizeOverride="font-medium xs:text-lg px-6 lg:px-8 py-3 lg:py-4"
-            className="pointer-events-auto"
-            openInNewTab
-          >
+        <h3 className="text-center lg+:text-left max-w-2xl lg+:max-w-xl 2xl:max-w-3xl mt-6 text-lg 2xl:text-xl text-slate-500 leading-loose">
+          Canoeing beautiful rivers, rappelling 120-foot cliffs, primitive camping on
+          islands, and so much more. Come join us this summer for the adventure of a
+          lifetime, and see the character of our Creator through it all!
+        </h3>
+        <div className="flex flex-col sm:flex-row sm:items-center self-stretch sm:self-auto mt-8 xl:mt-12 gap-4">
+          <Button type="link" color="primary" shadow size="lg" to="" icon="video-camera">
             Watch the video
           </Button>
           <Button
             type="link"
-            to="/programs"
             color="secondary"
-            size="lg"
-            icon="arrow-circle-right"
             shadow
-            sizeOverride="font-medium xs:text-lg px-6 lg:px-8 py-3 lg:py-4"
-            className="pointer-events-auto"
+            size="lg"
+            to=""
+            icon="arrow-circle-right"
+            className="!bg-emerald-100 !text-emerald-700 hover:!bg-emerald-200"
           >
             View programs
           </Button>
+        </div>
+      </div>
+      <div className="flex-grow flex flex-col">
+        <div className="flex-grow p-8 relative rounded-3xl bg-emerald-100 my-8 lg:my-12 mx-4 xs:mx-8 lg:mx-16 flex flex-col md:flex-row items-center h-72 lg+:h-auto">
+          <Image
+            src={IslandImage}
+            alt={'Island'}
+            className="w-full md:w-3/4 lg+:w-full h-[120%] lg+:h-full object-cover rounded-3xl shadow-xl absolute left-0 lg+:-left-12 top-[-10%] lg+:-top-8"
+          />
+          <div className="absolute mx-4 md:right-8 lg+:-right-8 -bottom-32 md:-bottom-20 lg+:-bottom-8 bg-white rounded-2xl p-4 lg:p-6 shadow-xl max-w-lg">
+            <h4 className="text-xl font-bold">River schools</h4>
+            <p className="text-slate-600 mt-2 text-sm lg:text-base">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero laborum
+              nobis eveniet saepe iure sint placeat at. Necessitatibus quam maxime.
+            </p>
+            <div className="flex justify-end">
+              <Button
+                type="link"
+                color="secondary"
+                size="sm"
+                to=""
+                icon="arrow-circle-right"
+                className="mt-4"
+              >
+                Find out more
+              </Button>
+            </div>
+          </div>
+        </div>
+        <div className="mr-8 flex justify-center items-center gap-4 mt-32 md:mt-20 lg:mt-16 lg+:mt-4">
+          <div className="w-3 h-3 bg-slate-200 rounded-full shadow-inner hover:bg-slate-300 transition duration-100 hover:scale-110 cursor-pointer" />
+          <div className="w-3 h-3 bg-slate-200 rounded-full shadow-inner hover:bg-slate-300 transition duration-100 hover:scale-110 cursor-pointer" />
+          <div className="w-3 h-3 bg-slate-200 rounded-full shadow-inner hover:bg-slate-300 transition duration-100 hover:scale-110 cursor-pointer" />
+          <div className="w-3 h-3 bg-slate-200 rounded-full shadow-inner hover:bg-slate-300 transition duration-100 hover:scale-110 cursor-pointer" />
         </div>
       </div>
     </div>
@@ -139,48 +124,3 @@ const HeroBlock: React.FC = () => {
 };
 
 export default HeroBlock;
-
-interface MasonryImageColumnProps {
-  images: StaticImageData[];
-  className?: string;
-  style?: React.CSSProperties;
-  padding?: string;
-}
-
-const MasonryImageColumn: React.FC<MasonryImageColumnProps> = ({
-  images,
-  className,
-  style,
-  padding,
-}) => {
-  return (
-    <div
-      className={cx('px-1.5 lg:px-2 flex flex-col gap-3 lg:gap-4', padding, className)}
-      style={style}
-    >
-      {images.concat(images).map((image, index) => (
-        <Image
-          key={image.src + index}
-          src={image}
-          alt={'Canoe creation event'}
-          className="rounded-xl lg:rounded-2xl xl:rounded-3xl aspect-[3/2] object-cover"
-        />
-      ))}
-      <div
-        className={cx(
-          'bg-gradient-to-b from-white via-white/70 to-white/20 absolute w-full h-full left-0 px-1.5 lg:px-2 flex flex-col gap-3 lg:gap-4',
-          padding,
-        )}
-      >
-        {images.concat(images).map((image, index) => (
-          <Image
-            key={image.src + index}
-            src={image}
-            alt={'Canoe creation event'}
-            className="rounded-xl lg:rounded-2xl xl:rounded-3xl aspect-[3/2] object-cover opacity-0 hover:opacity-100 hover:scale-[102%] transition duration-[400ms]"
-          />
-        ))}
-      </div>
-    </div>
-  );
-};

@@ -21,7 +21,7 @@ const InfoBlock: React.FC<Props> = ({ mostRecentNewsfeedPost }) => {
   });
 
   return (
-    <div className="bg-gradient-to-b from-[#08A0b2] to-emerald-500 relative -mt-24 p-6 xs:p-8 sm:p-12">
+    <div className="bg-gradient-to-b from-[#08A0b2] to-emerald-500 relative p-6 xs:p-8 sm:p-12">
       <div className="bg-[#20b3c5] p-3 rounded-3xl flex justify-between lg:items-center flex-col lg:flex-row">
         <div className="flex items-center mr-8 mb-8 lg:mb-0">
           <div className="w-12 h-12 rounded-2xl bg-cyan-100 mr-6 flex justify-center items-center shrink-0">
