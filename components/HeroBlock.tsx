@@ -14,6 +14,7 @@ import WaterfallImage from '../public/little-solomons/waterfall.jpg';
 import Image, { StaticImageData } from 'next/image';
 import Button from './Button';
 import Sparkle from './Sparkle';
+import { formatAgeRange } from '../lib/strings';
 
 const HeroBlock: React.FC = () => {
   const [curImageIndex, setCurImageIndex] = useState(0);
@@ -70,7 +71,7 @@ const HeroBlock: React.FC = () => {
             color={'yellow'}
           />
           <span className="relative">
-            Explore God&apos;s glory through{' '}
+            Explore God&apos;s Glory Through{' '}
             <span className="bg-gradient-to-r from-cyan-500 to-emerald-500 bg-clip-text text-transparent">
               Creation
             </span>
@@ -117,6 +118,7 @@ const HeroBlock: React.FC = () => {
             description={
               'Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero laborum nobis eveniet saepe iure sint placeat at. Necessitatibus quam maxime.'
             }
+            ageRange={{ min: 12, max: 20 }}
           />
           <ProgramFeature
             index={1}
@@ -127,6 +129,7 @@ const HeroBlock: React.FC = () => {
             description={
               'Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero laborum nobis eveniet saepe iure sint placeat at. Necessitatibus quam maxime.'
             }
+            ageRange={{ min: 12, max: null }}
           />
           <ProgramFeature
             index={2}
@@ -137,6 +140,7 @@ const HeroBlock: React.FC = () => {
             description={
               'Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero laborum nobis eveniet saepe iure sint placeat at. Necessitatibus quam maxime.'
             }
+            ageRange={{ min: 11, max: 13 }}
           />
           <ProgramFeature
             index={3}
@@ -147,6 +151,7 @@ const HeroBlock: React.FC = () => {
             description={
               'Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero laborum nobis eveniet saepe iure sint placeat at. Necessitatibus quam maxime.'
             }
+            ageRange={{ min: 8, max: 12 }}
           />
           <ProgramFeature
             index={4}
@@ -157,6 +162,7 @@ const HeroBlock: React.FC = () => {
             description={
               'Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero laborum nobis eveniet saepe iure sint placeat at. Necessitatibus quam maxime.'
             }
+            ageRange={{ min: 5, max: 10 }}
           />
         </div>
         <div className="mr-8 flex justify-center items-center gap-4 mt-32 md:mt-20 lg:mt-16 lg+:mt-4">
@@ -184,6 +190,10 @@ interface ProgramFeatureProps {
   title: string;
   slug: string;
   description: string;
+  ageRange: {
+    min: number;
+    max: number | null;
+  };
 }
 
 const ProgramFeature: React.FC<ProgramFeatureProps> = ({
@@ -193,6 +203,7 @@ const ProgramFeature: React.FC<ProgramFeatureProps> = ({
   title,
   slug,
   description,
+  ageRange,
 }) => {
   return (
     <>
@@ -200,7 +211,7 @@ const ProgramFeature: React.FC<ProgramFeatureProps> = ({
         src={img}
         alt={'Canoe Creation fun'}
         className={cx(
-          'w-full md:w-3/4 lg+:w-full h-[120%] lg+:h-full object-cover rounded-3xl shadow-xl absolute left-0 lg+:-left-12 top-[-10%] lg+:-top-8 [transition:500ms]',
+          'w-full md:w-3/4 lg+:w-full h-[120%] lg+:h-full object-cover rounded-3xl shadow-xl absolute left-0 lg+:-left-12 top-[-10%] lg+:-top-8 transition-[transform,left,opacity] duration-500',
           index < curIndex && `!scale-50 !opacity-0`,
           index > curIndex && `!left-[50em] !opacity-0`,
         )}
@@ -211,7 +222,7 @@ const ProgramFeature: React.FC<ProgramFeatureProps> = ({
       />
       <div
         className={cx(
-          'absolute mx-4 md:right-8 lg+:-right-8 -bottom-32 md:-bottom-20 lg+:-bottom-8 bg-white rounded-2xl p-4 lg:p-6 shadow-xl max-w-lg [transition:600ms] shrink-0',
+          'absolute mx-4 md:right-8 lg+:-right-8 -bottom-32 md:-bottom-20 lg+:-bottom-8 bg-white rounded-2xl p-4 lg:p-6 shadow-xl max-w-lg transition-[opacity,transform,right] duration-[600ms] shrink-0',
           index < curIndex && `!opacity-0 !scale-50`,
           index > curIndex && `!right-[-50em] !opacity-0`,
         )}
@@ -219,7 +230,12 @@ const ProgramFeature: React.FC<ProgramFeatureProps> = ({
           zIndex: index * 10 + 1,
         }}
       >
-        <h4 className="text-xl font-bold">{title}</h4>
+        <div className="flex justify-between items-start gap-4">
+          <h4 className="text-xl font-bold">{title}</h4>
+          <span className="text-sm text-slate-500">
+            {formatAgeRange(ageRange.min, ageRange.max)}
+          </span>
+        </div>
         <p className="text-slate-600 mt-2 text-sm lg:text-base">{description}</p>
         <div className="flex justify-end">
           <Button

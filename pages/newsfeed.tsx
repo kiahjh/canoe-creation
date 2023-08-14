@@ -30,7 +30,7 @@ const Newsfeed: React.FC<Props> = ({ newsfeedPosts }) => {
           <Sparkle size={16} position={'-right-8 bottom-6'} color={'cyan'} />
           <Sparkle size={24} position={'-left-12 -top-2'} color={'emerald'} />
           <Sparkle size={16} position={'-left-4 -top-8'} color={'yellow'} />
-          <span className="relative">Newsfeed</span>
+          <span className="relative">Canews Feed</span>
         </h1>
         {newsfeedPosts.map((post, index) => (
           <div className="flex max-w-3xl" key={post.id}>

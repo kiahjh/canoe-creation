@@ -76,6 +76,8 @@ const Button: React.FC<Props> = (props) => {
         return <CalendarDaysIcon className={iconStyles} />;
       case 'grid':
         return <Squares2X2Icon className={iconStyles} />;
+      case 'paypal':
+        return <i className={cx(`fa-brands fa-paypal mt-1`, iconStyles)} />;
       default:
         return <ArrowRightCircleIcon className={iconStyles} />;
     }

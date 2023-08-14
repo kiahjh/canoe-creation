@@ -7,7 +7,12 @@ import getImages from '../../lib/get-images';
 
 export const getStaticProps: GetStaticProps = async () => {
   const events = (await getAllEvents()).filter((event) => event.type === 'pollywogs');
-  const images = getImages(`**/public/pollywogs/*.jpg`);
+  const images = getImages(
+    `**/public/pollywogs/*.jpg`,
+    `paddling-pollywogs`,
+    `girls-canoeing`,
+    `kids-splashing`,
+  );
   return {
     props: { events, images },
   };
@@ -29,7 +34,7 @@ const Pollywogs: React.FC<Props> = ({ events, images }) => {
       }
       quote={{
         text: `I loved the fact that it was outdoors and we were learning new things and trying new things. I enjoyed being in nature and interacting with other kids at the same time.`,
-        cite: `Charlie, participant`,
+        cite: `Charlie A, participant`,
       }}
       paragraph2="The kids will start the day with an introduction to water safety, then get paired up with experienced interns and launched out onto the river in canoes. Paddling downstream, they’ll have the opportunity to make frequent stops along sandbars to look for freshwater mussels, killdeer nests, and sleeping fawns. They’ll turn over river rocks to discover crayfish, water pennies, and caddisfly larvae. While eating packed lunches on an island, they’ll listen to Al talk about God’s creation, and experience it close-up for themselves. Netting fish, identifying mussels, observing a bald eagle nest, listening for birds…..this and much more will make up the better part of the day as they make their way downstream, finally to pull the canoes ashore and shuttle back to where they started to meet their parents. Kids will leave the river with new things to consider, a renewed interest in what we see around us, and a sense of awe for the One who made it all."
       numDaysRange={{

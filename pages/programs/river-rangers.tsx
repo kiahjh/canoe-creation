@@ -7,7 +7,12 @@ import getImages from '../../lib/get-images';
 
 export const getStaticProps: GetStaticProps = async () => {
   const events = (await getAllEvents()).filter((event) => event.type === 'river-rangers');
-  const images = getImages(`**/public/river-rangers/*.jpg`);
+  const images = getImages(
+    `**/public/river-rangers/*.jpg`,
+    `cottonwood-fuzzies`,
+    `catfish`,
+    `burma`,
+  );
   return {
     props: { events, images },
   };

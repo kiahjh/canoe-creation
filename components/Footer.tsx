@@ -8,7 +8,28 @@ const Footer: React.FC<Props> = ({}) => {
   return (
     <footer className="bg-slate-50 border-t border-slate-200 z-10">
       <div className="py-8 xs:py-12 px-6 xs:px-8 md:px-20 lg:px-32 flex sm:flex-row flex-col sm:items-start justify-between">
-        <Logo />
+        <div className="flex sm:flex-col items-start justify-between">
+          <Logo />
+          <div className="flex-col sm:mt-8 text-slate-600 ml-4 gap-2 text-sm sm:text-base hidden xs:flex">
+            <span className="font-medium">Al and Amy Parker</span>
+            <span>6400 Cutler Lake Rd.</span>
+            <span>Blue Rock, OH 43720</span>
+            <a
+              href="tel:740-674-4403"
+              className="text-cyan-600 hover:text-cyan-700 font-medium"
+            >
+              (740) 674-4403
+            </a>
+            <Link
+              href="https://facebook.com/canoecreationofficial"
+              target="_blank"
+              className="flex items-center gap-2 text-slate-600 font-medium mt-2 bg-slate-200 transition-colors duration-200 hover:bg-slate-300 w-fit rounded-xl px-4 py-2"
+            >
+              <i className="fa-brands fa-facebook sm:text-lg" />
+              <span>Facebook page</span>
+            </Link>
+          </div>
+        </div>
         <div className="flex space-x-16 justify-center mt-12 sm:mt-0">
           <div>
             <h3 className="font-bold text-slate-800 text-lg mb-2">Programs</h3>

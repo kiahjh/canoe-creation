@@ -9,7 +9,12 @@ export const getStaticProps: GetStaticProps = async () => {
   const events = (await getAllEvents()).filter(
     (event) => event.type === 'little-solomons',
   );
-  const images = getImages(`**/public/little-solomons/*.jpg`);
+  const images = getImages(
+    `**/public/little-solomons/*.jpg`,
+    `waterfall`,
+    `two-girls`,
+    `kid-journalling`,
+  );
   return {
     props: { events, images },
   };

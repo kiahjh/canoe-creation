@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import cx from 'classnames';
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
+import Image from 'next/image';
 
 interface Props {
   images: string[];
@@ -18,11 +19,11 @@ const Carousel: React.FC<Props> = ({ images, className }) => {
         )}
       >
         {images.map((image, index) => (
-          <div
+          <Image
             key={image}
             onClick={() => setCurIndex(index)}
             className={cx(
-              'rounded-2xl sm:rounded-3xl bg-center bg-cover [transition:400ms] scale-90 shadow-inner relative overflow-hidden opacity-0 hover:scale-95 cursor-pointer',
+              'rounded-2xl sm:rounded-3xl bject-center object-cover [transition:400ms] scale-90 shadow-inner relative overflow-hidden opacity-0 hover:scale-95 cursor-pointer w-0',
               index === curIndex &&
                 `[flex-grow:1.25] !opacity-100 mx-0.5 xs:mx-1 sm:mx-2 lg:mx-4 !scale-100`,
               index === curIndex - 1 &&
@@ -34,9 +35,10 @@ const Carousel: React.FC<Props> = ({ images, className }) => {
               index === curIndex + 2 &&
                 `lg:[flex-grow:0.1] xl:[flex-grow:0.25] !opacity-60 lg:mx-2`,
             )}
-            style={{
-              backgroundImage: `url(${image})`,
-            }}
+            src={image}
+            alt="Canoe Creation image"
+            width={800}
+            height={600}
           />
         ))}
       </div>

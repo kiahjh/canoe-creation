@@ -47,14 +47,14 @@ const Programs: React.FC = () => {
             title={'River Schools'}
             slug={'river-schools'}
             description={
-              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel libero euismod, ullamcorper nisl eget, ultricies nisl.'
+              'Here are the premier trips for young people who want to delve deep in study of creation and honor God in the process. These day and overnight adventures take you down a corridor of praise to the Creator and put in your hands, hearts, and minds the wonders of wildlife and wild places.'
             }
             ageRange={{
               min: 12,
               max: 20,
             }}
             priceRange={{
-              min: 65,
+              min: 60,
               max: 140,
             }}
             image={IslandImage.src}
@@ -63,7 +63,7 @@ const Programs: React.FC = () => {
             title={'Rappelling'}
             slug={'rappelling'}
             description={
-              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel libero euismod, ullamcorper nisl eget, ultricies nisl.'
+              'A journey to the cliffs wakes up the wild wonder of your heart. Beautiful scenes and trust-building experiences like rappelling and rock climbing bring us to appreciate the Creator in more ways than just the fun of it.'
             }
             ageRange={{
               min: 12,
@@ -95,7 +95,7 @@ const Programs: React.FC = () => {
             title={'Pollywog Floats'}
             slug={'pollywogs'}
             description={
-              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel libero euismod, ullamcorper nisl eget, ultricies nisl.'
+              'A river starter trip for kids ages 8 to 10 introduces them to a world of fun and faith. They learn canoe skills along with cool ways to learn about fish, birds, flowers, mussels, trees, etc. Water games and mini-studies of creation get them hooked on canoeing creation.'
             }
             ageRange={{
               min: 8,

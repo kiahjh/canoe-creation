@@ -6,25 +6,32 @@ import Link from 'next/link';
 const ProgramsDropdown: React.FC = () => {
   return (
     <Menu as="div" className="relative text-left flex flex-col items-center">
-      <div>
-        <Menu.Button>
-          {({ open }) => (
-            <span
-              className={cx(
-                'px-4 py-2 font-medium cursor-pointer select-none transition duration-100 flex items-center',
-                'text-slate-500 hover:text-slate-700',
-              )}
-            >
-              Programs
-              <i
-                className={cx(
-                  'ml-2 fas fa-chevron-down transition duration-200',
-                  open && '-rotate-180',
-                )}
-              />
-            </span>
+      <div className="flex">
+        <span
+          className={cx(
+            'font-medium cursor-pointer select-none transition duration-100 flex items-center hover:bg-slate-50 rounded-xl',
+            'text-slate-500 hover:text-slate-700',
           )}
-        </Menu.Button>
+        >
+          <Link
+            href="/programs"
+            className="pl-4 py-2 transition duration-100 active:scale-95"
+          >
+            Programs
+          </Link>
+          <Menu.Button>
+            {({ open }) => (
+              <span className="self-stretch py-2 px-2 hover:bg-slate-100 transition duration-100 rounded-lg my-2 mx-1 ml-2 active:scale-95 active:bg-slate-200/70">
+                <i
+                  className={cx(
+                    'fas fa-chevron-down transition duration-200',
+                    open && '-rotate-180',
+                  )}
+                />
+              </span>
+            )}
+          </Menu.Button>
+        </span>
       </div>
 
       <Transition
@@ -36,12 +43,12 @@ const ProgramsDropdown: React.FC = () => {
         leaveFrom="transform opacity-100 scale-100"
         leaveTo="transform opacity-0 -translate-y-1"
       >
-        <Menu.Items className="absolute z-10 mt-14 w-56 rounded-xl bg-white shadow-lg focus:outline-none overflow-hidden">
+        <Menu.Items className="absolute z-10 mt-14 w-56 rounded-xl bg-white shadow-lg focus:outline-none overflow-hidden p-2">
           <LinkOption to="/programs/river-schools">River schools</LinkOption>
+          <LinkOption to="/programs/rappelling">Rappelling</LinkOption>
           <LinkOption to="/programs/river-rangers">River Rangers</LinkOption>
           <LinkOption to="/programs/pollywogs">Pollywogs</LinkOption>
           <LinkOption to="/programs/little-solomons">Little Solomon Classes</LinkOption>
-          <LinkOption to="/programs/rappelling">Rappelling</LinkOption>
         </Menu.Items>
       </Transition>
     </Menu>
@@ -62,8 +69,8 @@ const LinkOption: React.FC<LinkOptionProps> = ({ to, children }) => {
         <Link
           href={to}
           className={cx(
-            active ? 'bg-emerald-100/20 text-emerald-700' : 'text-gray-700',
-            'block px-4 py-2 text-sm first:pt-3 last:pb-3',
+            active ? 'bg-emerald-50 text-emerald-700' : 'text-slate-500',
+            'block px-4 py-2 font-medium rounded-xl active:scale-95 transition duration-100',
           )}
         >
           {children}

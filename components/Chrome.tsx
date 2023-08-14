@@ -11,6 +11,7 @@ import {
 } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 import Logo from './Logo';
+import Button from './Button';
 
 interface Props {
   children: React.ReactNode;
@@ -37,7 +38,7 @@ const Chrome: React.FC<Props> = ({ children, page, imageViewer }) => {
       <Transition.Root show={sidebarOpen} as={Fragment}>
         <Dialog
           as="div"
-          className="relative z-20 md:hidden block"
+          className="relative z-50 lg:hidden block"
           onClose={setSidebarOpen}
         >
           <Transition.Child
@@ -88,6 +89,17 @@ const Chrome: React.FC<Props> = ({ children, page, imageViewer }) => {
                       <SidebarLink to="/programs/rappelling">Rappelling</SidebarLink>
                     </div>
                   </div>
+                  <Button
+                    type="link"
+                    to={process.env.NEXT_PUBLIC_PAYPAL_DONATION_URL || ``}
+                    color="primary"
+                    size="sm"
+                    icon="paypal"
+                    className="mt-4"
+                    openInNewTab
+                  >
+                    Donate
+                  </Button>
                   <Logo className="self-center mb-6 mt-8" />
                 </div>
               </Dialog.Panel>
@@ -99,7 +111,7 @@ const Chrome: React.FC<Props> = ({ children, page, imageViewer }) => {
       {/* image viewer */}
       {imageViewer && (
         <Transition.Root show={imageViewer.isOpen} as={Fragment}>
-          <Dialog as="div" className="relative z-20" onClose={() => null}>
+          <Dialog as="div" className="relative z-50" onClose={() => null}>
             <Transition.Child
               as={Fragment}
               enter="ease-in-out duration-500"
@@ -126,7 +138,7 @@ const Chrome: React.FC<Props> = ({ children, page, imageViewer }) => {
                 leaveTo="-translate-y-40 scale-90 opacity-0"
               >
                 <Dialog.Panel className="pointer-events-auto">
-                  <div className="mx-4 2xs:w-96 xs:w-112 sm:w-128 md:w-176 xl:w-[1200px] rounded-3xl overflow-y-scroll bg-white overflow-hidden shadow-xl pointer-events-auto flex flex-col items-center">
+                  <div className="mx-4 w-80 2xs:w-96 xs:w-112 sm:w-128 md:w-176 xl:w-[1200px] rounded-3xl overflow-y-scroll bg-white overflow-hidden shadow-xl pointer-events-auto flex flex-col items-center">
                     <div className="p-2 bg-emerald-500 self-stretch flex justify-end">
                       <button
                         className="bg-white w-8 h-8 flex justify-center items-center rounded-full hover:bg-emerald-100 transition duration-100"
@@ -209,7 +221,7 @@ const SidebarLink: React.FC<SidebarLinkProps> = ({ to, children }) => {
   return (
     <Link
       href={to}
-      className="rounded-full px-6 py-3 font-medium text-lg transition duration-100 hover:bg-slate-100 text-slate-600 hover:text-slate-900"
+      className="rounded-full px-6 py-3 font-medium text-lg transition duration-150 hover:bg-slate-100 active:bg-slate-200 text-slate-600 hover:text-slate-900"
     >
       {children}
     </Link>
@@ -237,16 +249,19 @@ const ImagePreviews: React.FC<ImagePreviewsProps> = ({
               index === imageIndex && ` bg-slate-400`,
             )}
             onClick={() => setImageIndex(index)}
-            key={image}
+            key={image + `_small`}
           />
-          <div
+          <Image
             className={cx(
-              'rounded-xl shadow w-12 h-12 bg-cover bg-center cursor-pointer hover:scale-105 transition duration-100 hidden xl:block',
+              'rounded-xl shadow w-12 h-12 bg-cover bg-center cursor-pointer hover:scale-105 transition duration-100 hidden xl:block active:scale-100',
               index === imageIndex && 'ring-2 ring-emerald-500 ring-offset-2',
             )}
-            style={{ backgroundImage: `url(${image})` }}
             onClick={() => setImageIndex(index)}
-            key={image + `_small`}
+            key={image}
+            src={image}
+            alt={`Canoe Creation image`}
+            width={48}
+            height={48}
           />
         </>
       ))}
