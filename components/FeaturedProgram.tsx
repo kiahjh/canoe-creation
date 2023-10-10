@@ -1,9 +1,9 @@
-import React from 'react';
-import cx from 'classnames';
-import { CurrencyDollarIcon, UserGroupIcon } from '@heroicons/react/24/outline';
-import { useIntersectionObserver } from '../lib/hooks';
-import Button from './Button';
-import { formatAgeRange } from '../lib/strings';
+import React from "react";
+import cx from "classnames";
+import { CurrencyDollarIcon, UserGroupIcon } from "@heroicons/react/24/outline";
+import { useIntersectionObserver } from "../lib/hooks";
+import { formatAgeRange } from "../lib/strings";
+import Button from "./Button";
 
 interface Props {
   title: string;
@@ -31,15 +31,17 @@ const FeaturedProgram: React.FC<Props> = ({
   fadeIn = false,
 }) => {
   const { intersected, ref } = useIntersectionObserver({
-    rootMargin: '0px',
+    rootMargin: `0px`,
     threshold: 0.9,
   });
 
   return (
     <div
       className={cx(
-        'bg-white rounded-3xl overflow-hidden shadow-xl transition-[opacity,transform] duration-500 flex flex-col',
-        intersected || !fadeIn ? 'opacity-100' : 'lg+:translate-x-12 lg+:opacity-0',
+        `bg-white rounded-3xl overflow-hidden shadow-xl transition-[opacity,transform] duration-500 flex flex-col`,
+        intersected || !fadeIn
+          ? `opacity-100`
+          : `lg+:translate-x-12 lg+:opacity-0`,
       )}
       ref={ref}
     >
@@ -49,12 +51,14 @@ const FeaturedProgram: React.FC<Props> = ({
       />
       <div className="p-6 sm:p-8">
         <div className="flex flex-col space-y-2 md:space-y-0 md:flex-row lg+:flex-col lg+:space-y-2 2xl:flex-row 2xl:space-y-0 justify-between items-start">
-          <h3 className={cx('text-2xl sm:text-3xl font-inter')}>{title}</h3>
+          <h3 className={cx(`text-2xl sm:text-3xl font-inter`)}>{title}</h3>
           <div className="flex items-center space-x-6">
             <span className="flex items-center text-sm sm:text-base text-slate-600">
               <CurrencyDollarIcon className="h-5 sm:h-6 text-slate-500 mr-1" />
               <span>
-                {`$${priceRange.min}${priceRange.max ? `-$${priceRange.max}` : ``} /
+                {`$${priceRange.min}${
+                  priceRange.max ? `-$${priceRange.max}` : ``
+                } /
                 person`}
               </span>
             </span>
@@ -64,10 +68,18 @@ const FeaturedProgram: React.FC<Props> = ({
             </span>
           </div>
         </div>
-        <p className="mt-4 text-slate-600 text-[15px] sm:text-[17px]">{description}</p>
+        <p className="mt-4 text-slate-600 text-[15px] sm:text-[17px]">
+          {description}
+        </p>
       </div>
       <div className="flex flex-col sm:flex-row sm:items-end justify-end p-6 sm:p-8 pt-0 sm:pt-0 sm:space-x-6 space-y-4 sm:space-y-0 flex-grow">
-        <Button type="link" to="/calendar" size="md" color="secondary" icon="calendar">
+        <Button
+          type="link"
+          to="/calendar"
+          size="md"
+          color="secondary"
+          icon="calendar"
+        >
           View calendar
         </Button>
         <Button

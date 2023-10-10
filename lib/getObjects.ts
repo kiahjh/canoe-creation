@@ -1,5 +1,4 @@
-import { apiToBlogPost, apiToEvent, apiToNewsfeedPost } from './data-conversion';
-import {
+import type {
   APIBlogPost,
   APIEvent,
   APINewsfeedPost,
@@ -7,10 +6,15 @@ import {
   BlogPost,
   CCEvent,
   NewsfeedPost,
-} from './types';
+} from "./types";
+import {
+  apiToBlogPost,
+  apiToEvent,
+  apiToNewsfeedPost,
+} from "./data-conversion";
 
-const bucketSlug = process.env.COSMIC_BUCKET_SLUG!;
-const readKey = process.env.COSMIC_READ_KEY!;
+const bucketSlug = process.env.COSMIC_BUCKET_SLUG ?? ``;
+const readKey = process.env.COSMIC_READ_KEY ?? ``;
 
 export async function getAllBlogPosts(): Promise<BlogPost[]> {
   const endpoint = `https://api.cosmicjs.com/v3/buckets`;

@@ -1,18 +1,18 @@
-import React from 'react';
-import Link from 'next/link';
-import cx from 'classnames';
-import { months } from '../lib/dates';
-import { useIntersectionObserver } from '../lib/hooks';
-import { CCEvent } from '../lib/types';
+import React from "react";
+import Link from "next/link";
+import cx from "classnames";
 import {
   ArrowRightCircleIcon,
   CalendarDaysIcon,
   CurrencyDollarIcon,
   UsersIcon,
-} from '@heroicons/react/24/outline';
-import { eventTypeToSlug } from '../lib/data-conversion';
-import { formatAgeRange } from '../lib/strings';
-import { formatEventType } from '../lib/events';
+} from "@heroicons/react/24/outline";
+import type { CCEvent } from "../lib/types";
+import { months } from "../lib/dates";
+import { useIntersectionObserver } from "../lib/hooks";
+import { eventTypeToSlug } from "../lib/data-conversion";
+import { formatAgeRange } from "../lib/strings";
+import { formatEventType } from "../lib/events";
 
 interface Props {
   event: CCEvent;
@@ -21,44 +21,48 @@ interface Props {
 
 const EventCard: React.FC<Props> = ({ event, withoutInfoButton }) => {
   const { intersected, ref } = useIntersectionObserver({
-    rootMargin: '0px',
+    rootMargin: `0px`,
     threshold: 0.9,
   });
 
-  let badgeColors = '';
+  let badgeColors = ``;
   switch (event.status) {
-    case 'open':
-      badgeColors = 'bg-emerald-100 text-emerald-600';
+    case `open`:
+      badgeColors = `bg-emerald-100 text-emerald-600`;
       break;
-    case 'full':
-      badgeColors = 'bg-red-100 text-red-800';
+    case `full`:
+      badgeColors = `bg-red-100 text-red-800`;
       break;
-    case 'private':
-      badgeColors = 'bg-yellow-100 text-yellow-600';
+    case `private`:
+      badgeColors = `bg-yellow-100 text-yellow-600`;
       break;
   }
 
   const startDate = new Date(event.dateRange[0]);
-  const formattedStartDate = `${months[startDate.getMonth()]} ${startDate.getDate() + 1}`;
+  const formattedStartDate = `${months[startDate.getMonth()]} ${
+    startDate.getDate() + 1
+  }`;
   const endDate = new Date(event.dateRange[1]);
-  const formattedEndDate = `${months[endDate.getMonth()]} ${endDate.getDate() + 1}`;
+  const formattedEndDate = `${months[endDate.getMonth()]} ${
+    endDate.getDate() + 1
+  }`;
   const eventIsSpecial = !event.title.startsWith(formattedStartDate);
   const eventAlreadyHappened = endDate < new Date();
   if (eventAlreadyHappened) {
-    badgeColors = 'bg-slate-100 text-slate-500';
+    badgeColors = `bg-slate-100 text-slate-500`;
   }
 
   return (
     <div
       className={cx(
-        'bg-white shadow rounded-2xl flex flex-col relative overflow-hidden transition-[opacity,transform] duration-200',
-        intersected ? 'opacity-100' : 'opacity-0 translate-y-2 scale-75',
+        `bg-white shadow rounded-2xl flex flex-col relative overflow-hidden transition-[opacity,transform] duration-200`,
+        intersected ? `opacity-100` : `opacity-0 translate-y-2 scale-75`,
       )}
       ref={ref}
     >
       <div
         className={cx(
-          'w-full h-full absolute top-0 left-0 bg-white/80 opacity-0 hover:opacity-100 transition-opacity duration-300 justify-center items-center group',
+          `w-full h-full absolute top-0 left-0 bg-white/80 opacity-0 hover:opacity-100 transition-opacity duration-300 justify-center items-center group`,
           withoutInfoButton ? `hidden` : `flex`,
         )}
       >
@@ -87,7 +91,7 @@ const EventCard: React.FC<Props> = ({ event, withoutInfoButton }) => {
             `px-4 rounded-full flex justify-center items-center py-0.5 text-sm uppercase font-medium`,
           )}
         >
-          {eventAlreadyHappened ? 'done' : event.status}
+          {eventAlreadyHappened ? `done` : event.status}
         </span>
       </div>
       <div className="flex flex-col space-y-1 p-4 pt-2 flex-grow">
@@ -111,7 +115,9 @@ const EventCard: React.FC<Props> = ({ event, withoutInfoButton }) => {
       </div>
       {(event.location || event.specialNotes) && (
         <div className="p-4 pt-2 flex justify-between italic text-sm text-slate-500">
-          <span className="mr-6">{event.specialNotes && event.specialNotes}</span>
+          <span className="mr-6">
+            {event.specialNotes && event.specialNotes}
+          </span>
           <span>{event.location && event.location}</span>
         </div>
       )}

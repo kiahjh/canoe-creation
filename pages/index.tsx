@@ -1,13 +1,12 @@
-import React from 'react';
-import { GetStaticProps } from 'next';
-import type { CCEvent, NewsfeedPost } from '../lib/types';
-import HeroBlock from '../components/HeroBlock';
-import Waves from '../components/Waves';
-import InfoBlock from '../components/InfoBlock';
-import CalendarBlock from '../components/CalendarBlock';
-import { getAllEvents, getAllNewsfeedPosts } from '../lib/getObjects';
-import Chrome from '../components/Chrome';
-import CTABlock from '../components/CTABlock';
+import React from "react";
+import type { GetStaticProps } from "next";
+import type { CCEvent, NewsfeedPost } from "../lib/types";
+import HeroBlock from "../components/HeroBlock";
+import InfoBlock from "../components/InfoBlock";
+import CalendarBlock from "../components/CalendarBlock";
+import { getAllEvents, getAllNewsfeedPosts } from "../lib/getObjects";
+import Chrome from "../components/Chrome";
+import CTABlock from "../components/CTABlock";
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const events = await getAllEvents();

@@ -1,28 +1,28 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: "class",
+  darkMode: `class`,
   content: [
-    './pages/**/*.{js,ts,jsx,tsx}',
-    './components/**/*.{js,ts,jsx,tsx}',
-    './app/**/*.{js,ts,jsx,tsx}',
+    `./pages/**/*.{js,ts,jsx,tsx}`,
+    `./components/**/*.{js,ts,jsx,tsx}`,
+    `./app/**/*.{js,ts,jsx,tsx}`,
   ],
   theme: {
     screens: {
-     '2xs': `400px`,
+      "2xs": `400px`,
       xs: `500px`,
       sm: `640px`,
       md: `768px`,
       "md-lg": `900px`,
       lg: `1024px`,
-      'lg+': `1152px`,
+      "lg+": `1152px`,
       xl: `1280px`,
-      '2xl': `1600px`,
+      "2xl": `1600px`,
     },
-  extend: {
+    extend: {
       fontFamily: {
         raleway: [`Raleway`],
         inter: [`Inter`],
-        'reem-kufi': [`Reem Kufi`],
+        "reem-kufi": [`Reem Kufi`],
         lato: [`lato`],
       },
       spacing: {
@@ -33,7 +33,5 @@ module.exports = {
       },
     },
   },
-  plugins: [
-    require('@tailwindcss/typography'),
-  ],
-}
+  plugins: [require(`@tailwindcss/typography`)],
+};

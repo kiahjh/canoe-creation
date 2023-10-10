@@ -1,89 +1,91 @@
-import React from 'react';
-import Link from 'next/link';
-import cx from 'classnames';
+import React from "react";
+import Link from "next/link";
+import cx from "classnames";
 import {
   ArrowRightCircleIcon,
   CalendarDaysIcon,
   Squares2X2Icon,
   VideoCameraIcon,
-} from '@heroicons/react/24/outline';
+} from "@heroicons/react/24/outline";
 
 interface CommonProps {
-  size?: 'sm' | 'md' | 'lg';
-  color: 'primary' | 'secondary';
-  icon?: 'arrow-circle-right' | 'video-camera' | 'calendar' | 'grid' | 'paypal';
+  size?: "sm" | "md" | "lg";
+  color: "primary" | "secondary";
+  icon?: "arrow-circle-right" | "video-camera" | "calendar" | "grid" | "paypal";
   shadow?: boolean;
   className?: string;
   sizeOverride?: string;
   children: React.ReactNode;
 }
 interface LinkProps {
-  type: 'link';
+  type: "link";
   to: string;
   openInNewTab?: boolean;
 }
 interface ButtonProps {
-  type: 'button';
+  type: "button";
   onClick: () => void;
 }
 type Props = CommonProps & (LinkProps | ButtonProps);
 
 const Button: React.FC<Props> = (props) => {
-  const commonStyles =
-    'flex justify-center items-center rounded-full font-medium transition duration-150 active:scale-95';
-  let colorStyles = (() => {
+  const commonStyles = `flex justify-center items-center rounded-full font-medium transition duration-150 active:scale-95`;
+  const colorStyles = (() => {
     switch (props.color) {
-      case 'primary':
+      case `primary`:
         return cx(
-          'bg-emerald-500 text-white hover:bg-emerald-600',
-          props.shadow && 'shadow-emerald-500/30',
+          `bg-emerald-500 text-white hover:bg-emerald-600`,
+          props.shadow && `shadow-emerald-500/30`,
         );
-      case 'secondary':
+      case `secondary`:
         return cx(
-          'bg-emerald-50 text-emerald-600 hover:bg-emerald-100',
-          props.shadow && 'shadow-black/5',
+          `bg-emerald-50 text-emerald-600 hover:bg-emerald-100`,
+          props.shadow && `shadow-black/5`,
         );
     }
   })();
-  let sizeStyles = (() => {
+  const sizeStyles = (() => {
     switch (props.size) {
-      case 'sm':
+      case `sm`:
         return cx(
-          props.sizeOverride || 'px-4 py-1.5 text-base',
-          props.shadow && 'shadow',
+          props.sizeOverride || `px-4 py-1.5 text-base`,
+          props.shadow && `shadow`,
         );
-      case 'md':
+      case `md`:
         return cx(
-          props.sizeOverride || 'px-6 py-3 text-base',
-          props.shadow && 'shadow-md',
+          props.sizeOverride || `px-6 py-3 text-base`,
+          props.shadow && `shadow-md`,
         );
-      case 'lg':
-        return cx(props.sizeOverride || 'px-8 py-4 text-lg', props.shadow && 'shadow-lg');
+      case `lg`:
+        return cx(
+          props.sizeOverride || `px-8 py-4 text-lg`,
+          props.shadow && `shadow-lg`,
+        );
     }
   })();
   const Icon = (() => {
     const iconStyles = cx(
-      'mr-2',
-      props.size === 'sm' ? 'h-5' : 'h-6',
-      props.size === 'lg' && 'mr-3',
+      `mr-2`,
+      props.size === `sm` ? `h-5` : `h-6`,
+      props.size === `lg` && `mr-3`,
     );
     switch (props.icon) {
-      case 'arrow-circle-right':
+      case `arrow-circle-right`:
         return <ArrowRightCircleIcon className={iconStyles} />;
-      case 'video-camera':
+      case `video-camera`:
         return <VideoCameraIcon className={iconStyles} />;
-      case 'calendar':
+      case `calendar`:
         return <CalendarDaysIcon className={iconStyles} />;
-      case 'grid':
+      case `grid`:
         return <Squares2X2Icon className={iconStyles} />;
-      case 'paypal':
+      case `paypal`:
         return <i className={cx(`fa-brands fa-paypal mt-1`, iconStyles)} />;
       default:
         return <ArrowRightCircleIcon className={iconStyles} />;
     }
   })();
 
-  if (props.type === 'button') {
+  if (props.type === `button`) {
     return (
       <button
         onClick={props.onClick}
@@ -98,7 +100,7 @@ const Button: React.FC<Props> = (props) => {
     <Link
       href={props.to}
       className={cx(commonStyles, colorStyles, sizeStyles, props.className)}
-      target={props.openInNewTab ? '_blank' : '_self'}
+      target={props.openInNewTab ? `_blank` : `_self`}
     >
       {props.icon && Icon}
       {props.children}

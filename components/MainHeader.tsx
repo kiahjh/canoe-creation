@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import cx from 'classnames';
-import NavLink from './NavLink';
-import ProgramsDropdown from './ProgramsDropdown';
-import { useScrollY } from '../lib/hooks';
-import { Bars3Icon } from '@heroicons/react/24/outline';
-import Logo from './Logo';
-import Button from './Button';
+import React from "react";
+import cx from "classnames";
+import { Bars3Icon } from "@heroicons/react/24/outline";
+import { useScrollY } from "../lib/hooks";
+import NavLink from "./NavLink";
+import ProgramsDropdown from "./ProgramsDropdown";
+import Logo from "./Logo";
+import Button from "./Button";
 
 interface Props {
   page: string;
@@ -19,7 +19,7 @@ const MainHeader: React.FC<Props> = ({ page, setSidebarOpen }) => {
   return (
     <header
       className={cx(
-        'flex items-center justify-between p-4 relative z-[45]',
+        `flex items-center justify-between p-4 relative z-[45]`,
         page !== `/` && `border-b border-slate-200`,
       )}
     >
@@ -32,21 +32,21 @@ const MainHeader: React.FC<Props> = ({ page, setSidebarOpen }) => {
       </button>
       <nav
         className={cx(
-          'items-center py-2 px-4 space-x-2 rounded-2xl bg-white fixed right-4 transition duration-300 hidden lg:flex',
-          scrollY > 0 && 'shadow-lg',
+          `items-center py-2 px-4 space-x-2 rounded-2xl bg-white fixed right-4 transition duration-300 hidden lg:flex`,
+          scrollY > 0 && `shadow-lg`,
         )}
       >
-        <NavLink to="/" selected={page === '/'}>
+        <NavLink to="/" selected={page === `/`}>
           Home
         </NavLink>
-        <NavLink to="/about" selected={page === '/about'}>
+        <NavLink to="/about" selected={page === `/about`}>
           About
         </NavLink>
         <ProgramsDropdown />
-        <NavLink to="/calendar" selected={page === '/calendar'}>
+        <NavLink to="/calendar" selected={page === `/calendar`}>
           Calendar
         </NavLink>
-        <NavLink to="/blog" selected={page === '/blog'}>
+        <NavLink to="/blog" selected={page === `/blog`}>
           Blog
         </NavLink>
         <div className="w-2" />
