@@ -26,7 +26,10 @@ interface ButtonProps {
   type: "button";
   onClick: () => void;
 }
-type Props = CommonProps & (LinkProps | ButtonProps);
+interface SubmitProps {
+  type: "submit";
+}
+type Props = CommonProps & (LinkProps | ButtonProps | SubmitProps);
 
 const Button: React.FC<Props> = (props) => {
   const commonStyles = `flex justify-center items-center rounded-full font-medium transition duration-150 active:scale-95`;
@@ -89,6 +92,16 @@ const Button: React.FC<Props> = (props) => {
     return (
       <button
         onClick={props.onClick}
+        className={cx(commonStyles, colorStyles, sizeStyles, props.className)}
+      >
+        {props.icon && Icon}
+        {props.children}
+      </button>
+    );
+  } else if (props.type === `submit`) {
+    return (
+      <button
+        type="submit"
         className={cx(commonStyles, colorStyles, sizeStyles, props.className)}
       >
         {props.icon && Icon}
