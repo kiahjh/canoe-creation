@@ -10,7 +10,11 @@ import WaterfallImage from "../../public/little-solomons/waterfall.jpg";
 import Sparkle from "../../components/Sparkle";
 
 const Programs: React.FC = () => (
-  <Chrome page="/programs">
+  <Chrome
+    page="/programs"
+    title="Canoe Creation | Programs"
+    description="A full list of all of Canoe Creation's offered programs."
+  >
     <div className="py-12 lg:py-20 px-4 xs:px-6 sm:px-12 lg:px-16 2xl:px-20 bg-gradient-to-b from-white via-cyan-50 to-emerald-50">
       <div className="flex justify-center px-8">
         <h1 className="text-center text-4xl md:text-5xl font-raleway relative">

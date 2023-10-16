@@ -2,6 +2,7 @@ import React from "react";
 import cx from "classnames";
 import Link from "next/link";
 import { ChevronLeftIcon } from "@heroicons/react/24/outline";
+import striptags from "striptags";
 import type { GetStaticPaths, GetStaticProps } from "next";
 import Chrome from "../../components/Chrome";
 import { getAllBlogPosts } from "../../lib/getObjects";
@@ -51,7 +52,13 @@ interface Props {
 }
 
 const BlogPost: React.FC<Props> = ({ post, recentPosts }) => (
-  <Chrome page="/blog">
+  <Chrome
+    page="/blog"
+    title={`Canoe Creation | Blog - ${post.title}`}
+    description={
+      striptags(post.content).split(/\s/g).slice(0, 50).join(` `) + `...`
+    }
+  >
     <div className="bg-emerald-50/80 p-[30px] sticky top-0 backdrop-blur-2xl border-b border-slate-200">
       <Link
         href="/blog"
@@ -80,7 +87,7 @@ const BlogPost: React.FC<Props> = ({ post, recentPosts }) => (
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
         </div>
-        <div className="flex-grow flex flex-col gap-8 self-stretch mx-4 xs:mx-auto w-[calc(100vw-32px)] xs:w-full lg:w-[800px] xl:w-auto">
+        <div className="flex-grow flex flex-col gap-8 self-stretch mx-4 xs:mx-auto w-[calc(100vw-32px)] xs:w-full lg:w-[800px] xl:w-auto max-w-3xl">
           <div
             className={cx(
               `w-full h-52 xs:h-72 md:h-96 bg-cover bg-center rounded-3xl`,

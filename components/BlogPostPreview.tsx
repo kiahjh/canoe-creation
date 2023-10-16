@@ -36,7 +36,8 @@ const BlogPostPreview: React.FC<Props> = ({ post }) => (
         <p
           dangerouslySetInnerHTML={{
             __html:
-              striptags(post.content).split(` `).slice(0, 40).join(` `) + `...`,
+              striptags(post.content).split(/\s/).slice(0, 40).join(` `) +
+              `...`,
           }}
           className="my-2 text-slate-500 text-sm xs:text-base"
         />

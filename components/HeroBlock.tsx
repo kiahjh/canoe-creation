@@ -4,13 +4,13 @@ import cx from "classnames";
 import Image from "next/image";
 import type { StaticImageData } from "next/image";
 import IslandImage from "../public/river-schools/island.jpg";
+import BgPicture from "../public/river-schools/river-drama-shot.jpg";
 import SwimmingPollywogsImage from "../public/pollywogs/swimming-pollywogs.jpg";
 import RappellingDescentImage from "../public/rappelling/rappelling-descent.jpg";
 import CottonwoodFuzziesImage from "../public/river-rangers/cottonwood-fuzzies.jpg";
 import WaterfallImage from "../public/little-solomons/waterfall.jpg";
 import { formatAgeRange } from "../lib/strings";
 import Button from "./Button";
-import Sparkle from "./Sparkle";
 
 const HeroBlock: React.FC = () => {
   const [curImageIndex, setCurImageIndex] = useState(0);
@@ -27,49 +27,16 @@ const HeroBlock: React.FC = () => {
   }, [curImageIndex, hasBeenInteracted]);
 
   return (
-    <div className="flex flex-col lg+:flex-row pb-16 bg-gradient-to-b from-white to-slate-50 pt-12 overflow-hidden">
+    <div
+      className="flex flex-col lg+:flex-row pb-16 pt-12 overflow-hidden"
+      style={{
+        background: `linear-gradient(to bottom, white, #ffffffe0), url(${BgPicture.src})`,
+        backgroundPosition: `center`,
+        backgroundSize: `cover`,
+      }}
+    >
       <div className="pl-8 lg:pl-16 xl:pl-24 pt-4 sm:pt-8 lg+:pt-20 xl:pt-20 pr-8 lg:pr-16 xl:pr-16 pb-20 lg+:pb-24 shrink-0 flex flex-col items-center lg+:items-start">
         <h1 className="text-4xl xs:text-5xl md:text-6xl 2xl:text-7xl font-raleway text-center lg+:text-left max-w-2xl lg+:max-w-xl 2xl:max-w-3xl !leading-tight relative">
-          <Sparkle
-            size={24}
-            position={`-left-8 -top-6 hidden md:block`}
-            color={`yellow`}
-          />
-          <Sparkle
-            size={18}
-            position={`-left-16 top-4 hidden md:block`}
-            color={`cyan`}
-          />
-          <Sparkle
-            size={24}
-            position={`right-8 bottom-8 hidden md:block`}
-            color={`emerald`}
-          />
-          <Sparkle
-            size={16}
-            position={`right-0 bottom-0 hidden md:block`}
-            color={`yellow`}
-          />
-          <Sparkle
-            size={18}
-            position={`right-20 -bottom-2 hidden md:block`}
-            color={`yellow`}
-          />
-          <Sparkle
-            size={16}
-            position={`right-56 -top-20 hidden lg+:block`}
-            color={`emerald`}
-          />
-          <Sparkle
-            size={18}
-            position={`right-40 -top-12 hidden md:block`}
-            color={`yellow`}
-          />
-          <Sparkle
-            size={16}
-            position={`left-20 -bottom-4 hidden md:block`}
-            color={`yellow`}
-          />
           <span className="relative">
             Explore God&apos;s Glory Through{` `}
             <span className="bg-gradient-to-r from-cyan-500 to-emerald-500 bg-clip-text text-transparent">
@@ -109,7 +76,7 @@ const HeroBlock: React.FC = () => {
         </div>
       </div>
       <div className="flex-grow flex flex-col">
-        <div className="flex-grow p-8 relative rounded-3xl bg-emerald-100 my-8 lg:my-12 mx-4 xs:mx-8 lg:mx-16 flex flex-col md:flex-row items-center h-72 lg+:h-auto">
+        <div className="flex-grow p-8 relative rounded-3xl bg-emerald-400/20 my-8 lg:my-12 mx-4 xs:mx-8 lg:mx-16 flex flex-col md:flex-row items-center h-72 lg+:h-auto">
           <ProgramFeature
             index={0}
             curIndex={curImageIndex}
@@ -263,7 +230,9 @@ const IndexSwitcher: React.FC<IndexSwitcherProps> = ({
     }}
     className={cx(
       `w-3 h-3 rounded-full hover:bg-slate-300 shadow-inner transition duration-100 hover:scale-110 cursor-pointer`,
-      index === curIndex ? `bg-slate-400 hover:!bg-slate-400` : `bg-slate-200`,
+      index === curIndex
+        ? `bg-slate-400 hover:!bg-slate-400`
+        : `bg-slate-500/10`,
     )}
   />
 );

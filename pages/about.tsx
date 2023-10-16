@@ -1,8 +1,14 @@
 import React from "react";
+import Image from "next/image";
 import Chrome from "../components/Chrome";
+import InternGroupPic from "../public/river-schools/intern-group-2023.jpg";
 
 const About: React.FC = () => (
-  <Chrome page="/about">
+  <Chrome
+    page="/about"
+    title="Canoe Creation | About"
+    description="All about the history, mission, and current status of Canoe Creation."
+  >
     <div className="flex justify-center items-center py-8 xs:py-12 sm:py-20 px-6 xs:px-8 sm:px-12 md:px-20">
       <div className="absolute w-full lg:w-5/6 h-1/2 bg-emerald-50 rounded-3xl" />
       <div className="prose prose-p:text-slate-600 bg-white py-8 sm:py-12 md:py-16 px-6 sm:px-12 md:px-16 max-w-3xl rounded-3xl relative bg-opacity-70 backdrop-blur-3xl shadow">
@@ -43,6 +49,11 @@ const About: React.FC = () => (
           Canoe Creation and it shows when you get to know them on gravel bar
           islands and woods walks.
         </p>
+        <Image
+          src={InternGroupPic}
+          alt="Canoe Creation interns 2023"
+          className="rounded-2xl"
+        />
       </div>
     </div>
   </Chrome>
