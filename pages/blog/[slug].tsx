@@ -2,6 +2,7 @@ import React from "react";
 import cx from "classnames";
 import Link from "next/link";
 import { ChevronLeftIcon } from "@heroicons/react/24/outline";
+import striptags from "striptags";
 import type { GetStaticPaths, GetStaticProps } from "next";
 import Chrome from "../../components/Chrome";
 import { getAllBlogPosts } from "../../lib/getObjects";
@@ -51,7 +52,13 @@ interface Props {
 }
 
 const BlogPost: React.FC<Props> = ({ post, recentPosts }) => (
-  <Chrome page="/blog">
+  <Chrome
+    page="/blog"
+    title={`Canoe Creation | Blog - ${post.title}`}
+    description={
+      striptags(post.content).split(/\s/g).slice(0, 50).join(` `) + `...`
+    }
+  >
     <div className="bg-emerald-50/80 p-[30px] sticky top-0 backdrop-blur-2xl border-b border-slate-200">
       <Link
         href="/blog"

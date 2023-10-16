@@ -58,6 +58,8 @@ const ProgramTemplate: React.FC<Props> = ({
   return (
     <Chrome
       page={page}
+      title={`Canoe Creation | ${title}`}
+      description={paragraph1}
       imageViewer={{
         isOpen: imageViewerOpen,
         setIsOpen: setImageViewerOpen,

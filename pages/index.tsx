@@ -25,7 +25,11 @@ interface Props {
 }
 
 const Home: React.FC<Props> = ({ events, mostRecentNewsfeedPost }) => (
-  <Chrome page="/">
+  <Chrome
+    page="/"
+    title={`Canoe Creation`}
+    description="Canoe Creation exists to declare the glory of God by studying His works in creation and discipling youth in their Christian faith. Floating classrooms led by expert instructor/guides instill academic excellence, while teaching critical thinking. Rappelling adventures, retreats and classes for young children provide families with wholesome learning, fun and opportunity to encounter their Creator."
+  >
     <HeroBlock />
     <div className="z-10 relative">
       <InfoBlock mostRecentNewsfeedPost={mostRecentNewsfeedPost} />

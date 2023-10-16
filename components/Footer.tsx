@@ -50,6 +50,7 @@ const Footer: React.FC = () => (
             <FooterLink to="/newsfeed">Newsfeed</FooterLink>
             <FooterLink to="/gallery">Gallery</FooterLink>
             <FooterLink to="/contact">Contact</FooterLink>
+            <FooterLink to="/get-involved">Get Involved</FooterLink>
           </ul>
         </div>
       </div>

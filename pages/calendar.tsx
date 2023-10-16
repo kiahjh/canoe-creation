@@ -18,7 +18,11 @@ interface Props {
 }
 
 const Calendar: React.FC<Props> = ({ events }) => (
-  <Chrome page="/calendar">
+  <Chrome
+    page="/calendar"
+    title="Canoe Creation | Calendar"
+    description="Canoe Creation's schedule of events for the season."
+  >
     <CalendarBlock events={events} />
     <section className="flex justify-center items-center pb-20 xs:pb-20 sm:pb-20 pt-0 sm:pt-6 p-0 xs:p-8 sm:p-12 relative">
       <div className="w-full lg:w-3/4 h-1/2 absolute lg:rounded-3xl bg-emerald-50" />

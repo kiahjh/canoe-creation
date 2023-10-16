@@ -22,7 +22,11 @@ interface Props {
 }
 
 const Newsfeed: React.FC<Props> = ({ newsfeedPosts }) => (
-  <Chrome page={`/newsfeed`}>
+  <Chrome
+    page={`/newsfeed`}
+    title={`Canoe Creation | Newsfeed`}
+    description="Recent news and announcements from Canoe Creation."
+  >
     <div className="flex flex-col items-center pt-16 pl-8 xs:pl-4 pr-8 md:pl-16 md:pr-16 overflow-hidden mb-20">
       <h1 className="text-4xl mt-0 sm:mt-8 font-raleway relative">
         <Sparkle size={16} position={`right-8 -bottom-6`} color={`emerald`} />

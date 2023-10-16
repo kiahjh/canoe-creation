@@ -19,7 +19,11 @@ interface Props {
 }
 
 const Blog: React.FC<Props> = ({ blogPosts }) => (
-  <Chrome page="/blog">
+  <Chrome
+    page="/blog"
+    title="Canoe Creation | Blog"
+    description="These short articles will help you to see the perspective of creation apologetics that Canoe Creation holds. They are not a typical blog where comments are bantered about, but are intended to open windows to look through and think about."
+  >
     <div className="px-8 md:px-16 py-12 flex-grow">
       <h1 className="text-3xl xs:text-4xl md:text-5xl font-raleway">
         Canoe Creation River Log
@@ -31,10 +35,10 @@ const Blog: React.FC<Props> = ({ blogPosts }) => (
         through and think about. If you have an interest in discussing these you
         may contact Canoe Creation via{` `}
         <a
-          href="mailto:info@canoecreation.org"
+          href="mailto:amy@canoecreation.org"
           className="text-emerald-500 hover:text-emerald-600"
         >
-          info@canoecreation.org
+          amy@canoecreation.org
         </a>
         .
       </p>

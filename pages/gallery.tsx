@@ -29,7 +29,11 @@ interface Props {
 }
 
 const Gallery: React.FC<Props> = ({ images }) => (
-  <Chrome page="/gallery">
+  <Chrome
+    page="/gallery"
+    title="Canoe Creation | Gallery"
+    description="Photos from past and recent trips led by Canoe Creation."
+  >
     <div className="py-12 sm:py-20 flex flex-col">
       <h1 className="font-raleway text-4xl mx-4 sm:text-5xl text-center relative self-center">
         Canoe Creation{` `}
