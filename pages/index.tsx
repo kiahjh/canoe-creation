@@ -1,13 +1,12 @@
-import React from 'react';
-import { GetStaticProps } from 'next';
-import type { CCEvent, NewsfeedPost } from '../lib/types';
-import HeroBlock from '../components/HeroBlock';
-import Waves from '../components/Waves';
-import InfoBlock from '../components/InfoBlock';
-import CalendarBlock from '../components/CalendarBlock';
-import { getAllEvents, getAllNewsfeedPosts } from '../lib/getObjects';
-import Chrome from '../components/Chrome';
-import CTABlock from '../components/CTABlock';
+import React from "react";
+import type { GetStaticProps } from "next";
+import type { CCEvent, NewsfeedPost } from "../lib/types";
+import HeroBlock from "../components/HeroBlock";
+import InfoBlock from "../components/InfoBlock";
+import CalendarBlock from "../components/CalendarBlock";
+import { getAllEvents, getAllNewsfeedPosts } from "../lib/getObjects";
+import Chrome from "../components/Chrome";
+import CTABlock from "../components/CTABlock";
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const events = await getAllEvents();
@@ -28,11 +27,7 @@ interface Props {
 const Home: React.FC<Props> = ({ events, mostRecentNewsfeedPost }) => (
   <Chrome page="/">
     <HeroBlock />
-    <div className="z-10 relative mt-[380px] xs:mt-[480px] md:mt-112">
-      <div className="overflow-hidden flex">
-        <Waves className="w-[190%] xs:w-[150%] sm:w-full xl:w-3/4 shrink-0" />
-        <Waves className="w-3/4 shrink-0 mt-[16px]" />
-      </div>
+    <div className="z-10 relative">
       <InfoBlock mostRecentNewsfeedPost={mostRecentNewsfeedPost} />
       <CalendarBlock events={events} />
       <CTABlock />

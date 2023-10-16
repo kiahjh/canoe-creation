@@ -4,8 +4,8 @@ export type APIResponse<T> = {
 };
 
 export type APIEvent = {
-  type: 'events';
-  status: 'published' | 'draft';
+  type: "events";
+  status: "published" | "draft";
   title: string;
   slug: string;
   published_at: string;
@@ -41,8 +41,8 @@ export type APIEvent = {
 };
 
 export type APIBlogPost = {
-  type: 'blog-posts';
-  status: 'published' | 'draft';
+  type: "blog-posts";
+  status: "published" | "draft";
   title: string;
   slug: string;
   published_at: string;
@@ -63,8 +63,8 @@ export type APIBlogPost = {
 };
 
 export type APINewsfeedPost = {
-  type: 'newsfeed-posts';
-  status: 'published' | 'draft';
+  type: "newsfeed-posts";
+  status: "published" | "draft";
   title: string;
   slug: string;
   published_at: string;
@@ -75,7 +75,7 @@ export type APINewsfeedPost = {
   id: string;
   content: string;
   bucket: string;
-  metadata: {};
+  metadata: unknown;
 };
 
 export type CCEvent = {
@@ -112,20 +112,20 @@ export type NewsfeedPost = {
 };
 
 export type EventType =
-  | 'rappelling'
-  | 'river-schools'
-  | 'pollywogs'
-  | 'river-rangers'
-  | 'little-solomons';
+  | "rappelling"
+  | "river-schools"
+  | "pollywogs"
+  | "river-rangers"
+  | "little-solomons";
 export type FormattedEventType =
-  | 'Rappelling'
-  | 'River School'
-  | 'Pollywog Float'
-  | 'River Rangers'
-  | 'Little Solomons';
+  | "Rappelling"
+  | "River School"
+  | "Pollywog Float"
+  | "River Rangers"
+  | "Little Solomons";
 
-export type Status = 'open' | 'full' | 'private';
-export type FormattedStatus = 'Open' | 'Full' | 'Private';
+export type Status = "open" | "full" | "private";
+export type FormattedStatus = "Open" | "Full" | "Private";
 
 export type APIImage = {
   imgix_url: string;

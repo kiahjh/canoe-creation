@@ -1,18 +1,20 @@
-import React, { useContext, useEffect, useReducer, useState } from 'react';
-import cx from 'classnames';
+import React, { useState } from "react";
+import cx from "classnames";
 import {
   CalendarDaysIcon,
+  CalendarIcon,
   CurrencyDollarIcon,
-  UserIcon,
   UsersIcon,
-} from '@heroicons/react/24/outline';
-import Chrome from './Chrome';
-import Button from './Button';
-import { formatAgeRange } from '../lib/strings';
-import { CCEvent } from '../lib/types';
-import EventCard from './EventCard';
-import ContactForm from './ContactForm';
-import Testimonial from './Testimonial';
+} from "@heroicons/react/24/outline";
+import Image from "next/image";
+import Link from "next/link";
+import type { CCEvent } from "../lib/types";
+import { formatAgeRange } from "../lib/strings";
+import Chrome from "./Chrome";
+import Button from "./Button";
+import EventCard from "./EventCard";
+import ContactForm from "./ContactForm";
+import Testimonial from "./Testimonial";
 
 interface Props {
   title: string;
@@ -75,8 +77,11 @@ const ProgramTemplate: React.FC<Props> = ({
                 <CalendarDaysIcon className="h-5 text-slate-500" />
                 <span className="text-slate-500 text-sm">
                   {numDaysRange.min}
-                  {numDaysRange.max !== numDaysRange.min && `-${numDaysRange.max}`} day
-                  {numDaysRange.max !== 1 && 's'}
+                  {numDaysRange.max !== numDaysRange.min &&
+                    `-${numDaysRange.max}`}
+                  {` `}
+                  day
+                  {numDaysRange.max !== 1 && `s`}
                 </span>
               </div>
             )}
@@ -92,17 +97,39 @@ const ProgramTemplate: React.FC<Props> = ({
                 priceRange.max ? `-$${priceRange.max}` : ``
               } / person`}</span>
             </div>
+            {!title.includes(`Little Solomons`) && (
+              <Link
+                href="#events"
+                className="border border-slate-400 rounded-full bg-white flex justify-center items-center space-x-2 px-2 py-1 hover:bg-slate-100 transition-colors duration-150"
+              >
+                <CalendarIcon className="h-5 text-slate-500" />
+                <span className="text-slate-500 text-sm">
+                  See this year's events
+                </span>
+              </Link>
+            )}
           </div>
           <p className="text-slate-500 text-lg leading-8">{paragraph1}</p>
           {quote && (
-            <Testimonial text={quote.text} cite={quote.cite} className="mb-12 mt-16" />
+            <Testimonial
+              text={quote.text}
+              cite={quote.cite}
+              className="mb-12 mt-16"
+            />
           )}
-          <p className={cx('text-slate-500 text-lg leading-8', !quote && `mt-4`)}>
+          <p
+            className={cx(`text-slate-500 text-lg leading-8`, !quote && `mt-4`)}
+          >
             {paragraph2}
           </p>
           {events.length > 0 && (
-            <div className="mt-16 py-6 px-4 xs:py-8 xs:px-8 bg-emerald-50 rounded-3xl">
-              <h3 className="text-2xl font-inter text-emerald-900">Events this year:</h3>
+            <div
+              className="mt-16 py-6 px-4 xs:py-8 xs:px-8 bg-emerald-50 rounded-3xl"
+              id="events"
+            >
+              <h3 className="text-2xl font-inter text-emerald-900">
+                Events this year:
+              </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 2xl:grid-cols-2 gap-4 mt-4">
                 {events.map((e) => (
                   <EventCard key={e.id} event={e} withoutInfoButton />
@@ -113,16 +140,19 @@ const ProgramTemplate: React.FC<Props> = ({
         </div>
         <div
           className={cx(
-            'lg:w-112 lg+:w-128 xl:w-152 2xl:w-176 mt-0 lg:mt-16 ml-4 xs:ml-8 sm:ml-12 mr-4 xs:mr-8 sm:mr-12 lg:mr-8 lg:ml-0 xl:ml-8 m-8 rounded-3xl shrink-0 lg:self-start',
+            `lg:w-112 lg+:w-128 xl:w-152 2xl:w-176 mt-0 lg:mt-16 ml-4 xs:ml-8 sm:ml-12 mr-4 xs:mr-8 sm:mr-12 lg:mr-8 lg:ml-0 xl:ml-8 m-8 rounded-3xl shrink-0 lg:self-start`,
             images.length > 0 && `bg-slate-100 `,
           )}
         >
           {images.length > 0 && (
             <div className="p-4 xs:p-6 lg+:p-8">
               {images[0] && (
-                <div
-                  className="h-52 sm:h-72 lg:h-52 lg+:h-72 bg-center bg-cover rounded-3xl hover:scale-[102%] hover:shadow-lg transition duration-200 cursor-pointer"
-                  style={{ backgroundImage: `url(${images[0]})` }}
+                <Image
+                  src={images[0]}
+                  alt="Canoe Creation image"
+                  width={700}
+                  height={300}
+                  className="h-52 sm:h-72 lg:h-52 lg+:h-72 object-center object-cover rounded-3xl hover:scale-[102%] hover:shadow-lg transition duration-200 cursor-pointer"
                   onClick={() => {
                     setImageIndex(0);
                     setImageViewerOpen(true);
@@ -131,22 +161,29 @@ const ProgramTemplate: React.FC<Props> = ({
               )}
               {images.length > 1 && (
                 <div className="flex gap-2 xs:gap-4 xl:gap-6 mt-2 xs:mt-4 xl:mt-6">
-                  <div
+                  <Image
+                    src={images[1]}
+                    alt="Canoe Creation image"
+                    width={700}
+                    height={300}
                     className={cx(
-                      'bg-center bg-cover rounded-3xl hover:scale-[102%] hover:shadow-lg transition duration-200 cursor-pointer',
+                      `object-center object-cover rounded-3xl hover:scale-[102%] hover:shadow-lg transition duration-200 cursor-pointer`,
                       images.length === 2
                         ? `h-52 sm:h-72 lg:h-52 lg+:h-72 w-full`
-                        : `h-40 sm:h-52 lg:h-40 xl:h-64 w-1/2`,
+                        : `h-40 sm:h-52 lg:h-40 xl:h-64 w-0 flex-grow`,
                     )}
-                    style={{ backgroundImage: `url(${images[1]})` }}
                     onClick={() => {
                       setImageIndex(1);
                       setImageViewerOpen(true);
                     }}
                   />
                   {images[2] && (
-                    <div
-                      className="h-40 sm:h-52 lg:h-40 xl:h-64 w-1/2 bg-center bg-cover rounded-3xl hover:scale-[102%] hover:shadow-lg transition duration-200 cursor-pointer"
+                    <Image
+                      src={images[2]}
+                      alt="Canoe Creation image"
+                      width={700}
+                      height={300}
+                      className="h-40 sm:h-52 lg:h-40 xl:h-64 w-0 flex-grow object-center object-cover rounded-3xl hover:scale-[102%] hover:shadow-lg transition duration-200 cursor-pointer"
                       style={{ backgroundImage: `url(${images[2]})` }}
                       onClick={() => {
                         setImageIndex(2);

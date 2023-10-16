@@ -1,4 +1,4 @@
-import {
+import type {
   APIBlogPost,
   APIEvent,
   APINewsfeedPost,
@@ -6,7 +6,7 @@ import {
   CCEvent,
   EventType,
   NewsfeedPost,
-} from './types';
+} from "./types";
 
 export function apiToBlogPost(apiPost: APIBlogPost): BlogPost {
   return {
@@ -33,9 +33,13 @@ export function apiToEvent(apiEvent: APIEvent): CCEvent {
     type: apiEvent.metadata.event_type.value,
     dateRange: [
       apiEvent.metadata.date_range.start_day,
-      apiEvent.metadata.date_range.end_day || apiEvent.metadata.date_range.start_day,
+      apiEvent.metadata.date_range.end_day ||
+        apiEvent.metadata.date_range.start_day,
     ],
-    ageRange: [apiEvent.metadata.age_range.min_age, apiEvent.metadata.age_range.max_age],
+    ageRange: [
+      apiEvent.metadata.age_range.min_age,
+      apiEvent.metadata.age_range.max_age,
+    ],
     location: apiEvent.metadata.location,
     status: apiEvent.metadata.status.value,
     specialNotes: apiEvent.metadata.special_notes,
@@ -44,7 +48,9 @@ export function apiToEvent(apiEvent: APIEvent): CCEvent {
   };
 }
 
-export function apiToNewsfeedPost(apiNewsfeedPost: APINewsfeedPost): NewsfeedPost {
+export function apiToNewsfeedPost(
+  apiNewsfeedPost: APINewsfeedPost,
+): NewsfeedPost {
   return {
     title: apiNewsfeedPost.title,
     content: apiNewsfeedPost.content,
@@ -56,15 +62,15 @@ export function apiToNewsfeedPost(apiNewsfeedPost: APINewsfeedPost): NewsfeedPos
 
 export function eventTypeToSlug(eventType: EventType): string {
   switch (eventType) {
-    case 'pollywogs':
-      return 'pollywogs';
-    case 'little-solomons':
-      return 'little-solomons';
-    case 'river-rangers':
-      return 'river-rangers';
-    case 'river-schools':
-      return 'river-schools';
-    case 'rappelling':
-      return 'rappelling';
+    case `pollywogs`:
+      return `pollywogs`;
+    case `little-solomons`:
+      return `little-solomons`;
+    case `river-rangers`:
+      return `river-rangers`;
+    case `river-schools`:
+      return `river-schools`;
+    case `rappelling`:
+      return `rappelling`;
   }
 }
