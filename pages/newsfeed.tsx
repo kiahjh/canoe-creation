@@ -42,7 +42,7 @@ const Newsfeed: React.FC<Props> = ({ newsfeedPosts }) => (
           />
           <div
             className={cx(
-              `w-8 md:w-20 border-l-4 border-t-4 border-slate-300 relative top-[108px] mx-8 shrink-0 hidden xs:block`,
+              `w-8 md:w-20 border-l-4 border-t-4 border-slate-200 relative top-[108px] mx-8 shrink-0 hidden xs:block`,
               index === 0 && `rounded-tl-3xl`,
               index === newsfeedPosts.length - 1 && `!border-l-0 !border-t-0`,
               index === newsfeedPosts.length - 2 &&
