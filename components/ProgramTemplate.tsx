@@ -152,7 +152,7 @@ const ProgramTemplate: React.FC<Props> = ({
                   alt="Canoe Creation image"
                   width={700}
                   height={300}
-                  className="h-52 sm:h-72 lg:h-52 lg+:h-72 object-center object-cover rounded-3xl hover:scale-[102%] hover:shadow-lg transition duration-200 cursor-pointer"
+                  className="h-52 sm:h-72 lg:h-52 lg+:h-72 object-center object-cover rounded-3xl hover:scale-[102%] hover:shadow-lg transition duration-200 cursor-pointer w-full"
                   onClick={() => {
                     setImageIndex(0);
                     setImageViewerOpen(true);

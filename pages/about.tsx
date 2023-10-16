@@ -1,5 +1,7 @@
 import React from "react";
+import Image from "next/image";
 import Chrome from "../components/Chrome";
+import InternGroupPic from "../public/river-schools/intern-group-2023.jpg";
 
 const About: React.FC = () => (
   <Chrome page="/about">
@@ -43,6 +45,11 @@ const About: React.FC = () => (
           Canoe Creation and it shows when you get to know them on gravel bar
           islands and woods walks.
         </p>
+        <Image
+          src={InternGroupPic}
+          alt="Canoe Creation interns 2023"
+          className="rounded-2xl"
+        />
       </div>
     </div>
   </Chrome>

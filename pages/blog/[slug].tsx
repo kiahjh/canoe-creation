@@ -80,7 +80,7 @@ const BlogPost: React.FC<Props> = ({ post, recentPosts }) => (
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
         </div>
-        <div className="flex-grow flex flex-col gap-8 self-stretch mx-4 xs:mx-auto w-[calc(100vw-32px)] xs:w-full lg:w-[800px] xl:w-auto">
+        <div className="flex-grow flex flex-col gap-8 self-stretch mx-4 xs:mx-auto w-[calc(100vw-32px)] xs:w-full lg:w-[800px] xl:w-auto max-w-3xl">
           <div
             className={cx(
               `w-full h-52 xs:h-72 md:h-96 bg-cover bg-center rounded-3xl`,
