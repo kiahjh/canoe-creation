@@ -30,12 +30,7 @@ const RiverRangers: React.FC<Props> = ({ events, images }) => (
     title={`River Rangers`}
     page={`/river-rangers`}
     events={events}
-    paragraph1={`Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo vel tempora animi dignissimos doloremque, architecto quidem totam sint ut, fugiat repellendus? Veritatis saepe quam rem libero magnam, assumenda nemo dolores! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt ipsum dolor aspernatur cum possimus iste repellendus repudiandae ad corrupti. Sint, molestias quod? Illum sint doloremque magni nisi perferendis sed? Facere? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt dolorem, architecto, tempore placeat est aperiam soluta minus omnis veritatis facilis praesentium quam itaque vero reiciendis, fuga velit. Illum, animi consequatur!`}
-    quote={{
-      text: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, blanditiis et, sapiente neque placeat sunt est, voluptas id corrupti ex aut dolor quod architecto suscipit obcaecati ullam illum beatae incidunt.`,
-      cite: `Homeschool mom`,
-    }}
-    paragraph2="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet laboriosam cumque consequatur inventore iusto iste aut quas, enim cupiditate! Quisquam voluptas veniam reiciendis facere numquam fugiat suscipit, aperiam eaque cumque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam necessitatibus aliquid magnam, tempore quae culpa quisquam eum explicabo distinctio laborum dolorum, natus eos delectus amet temporibus eius consequatur beatae provident! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit voluptatem provident explicabo at perferendis ipsum, mollitia cupiditate aperiam magnam recusandae debitis! Odio a deleniti iusto libero, consectetur pariatur ducimus ex!"
+    paragraph1={`Whether standing in the flow and feeling the force of the river's current or racing toward a net to capture stream fish, this is the program for pre-teens (11-13) that will excite and invite them into the adventure of getting into God's handiwork. Studying, capturing, and looking at the details of other living things shows each of us how carefully designed God's world is. Time alone with their Creator and His Word is built in. Grow in your canoeing skills and jump into the goofy fun!`}
     numDaysRange={{
       min: 1,
       max: 1,

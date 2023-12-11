@@ -1,6 +1,8 @@
 import React from "react";
 import cx from "classnames";
 import { CurrencyDollarIcon, UserGroupIcon } from "@heroicons/react/24/outline";
+import Image from "next/image";
+import type { StaticImageData } from "next/image";
 import { useIntersectionObserver } from "../lib/hooks";
 import { formatAgeRange } from "../lib/strings";
 import Button from "./Button";
@@ -17,7 +19,7 @@ interface Props {
     min: number;
     max: number | null;
   };
-  image: string;
+  image: StaticImageData;
   fadeIn?: boolean;
 }
 
@@ -45,10 +47,13 @@ const FeaturedProgram: React.FC<Props> = ({
       )}
       ref={ref}
     >
-      <div
-        style={{ backgroundImage: `url(${image})` }}
-        className="w-full h-52 sm:h-72 bg-center bg-cover"
-      />
+      <div className="w-full h-52 sm:h-72 bg-center bg-cover">
+        <Image
+          src={image}
+          alt={title}
+          className="w-full h-full object-center object-cover"
+        />
+      </div>
       <div className="p-6 sm:p-8">
         <div className="flex flex-col space-y-2 md:space-y-0 md:flex-row lg+:flex-col lg+:space-y-2 2xl:flex-row 2xl:space-y-0 justify-between items-start">
           <h3 className={cx(`text-2xl sm:text-3xl font-inter`)}>{title}</h3>

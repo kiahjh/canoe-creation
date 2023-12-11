@@ -30,7 +30,7 @@ const HeroBlock: React.FC = () => {
     <div
       className="flex flex-col lg+:flex-row pb-16 pt-12 overflow-hidden"
       style={{
-        background: `linear-gradient(to bottom, white, #ffffffe0), url(${BgPicture.src})`,
+        background: `linear-gradient(to bottom, white, #ffffffe5), url(${BgPicture.src})`,
         backgroundPosition: `center`,
         backgroundSize: `cover`,
       }}
@@ -44,7 +44,7 @@ const HeroBlock: React.FC = () => {
             </span>
           </span>
         </h1>
-        <h3 className="text-center lg+:text-left max-w-2xl lg+:max-w-xl 2xl:max-w-3xl mt-6 text-lg 2xl:text-xl text-slate-500 leading-loose">
+        <h3 className="text-center lg+:text-left max-w-2xl lg+:max-w-xl 2xl:max-w-3xl mt-6 text-lg 2xl:text-xl text-slate-500 leading-8">
           Canoeing beautiful rivers, rappelling 120-foot cliffs, primitive
           camping on islands, and so much more. Come join us this summer for the
           adventure of a lifetime, and see the character of our Creator through
