@@ -42,6 +42,7 @@ const LittleSolomons: React.FC<Props> = ({ events, images }) => (
       max: null,
     }}
     images={images}
+    registrationLinks={[]}
   />
 );
 

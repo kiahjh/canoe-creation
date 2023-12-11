@@ -49,6 +49,16 @@ const Rappelling: React.FC<Props> = ({ events, images }) => (
       max: null,
     }}
     images={images}
+    registrationLinks={[
+      {
+        name: `Registration form`,
+        url: `/registration/rappelling-registration.pdf`,
+      },
+      {
+        name: `Rules and memorandum`,
+        url: `/registration/rappelling-memorandum.pdf`,
+      },
+    ]}
   />
 );
 

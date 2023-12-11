@@ -13,7 +13,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ className }) => {
   return (
     <div className={className}>
       <h3 className="text-2xl font-bold text-slate-900">
-        Want to register or just have a question?
+        Want to reach out for any reason?
       </h3>
       <p className="mt-3 text-slate-500 max-w-md">
         Feel free to reach out! We will do our best to get back to you within 3

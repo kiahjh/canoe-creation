@@ -49,6 +49,12 @@ const Pollywogs: React.FC<Props> = ({ events, images }) => (
       max: 90,
     }}
     images={images}
+    registrationLinks={[
+      {
+        name: `Registration form`,
+        url: `/registration/day-float-registration.pdf`,
+      },
+    ]}
   />
 );
 

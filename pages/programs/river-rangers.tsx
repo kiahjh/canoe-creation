@@ -44,6 +44,12 @@ const RiverRangers: React.FC<Props> = ({ events, images }) => (
       max: null,
     }}
     images={images}
+    registrationLinks={[
+      {
+        name: `Registration form`,
+        url: `/registration/day-float-registration.pdf`,
+      },
+    ]}
   />
 );
 

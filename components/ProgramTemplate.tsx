@@ -39,6 +39,10 @@ interface Props {
   };
   images: string[];
   events: CCEvent[];
+  registrationLinks: Array<{
+    name: string;
+    url: string;
+  }>;
 }
 
 const ProgramTemplate: React.FC<Props> = ({
@@ -52,6 +56,7 @@ const ProgramTemplate: React.FC<Props> = ({
   priceRange,
   images,
   events,
+  registrationLinks,
 }) => {
   const [imageViewerOpen, setImageViewerOpen] = useState(false);
   const [imageIndex, setImageIndex] = useState(0);
@@ -211,7 +216,19 @@ const ProgramTemplate: React.FC<Props> = ({
               )}
             </div>
           )}
-          <div className="sm:p-6 lg+:p-8">
+          <div className="sm:p-6 lg+:p-8 flex flex-col gap-8">
+            {registrationLinks.length > 0 && (
+              <div className="flex justify-center flex-wrap items-center gap-4 p-8 rounded-3xl sm:bg-slate-50">
+                {registrationLinks.map((regLink) => (
+                  <Link
+                    href={regLink.url}
+                    className="font-medium text-lg text-cyan-600 underline px-4 py-1 rounded-lg hover:bg-cyan-500/10 transition-colors duration-150"
+                  >
+                    {regLink.name}
+                  </Link>
+                ))}
+              </div>
+            )}
             <ContactForm className="bg-slate-100 sm:bg-slate-50 rounded-b-3xl sm:rounded-t-3xl p-4 xs:p-6 lg+p-8" />
           </div>
         </div>
