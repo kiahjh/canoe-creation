@@ -87,7 +87,7 @@ const Programs: React.FC = () => (
         <FeaturedProgram
           title={`River Rangers`}
           slug={`river-rangers`}
-          description={`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel libero euismod, ullamcorper nisl eget, ultricies nisl.`}
+          description={`Whether standing in the flow and feeling the force of the river's current or racing toward a net to capture stream fish, this is the program for pre-teens (11-13) that will excite and invite them into the adventure of getting into God's handiwork. Studying, capturing, and looking at the details of other living things shows each of us how carefully designed God's world is. Time alone with their Creator and His Word is built in.`}
           ageRange={{
             min: 11,
             max: 13,
@@ -115,7 +115,7 @@ const Programs: React.FC = () => (
         <FeaturedProgram
           title={`Little Solomons`}
           slug={`little-solomons`}
-          description={`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel libero euismod, ullamcorper nisl eget, ultricies nisl.`}
+          description={`In these classes, children learn about our wonderful God through the wonders He has made. They will spend time exploring the plants, birds, and creek critters of Creation; journaling and sketching about the wild wonders they discover; learning to sing of our marvelous, loving Make; and enjoying games and fun with the leaders.`}
           ageRange={{
             min: 5,
             max: 10,

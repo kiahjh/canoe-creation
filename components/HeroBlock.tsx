@@ -83,7 +83,7 @@ const HeroBlock: React.FC = () => {
             img={IslandImage}
             title={`River Schools`}
             slug={`river-schools`}
-            description={`Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero laborum nobis eveniet saepe iure sint placeat at. Necessitatibus quam maxime.`}
+            description={`These day and overnight adventures take you down a corridor of praise to the Creator and put in your hands, hearts, and minds the wonders of wildlife and wild places.`}
             ageRange={{ min: 12, max: 20 }}
           />
           <ProgramFeature
@@ -92,7 +92,7 @@ const HeroBlock: React.FC = () => {
             img={RappellingDescentImage}
             title={`Rappelling`}
             slug={`rappelling`}
-            description={`Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero laborum nobis eveniet saepe iure sint placeat at. Necessitatibus quam maxime.`}
+            description={`A journey to the cliffs wakes up the wonder of your heart. Beautiful scenes and trust-building experiences like rappelling and rock climbing bring us to appreciate the Creator.`}
             ageRange={{ min: 12, max: null }}
           />
           <ProgramFeature
@@ -101,7 +101,7 @@ const HeroBlock: React.FC = () => {
             img={CottonwoodFuzziesImage}
             title={`River Rangers`}
             slug={`river-rangers`}
-            description={`Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero laborum nobis eveniet saepe iure sint placeat at. Necessitatibus quam maxime.`}
+            description={`Program for pre-teens (11-13) that will excite and invite them into the adventure of getting into God's handiwork.`}
             ageRange={{ min: 11, max: 13 }}
           />
           <ProgramFeature
@@ -110,7 +110,7 @@ const HeroBlock: React.FC = () => {
             img={SwimmingPollywogsImage}
             title={`Pollywog Floats`}
             slug={`pollywogs`}
-            description={`Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero laborum nobis eveniet saepe iure sint placeat at. Necessitatibus quam maxime.`}
+            description={`A river starter trip for kids ages 8 to 10 introduces them to a world of fun and faith.`}
             ageRange={{ min: 8, max: 12 }}
           />
           <ProgramFeature
@@ -119,7 +119,7 @@ const HeroBlock: React.FC = () => {
             img={WaterfallImage}
             title={`Little Solomon Classes`}
             slug={`little-solomons`}
-            description={`Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero laborum nobis eveniet saepe iure sint placeat at. Necessitatibus quam maxime.`}
+            description={`In these classes, children learn about our wonderful God through the wonders He has made.`}
             ageRange={{ min: 5, max: 10 }}
           />
         </div>
