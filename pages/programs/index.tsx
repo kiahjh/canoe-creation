@@ -16,7 +16,7 @@ const Programs: React.FC = () => (
     description="A full list of all of Canoe Creation's offered programs."
   >
     <div className="py-12 lg:py-20 px-4 xs:px-6 sm:px-12 lg:px-16 2xl:px-20 bg-gradient-to-b from-white via-cyan-50 to-emerald-50">
-      <div className="flex justify-center px-8">
+      <div className="flex flex-col items-center px-4 sm:px-8">
         <h1 className="text-center text-4xl md:text-5xl font-raleway relative">
           <Sparkle
             size={16}
@@ -44,6 +44,16 @@ const Programs: React.FC = () => (
           />
           Canoe Creation Programs
         </h1>
+        <p className="mt-6 sm:mt-12 text-slate-500 text-center max-w-5xl">
+          Ever felt the fascination of a toad vibrating in your hand? Ever
+          wander through lush spring flowers and feel like there really is hope?
+          Ever wonder about not just the names of trees, but of their character?
+          Ever sit alongside a stream and have cares of this world washed from
+          you? Ever revel in the power of a storm because you know the One that
+          made it? Ever think about spending some time in a quiet place the way
+          Jesus did? Come wander, wonder, study, and be still with us to behold
+          our Great Creator and learn of Him.
+        </p>
       </div>
       <div className="mt-8 md:mt-20 grid grid-cols-1 xl:grid-cols-2 gap-8">
         <FeaturedProgram
@@ -58,7 +68,7 @@ const Programs: React.FC = () => (
             min: 60,
             max: 140,
           }}
-          image={IslandImage.src}
+          image={IslandImage}
         />
         <FeaturedProgram
           title={`Rappelling`}
@@ -72,21 +82,21 @@ const Programs: React.FC = () => (
             min: 70,
             max: null,
           }}
-          image={RappellingDescentImage.src}
+          image={RappellingDescentImage}
         />
         <FeaturedProgram
           title={`River Rangers`}
           slug={`river-rangers`}
-          description={`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel libero euismod, ullamcorper nisl eget, ultricies nisl.`}
+          description={`Whether standing in the flow and feeling the force of the river's current or racing toward a net to capture stream fish, this is the program for pre-teens (11-13) that will excite and invite them into the adventure of getting into God's handiwork. Studying, capturing, and looking at the details of other living things shows each of us how carefully designed God's world is. Time alone with their Creator and His Word is built in.`}
           ageRange={{
             min: 11,
             max: 13,
           }}
           priceRange={{
-            min: 65,
+            min: 45,
             max: null,
           }}
-          image={BurmaImage.src}
+          image={BurmaImage}
         />
         <FeaturedProgram
           title={`Pollywog Floats`}
@@ -94,27 +104,27 @@ const Programs: React.FC = () => (
           description={`A river starter trip for kids ages 8 to 10 introduces them to a world of fun and faith. They learn canoe skills along with cool ways to learn about fish, birds, flowers, mussels, trees, etc. Water games and mini-studies of creation get them hooked on canoeing creation.`}
           ageRange={{
             min: 8,
-            max: 12,
+            max: 10,
           }}
           priceRange={{
             min: 45,
             max: 90,
           }}
-          image={PaddlingPollywogsImage.src}
+          image={PaddlingPollywogsImage}
         />
         <FeaturedProgram
           title={`Little Solomons`}
           slug={`little-solomons`}
-          description={`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel libero euismod, ullamcorper nisl eget, ultricies nisl.`}
+          description={`In these classes, children learn about our wonderful God through the wonders He has made. They will spend time exploring the plants, birds, and creek critters of Creation; journaling and sketching about the wild wonders they discover; learning to sing of our marvelous, loving Make; and enjoying games and fun with the leaders.`}
           ageRange={{
-            min: 5,
-            max: 10,
+            min: 4,
+            max: 8,
           }}
           priceRange={{
-            min: 36,
+            min: 7,
             max: null,
           }}
-          image={WaterfallImage.src}
+          image={WaterfallImage}
         />
       </div>
     </div>

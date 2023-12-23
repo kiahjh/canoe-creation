@@ -40,6 +40,9 @@ const MainHeader: React.FC<Props> = ({ page, setSidebarOpen }) => {
           Home
         </NavLink>
         <ProgramsDropdown />
+        <NavLink to="/about" selected={page === `/about`}>
+          About
+        </NavLink>
         <NavLink to="/gallery" selected={page === `/gallery`}>
           Gallery
         </NavLink>

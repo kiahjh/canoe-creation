@@ -1,6 +1,7 @@
 import React from "react";
 import cx from "classnames";
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
+import Link from "next/link";
 import type { HeroIcon } from "../lib/types";
 import Chrome from "../components/Chrome";
 
@@ -16,25 +17,47 @@ const GetInvolvedPage: React.FC = () => (
           Want to support Canoe Creation?
         </h1>
         <p className="text-slate-500 text-lg mt-4">
-          Thank you so much for your interest! There's lots of ways you can help
-          out; here's a few to get you started:
+          Thank you for your interest in Canoe Creation! Join with us to declare
+          His power to the next generation. (Ps. 71:18)
         </p>
         <ul className="mt-8 flex flex-col gap-4">
           <WayToHelpOut title="Pray" Icon={ArrowRightIcon}>
-            Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint
-            cillum sint consectetur cupidatat.
+            Receive praise and prayer updates or join online weekly prayer.
           </WayToHelpOut>
           <WayToHelpOut title="Donate" Icon={ArrowRightIcon}>
-            Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint
-            cillum sint consectetur cupidatat.
+            Use the donate button at the top of this page, or mail a check to
+            the address listed in the footer.
           </WayToHelpOut>
           <WayToHelpOut title="Spread the word" Icon={ArrowRightIcon}>
-            Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint
-            cillum sint consectetur cupidatat.
+            Share with those of like mind: family, church, homeschool groups,
+            etc. We also have a{` `}
+            <Link
+              href="https://facebook.com/canoecreationofficial"
+              className="text-emerald-500 underline"
+            >
+              facebook page
+            </Link>
+            .
           </WayToHelpOut>
           <WayToHelpOut title="Volunteer/Internships" Icon={ArrowRightIcon}>
-            Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint
-            cillum sint consectetur cupidatat.
+            <ul className="list-disc ml-4 mt-1">
+              <li>
+                <strong>Internships:</strong> Serve as a river guide/aide.
+                Contact us to inquire{` `}
+                <Link href="/contact" className="text-emerald-500 underline">
+                  here
+                </Link>
+                .
+              </li>
+              <li>
+                <strong>Hands-on volunteer work:</strong> From office help to
+                assisting with trips and upkeep of ministry.
+              </li>
+              <li>
+                <strong>Work camps:</strong> Group onsite work camps combine
+                work projects with creation teaching and fun.
+              </li>
+            </ul>
           </WayToHelpOut>
         </ul>
       </div>

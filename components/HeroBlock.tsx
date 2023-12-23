@@ -22,7 +22,7 @@ const HeroBlock: React.FC = () => {
         if (curImageIndex === 4) setCurImageIndex(0);
         else setCurImageIndex(curImageIndex + 1);
       }
-    }, 5000);
+    }, 6000);
     return () => clearTimeout(id);
   }, [curImageIndex, hasBeenInteracted]);
 
@@ -30,7 +30,7 @@ const HeroBlock: React.FC = () => {
     <div
       className="flex flex-col lg+:flex-row pb-16 pt-12 overflow-hidden"
       style={{
-        background: `linear-gradient(to bottom, white, #ffffffe0), url(${BgPicture.src})`,
+        background: `linear-gradient(to bottom, white, #ffffffe5), url(${BgPicture.src})`,
         backgroundPosition: `center`,
         backgroundSize: `cover`,
       }}
@@ -44,7 +44,7 @@ const HeroBlock: React.FC = () => {
             </span>
           </span>
         </h1>
-        <h3 className="text-center lg+:text-left max-w-2xl lg+:max-w-xl 2xl:max-w-3xl mt-6 text-lg 2xl:text-xl text-slate-500 leading-loose">
+        <h3 className="text-center lg+:text-left max-w-2xl lg+:max-w-xl 2xl:max-w-3xl mt-6 text-lg 2xl:text-xl text-slate-500 leading-8">
           Canoeing beautiful rivers, rappelling 120-foot cliffs, primitive
           camping on islands, and so much more. Come join us this summer for the
           adventure of a lifetime, and see the character of our Creator through
@@ -83,7 +83,7 @@ const HeroBlock: React.FC = () => {
             img={IslandImage}
             title={`River Schools`}
             slug={`river-schools`}
-            description={`Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero laborum nobis eveniet saepe iure sint placeat at. Necessitatibus quam maxime.`}
+            description={`These day and overnight adventures take you down a corridor of praise to the Creator and put in your hands, hearts, and minds the wonders of wildlife and wild places.`}
             ageRange={{ min: 12, max: 20 }}
           />
           <ProgramFeature
@@ -92,7 +92,7 @@ const HeroBlock: React.FC = () => {
             img={RappellingDescentImage}
             title={`Rappelling`}
             slug={`rappelling`}
-            description={`Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero laborum nobis eveniet saepe iure sint placeat at. Necessitatibus quam maxime.`}
+            description={`A journey to the cliffs wakes up the wonder of your heart. Beautiful scenes and trust-building experiences like rappelling and rock climbing bring us to appreciate the Creator.`}
             ageRange={{ min: 12, max: null }}
           />
           <ProgramFeature
@@ -101,7 +101,7 @@ const HeroBlock: React.FC = () => {
             img={CottonwoodFuzziesImage}
             title={`River Rangers`}
             slug={`river-rangers`}
-            description={`Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero laborum nobis eveniet saepe iure sint placeat at. Necessitatibus quam maxime.`}
+            description={`Program for pre-teens (11-13) that will excite and invite them into the adventure of getting into God's handiwork.`}
             ageRange={{ min: 11, max: 13 }}
           />
           <ProgramFeature
@@ -110,8 +110,8 @@ const HeroBlock: React.FC = () => {
             img={SwimmingPollywogsImage}
             title={`Pollywog Floats`}
             slug={`pollywogs`}
-            description={`Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero laborum nobis eveniet saepe iure sint placeat at. Necessitatibus quam maxime.`}
-            ageRange={{ min: 8, max: 12 }}
+            description={`A river starter trip for kids ages 8 to 10 introduces them to a world of fun and faith.`}
+            ageRange={{ min: 8, max: 10 }}
           />
           <ProgramFeature
             index={4}
@@ -119,7 +119,7 @@ const HeroBlock: React.FC = () => {
             img={WaterfallImage}
             title={`Little Solomon Classes`}
             slug={`little-solomons`}
-            description={`Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero laborum nobis eveniet saepe iure sint placeat at. Necessitatibus quam maxime.`}
+            description={`In these classes, children learn about our wonderful God through the wonders He has made.`}
             ageRange={{ min: 5, max: 10 }}
           />
         </div>
