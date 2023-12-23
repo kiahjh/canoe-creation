@@ -11,9 +11,9 @@ export const getStaticProps: GetStaticProps = async () => {
   );
   const images = getImages(
     `**/public/river-rangers/*.jpg`,
+    `landing`,
     `cottonwood-fuzzies`,
     `catfish`,
-    `burma`,
   );
   return {
     props: { events, images },
@@ -30,7 +30,7 @@ const RiverRangers: React.FC<Props> = ({ events, images }) => (
     title={`River Rangers`}
     page={`/river-rangers`}
     events={events}
-    paragraph1={`Whether standing in the flow and feeling the force of the river's current or racing toward a net to capture stream fish, this is the program for pre-teens (11-13) that will excite and invite them into the adventure of getting into God's handiwork. Studying, capturing, and looking at the details of other living things shows each of us how carefully designed God's world is. Time alone with their Creator and His Word is built in. Grow in your canoeing skills and jump into the goofy fun!`}
+    paragraph1={`Whether standing in the flow and feeling the force of the river's current or racing toward a net to capture stream fish, this is the program for pre-teens that will excite and invite them into the adventure of getting into God's handiwork. Studying, capturing, and looking at the details of other living things shows each of us how carefully designed God's world is. Time alone with their Creator and His Word is built in. Grow in your canoeing skills and jump into the goofy fun!`}
     numDaysRange={{
       min: 1,
       max: 1,
@@ -40,7 +40,7 @@ const RiverRangers: React.FC<Props> = ({ events, images }) => (
       max: 13,
     }}
     priceRange={{
-      min: 65,
+      min: 45,
       max: null,
     }}
     images={images}

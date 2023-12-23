@@ -54,10 +54,6 @@ const Rappelling: React.FC<Props> = ({ events, images }) => (
         name: `Registration form`,
         url: `/registration/rappelling-registration.pdf`,
       },
-      {
-        name: `Rules and memorandum`,
-        url: `/registration/rappelling-memorandum.pdf`,
-      },
     ]}
   />
 );

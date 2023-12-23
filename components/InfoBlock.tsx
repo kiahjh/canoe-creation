@@ -27,6 +27,7 @@ const InfoBlock: React.FC<Props> = ({ mostRecentNewsfeedPost }) => {
         <div className="bg-[#20b3c5] p-3 rounded-3xl flex justify-between lg:items-center flex-col lg:flex-row">
           <div className="flex items-center mr-8 mb-8 lg:mb-0">
             <div className="w-12 h-12 rounded-2xl bg-cyan-100 mr-6 flex justify-center items-center shrink-0">
+              {` `}
               <MegaphoneIcon className="h-7 text-cyan-800" />
             </div>
             <div className="flex flex-col">
@@ -118,7 +119,7 @@ const InfoBlock: React.FC<Props> = ({ mostRecentNewsfeedPost }) => {
               fadeIn
               slug="pollywogs"
               priceRange={{ min: 45, max: 90 }}
-              ageRange={{ min: 8, max: 12 }}
+              ageRange={{ min: 8, max: 10 }}
               title={`Pollywog floats`}
               description={`A river starter trip for kids ages 8 to 10 introduces them to a world of fun and faith. They learn canoe skills along with cool ways to learn about fish, birds, flowers, mussels, trees, etc. Water games and mini-studies of creation get them hooked on canoeing creation.`}
               image={PollywogImage}
@@ -147,7 +148,7 @@ const InfoBlock: React.FC<Props> = ({ mostRecentNewsfeedPost }) => {
       </div>
       <div className="p-6 sm:p-8 md:p-12 lg:p-20 md:pb-8 lg:pb-12">
         <p className="bg-gradient-to-b from-emerald-50 to-emerald-100 p-8 sm:p-12 md:p-20 text-xl md:text-2xl text-center text-emerald-950/80 font-medium rounded-3xl">
-          Canoe Creation has been running River Schools and otherprograms for
+          Canoe Creation has been running River Schools and other programs for
           over 15 years and is dedicated to encouraging your faith by what you
           can see clearly in God’s Creation.
         </p>

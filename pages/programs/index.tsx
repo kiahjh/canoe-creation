@@ -93,7 +93,7 @@ const Programs: React.FC = () => (
             max: 13,
           }}
           priceRange={{
-            min: 65,
+            min: 45,
             max: null,
           }}
           image={BurmaImage}
@@ -104,7 +104,7 @@ const Programs: React.FC = () => (
           description={`A river starter trip for kids ages 8 to 10 introduces them to a world of fun and faith. They learn canoe skills along with cool ways to learn about fish, birds, flowers, mussels, trees, etc. Water games and mini-studies of creation get them hooked on canoeing creation.`}
           ageRange={{
             min: 8,
-            max: 12,
+            max: 10,
           }}
           priceRange={{
             min: 45,
@@ -117,11 +117,11 @@ const Programs: React.FC = () => (
           slug={`little-solomons`}
           description={`In these classes, children learn about our wonderful God through the wonders He has made. They will spend time exploring the plants, birds, and creek critters of Creation; journaling and sketching about the wild wonders they discover; learning to sing of our marvelous, loving Make; and enjoying games and fun with the leaders.`}
           ageRange={{
-            min: 5,
-            max: 10,
+            min: 4,
+            max: 8,
           }}
           priceRange={{
-            min: 36,
+            min: 7,
             max: null,
           }}
           image={WaterfallImage}

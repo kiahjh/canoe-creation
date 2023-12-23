@@ -11,7 +11,7 @@ export const getStaticProps: GetStaticProps = async () => {
   );
   const images = getImages(
     `**/public/pollywogs/*.jpg`,
-    `paddling-pollywogs`,
+    `net-catch`,
     `girls-canoeing`,
     `kids-splashing`,
   );
@@ -42,7 +42,7 @@ const Pollywogs: React.FC<Props> = ({ events, images }) => (
     }}
     ageRange={{
       min: 8,
-      max: 12,
+      max: 10,
     }}
     priceRange={{
       min: 45,

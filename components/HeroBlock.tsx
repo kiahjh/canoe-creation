@@ -22,7 +22,7 @@ const HeroBlock: React.FC = () => {
         if (curImageIndex === 4) setCurImageIndex(0);
         else setCurImageIndex(curImageIndex + 1);
       }
-    }, 5000);
+    }, 6000);
     return () => clearTimeout(id);
   }, [curImageIndex, hasBeenInteracted]);
 
@@ -111,7 +111,7 @@ const HeroBlock: React.FC = () => {
             title={`Pollywog Floats`}
             slug={`pollywogs`}
             description={`A river starter trip for kids ages 8 to 10 introduces them to a world of fun and faith.`}
-            ageRange={{ min: 8, max: 12 }}
+            ageRange={{ min: 8, max: 10 }}
           />
           <ProgramFeature
             index={4}

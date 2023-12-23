@@ -27,18 +27,18 @@ interface Props {
 
 const LittleSolomons: React.FC<Props> = ({ events, images }) => (
   <ProgramTemplate
-    title={`Little Solomons (2023)`}
+    title={`Little Solomons`}
     page={`/little-solomons`}
     events={events}
-    paragraph1={`King Solomon, the wisest man in the world, studied lizards, trees, bird, fish and flowers in order to know God better (I Kings 4:33). In these classes, children learn about our wonderful God through the wonders He has made. They will spend time exploring the plants, birds, and creek critters of Creation; journaling and sketching about the wild wonders they discover; learning to sing of our marvelous, loving Make; and enjoying games and fun with the leaders.`}
-    paragraph2="Join us for this captivating class with your little ones! Bring a change of clothes and old shoes or river shoes for your children, as we will be spending some time in the creek for all the classes. $36/child for 6 weeks. Parents and younger siblings are welcome to attend at no cost. Every Wednesday starting September 6th at 2:00-3:30pm. Classes held at our (Al and Amy Parker) home: 6400 Cutler Lake Rd. Blue Rock, OH 43720."
+    paragraph1={`King Solomon, the wisest man in the world, studied lizards, trees, bird, fish, and flowers in order to know God better (1 Kings 4:33). In these classes, children learn about our wonderful God through the wonders He has made. Join us for this captivating class with your little ones! Themed classes include: Stream Class, Fruits of Fall, Wildflowers. Events are 1.5 hours long, and include discovery hikes, journaling, games, and singing.`}
+    paragraph2="Held at the Parker Home (6400 Cutler Lake Rd., Blue Rock, Oh 43720). Scheduled periodically through the year; contact us for the next session or one day event. Great for homeschool groups, families, or church programs. Parents and younger siblings may attend free of charge."
     numDaysRange={null}
     ageRange={{
-      min: 5,
-      max: 10,
+      min: 4,
+      max: 8,
     }}
     priceRange={{
-      min: 36,
+      min: 7,
       max: null,
     }}
     images={images}

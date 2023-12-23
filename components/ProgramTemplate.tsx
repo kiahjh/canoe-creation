@@ -227,6 +227,16 @@ const ProgramTemplate: React.FC<Props> = ({
                     {regLink.name}
                   </Link>
                 ))}
+                <div className="text-center text-slate-500">
+                  Send to{` `}
+                  <a
+                    href="mailto:amy@canoecreation.org"
+                    className="text-cyan-600 underline cursor-pointer"
+                  >
+                    amy@canoecreation.org
+                  </a>
+                  , or mail to 6400 Cutler Lake Rd., Blue Rock, OH 43720
+                </div>
               </div>
             )}
             <ContactForm className="bg-slate-100 sm:bg-slate-50 rounded-b-3xl sm:rounded-t-3xl p-4 xs:p-6 lg+p-8" />
