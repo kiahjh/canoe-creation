@@ -61,51 +61,31 @@ const Gallery: React.FC<Props> = ({ images }) => (
       </h1>
       <div className="mt-8 sm:mt-16 flex flex-col gap-8">
         <Section
-          description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt maiores error
-          aspernatur ratione blanditiis id odit architecto, nam fugiat eum aliquid dolorum
-          quia placeat modi nobis quaerat, tempore illum repellat? Lorem ipsum dolor, sit
-          amet consectetur adipisicing elit. Blanditiis dicta ab voluptates asperiores
-          suscipit rerum."
+          description="Here are the premier trips for young people who want to delve deep in study of creation and honor God in the process. These day and overnight adventures take you down a corridor of praise to the Creator and put in your hands, hearts, and minds the wonders of wildlife and wild places."
           slug="river-schools"
           title="River schools"
           images={images.riverSchools}
         />
         <Section
-          description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt maiores error
-          aspernatur ratione blanditiis id odit architecto, nam fugiat eum aliquid dolorum
-          quia placeat modi nobis quaerat, tempore illum repellat? Lorem ipsum dolor, sit
-          amet consectetur adipisicing elit. Blanditiis dicta ab voluptates asperiores
-          suscipit rerum."
+          description="A river starter trip for kids ages 8 to 10 introduces them to a world of fun and faith. They learn canoe skills along with cool ways to learn about fish, birds, flowers, mussels, trees, etc. Water games and mini-studies of creation get them hooked on canoeing creation."
           slug="pollywogs"
           title="Pollywog floats"
           images={images.pollywogs}
         />
         <Section
-          description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt maiores error
-          aspernatur ratione blanditiis id odit architecto, nam fugiat eum aliquid dolorum
-          quia placeat modi nobis quaerat, tempore illum repellat? Lorem ipsum dolor, sit
-          amet consectetur adipisicing elit. Blanditiis dicta ab voluptates asperiores
-          suscipit rerum."
+          description="Whether standing in the flow and feeling the force of the river's current or racing toward a net to capture stream fish, this is the program for pre-teens (11-13) that will excite and invite them into the adventure of getting into God's handiwork. Studying, capturing, and looking at the details of other living things shows each of us how carefully designed God's world is. Time alone with their Creator and His Word is built in."
           slug="river-rangers"
           title="River rangers"
           images={images.riverRangers}
         />
         <Section
-          description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt maiores error
-          aspernatur ratione blanditiis id odit architecto, nam fugiat eum aliquid dolorum
-          quia placeat modi nobis quaerat, tempore illum repellat? Lorem ipsum dolor, sit
-          amet consectetur adipisicing elit. Blanditiis dicta ab voluptates asperiores
-          suscipit rerum."
+          description="A journey to the cliffs wakes up the wild wonder of your heart. Beautiful scenes and trust-building experiences like rappelling and rock climbing bring us to appreciate the Creator in more ways than just the fun of it."
           slug="rappelling"
           title="Rappelling"
           images={images.rappelling}
         />
         <Section
-          description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt maiores error
-          aspernatur ratione blanditiis id odit architecto, nam fugiat eum aliquid dolorum
-          quia placeat modi nobis quaerat, tempore illum repellat? Lorem ipsum dolor, sit
-          amet consectetur adipisicing elit. Blanditiis dicta ab voluptates asperiores
-          suscipit rerum."
+          description="In these classes, children learn about our wonderful God through the wonders He has made. They will spend time exploring the plants, birds, and creek critters of Creation; journaling and sketching about the wild wonders they discover; learning to sing of our marvelous, loving Make; and enjoying games and fun with the leaders."
           slug="little-solomons"
           title="Little Solomon classes"
           images={images.littleSolomons}
