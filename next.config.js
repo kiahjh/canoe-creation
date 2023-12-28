@@ -2,7 +2,14 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: [`cdn.cosmicjs.com`],
+    remotePatterns: [
+      {
+        protocol: `https`,
+        hostname: `cdn.cosmicjs.com`,
+        port: ``,
+        pathname: `/**`,
+      },
+    ],
   },
 };
 

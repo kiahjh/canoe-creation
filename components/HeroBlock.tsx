@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import cx from "classnames";
 
 import Image from "next/image";
+import NextBgImage from "next-bg-image";
 import type { StaticImageData } from "next/image";
 import IslandImage from "../public/river-schools/island.jpg";
 import BgPicture from "../public/river-schools/river-drama-shot.jpg";
@@ -27,13 +28,12 @@ const HeroBlock: React.FC = () => {
   }, [curImageIndex, hasBeenInteracted]);
 
   return (
-    <div
+    <NextBgImage
+      as="section"
+      src={[`linear-gradient(to bottom, white, #ffffffe5)`, BgPicture]}
+      position="center"
+      size="cover"
       className="flex flex-col lg+:flex-row pb-16 pt-12 overflow-hidden"
-      style={{
-        background: `linear-gradient(to bottom, white, #ffffffe5), url(${BgPicture.src})`,
-        backgroundPosition: `center`,
-        backgroundSize: `cover`,
-      }}
     >
       <div className="pl-8 lg:pl-16 xl:pl-24 pt-4 sm:pt-8 lg+:pt-20 xl:pt-20 pr-8 lg:pr-16 xl:pr-16 pb-20 lg+:pb-24 shrink-0 flex flex-col items-center lg+:items-start">
         <h1 className="text-4xl xs:text-5xl md:text-6xl 2xl:text-7xl font-raleway text-center lg+:text-left max-w-2xl lg+:max-w-xl 2xl:max-w-3xl !leading-tight relative">
@@ -135,7 +135,7 @@ const HeroBlock: React.FC = () => {
           ))}
         </div>
       </div>
-    </div>
+    </NextBgImage>
   );
 };
 

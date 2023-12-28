@@ -191,7 +191,6 @@ const ProgramTemplate: React.FC<Props> = ({
                       width={700}
                       height={300}
                       className="h-40 sm:h-52 lg:h-40 xl:h-64 w-0 flex-grow object-center object-cover rounded-3xl hover:scale-[102%] hover:shadow-lg transition duration-200 cursor-pointer"
-                      style={{ backgroundImage: `url(${images[2]})` }}
                       onClick={() => {
                         setImageIndex(2);
                         setImageViewerOpen(true);
