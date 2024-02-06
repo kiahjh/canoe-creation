@@ -20,6 +20,11 @@ const Calendar: React.FC<Props> = ({ events }) => (
               (event) =>
                 months[new Date(event.dateRange[0]).getMonth()] === month,
             )
+            .sort(
+              (a, b) =>
+                new Date(a.dateRange[0]).getTime() -
+                new Date(b.dateRange[0]).getTime(),
+            )
             .map((event) => (
               <EventCard event={event} key={event.dateRange[0]} />
             ))}
