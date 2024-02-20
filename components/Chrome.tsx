@@ -26,6 +26,7 @@ interface Props {
   };
   title: string;
   description: string;
+  image?: string;
 }
 
 const Chrome: React.FC<Props> = ({
@@ -34,6 +35,7 @@ const Chrome: React.FC<Props> = ({
   imageViewer,
   title,
   description,
+  image = `main.png`,
 }) => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
@@ -48,6 +50,12 @@ const Chrome: React.FC<Props> = ({
         />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
+        <meta
+          property="og:image"
+          content={`https://canoecreation.org/og-images/${image}`}
+        />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
         <link rel="icon" type="image/png" href="/favicon.png" />
       </Head>
       <div className="min-h-screen flex flex-col relative">
