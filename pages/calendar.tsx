@@ -22,6 +22,7 @@ const Calendar: React.FC<Props> = ({ events }) => (
     page="/calendar"
     title="Canoe Creation | Calendar"
     description="Canoe Creation's schedule of events for the season."
+    image="calendar.png"
   >
     <CalendarBlock events={events} />
     <section className="flex justify-center items-center pb-20 xs:pb-20 sm:pb-20 pt-0 sm:pt-6 p-0 xs:p-8 sm:p-12 relative">
