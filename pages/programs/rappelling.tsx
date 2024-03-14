@@ -45,7 +45,7 @@ const Rappelling: React.FC<Props> = ({ events, images }) => (
       max: null,
     }}
     priceRange={{
-      min: 70,
+      min: 75,
       max: null,
     }}
     images={images}

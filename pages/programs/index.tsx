@@ -8,6 +8,7 @@ import BurmaImage from "../../public/river-rangers/burma.jpg";
 import PaddlingPollywogsImage from "../../public/pollywogs/paddling-pollywogs.jpg";
 import WaterfallImage from "../../public/little-solomons/waterfall.jpg";
 import Sparkle from "../../components/Sparkle";
+import PlanYourOwnTripBlock from "../../components/PlanYourOwnTripBlock";
 
 const Programs: React.FC = () => (
   <Chrome
@@ -79,7 +80,7 @@ const Programs: React.FC = () => (
             max: null,
           }}
           priceRange={{
-            min: 70,
+            min: 75,
             max: null,
           }}
           image={RappellingDescentImage}
@@ -128,6 +129,7 @@ const Programs: React.FC = () => (
         />
       </div>
     </div>
+    <PlanYourOwnTripBlock />
   </Chrome>
 );
 

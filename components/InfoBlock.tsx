@@ -127,7 +127,7 @@ const InfoBlock: React.FC<Props> = ({ mostRecentNewsfeedPost }) => {
             <FeaturedProgram
               fadeIn
               slug="rappelling"
-              priceRange={{ min: 70, max: null }}
+              priceRange={{ min: 75, max: null }}
               ageRange={{ min: 12, max: null }}
               title={`Rappelling`}
               description={`A journey to the cliffs wakes up the wild wonder of your heart. Beautiful scenes and trust-building experiences like rappelling and rock climbing bring us to appreciate the Creator in more ways than just the fun of it.`}
