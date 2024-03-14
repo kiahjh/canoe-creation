@@ -5,6 +5,7 @@ import Chrome from "../components/Chrome";
 import CalendarBlock from "../components/CalendarBlock";
 import { getAllEvents } from "../lib/getObjects";
 import ContactForm from "../components/ContactForm";
+import PlanYourOwnTripBlock from "../components/PlanYourOwnTripBlock";
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const events = await getAllEvents();
@@ -25,6 +26,7 @@ const Calendar: React.FC<Props> = ({ events }) => (
     image="calendar.png"
   >
     <CalendarBlock events={events} />
+    <PlanYourOwnTripBlock />
     <section className="flex justify-center items-center pb-20 xs:pb-20 sm:pb-20 pt-0 sm:pt-6 p-0 xs:p-8 sm:p-12 relative">
       <div className="w-full lg:w-3/4 h-1/2 absolute lg:rounded-3xl bg-emerald-50" />
       <ContactForm className="bg-slate-50 p-6 sm:p-8 xs:rounded-3xl w-full md:w-176 relative bg-opacity-80 backdrop-blur-3xl xs:shadow-xl" />
