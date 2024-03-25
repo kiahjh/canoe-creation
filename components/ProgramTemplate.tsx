@@ -234,7 +234,11 @@ const ProgramTemplate: React.FC<Props> = ({
                   >
                     amy@canoecreation.org
                   </a>
-                  , or mail to 6400 Cutler Lake Rd., Blue Rock, OH 43720
+                  , or mail to 6400 Cutler Lake Rd., Blue Rock, OH 43720.
+                </div>
+                <div className="text-center text-slate-500">
+                  For families with 3 or more participants, ask about our
+                  special discount.
                 </div>
               </div>
             )}
