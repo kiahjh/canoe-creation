@@ -1,7 +1,7 @@
-import type { EventType, FormattedEventType } from "./types";
+import type { CCEvent } from "./types";
 
-export function formatEventType(eventType: EventType): FormattedEventType {
-  switch (eventType) {
+export function formatEventType(event: CCEvent): string {
+  switch (event.type) {
     case `little-solomons`:
       return `Little Solomons`;
     case `pollywogs`:
@@ -12,5 +12,7 @@ export function formatEventType(eventType: EventType): FormattedEventType {
       return `River Rangers`;
     case `river-schools`:
       return `River School`;
+    case `other`:
+      return event.otherEventType ?? `Other`;
   }
 }

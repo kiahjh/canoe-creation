@@ -34,6 +34,7 @@ export type APIEvent = {
       key: FormattedEventType;
       value: EventType;
     };
+    other_event_type: string | null;
     location: string | null;
     special_notes: string | null;
     description: string | null;
@@ -88,6 +89,7 @@ export type CCEvent = {
   slug: string;
   description: string | null;
   type: EventType;
+  otherEventType: string | null;
   costPerPerson: number | null;
   dateRange: [string, string];
   ageRange: [number | null, number | null];
@@ -120,13 +122,15 @@ export type EventType =
   | "river-schools"
   | "pollywogs"
   | "river-rangers"
-  | "little-solomons";
+  | "little-solomons"
+  | "other";
 export type FormattedEventType =
   | "Rappelling"
   | "River School"
   | "Pollywog Float"
   | "River Rangers"
-  | "Little Solomons";
+  | "Little Solomons"
+  | "Other";
 
 export type Status = "open" | "full" | "private";
 export type FormattedStatus = "Open" | "Full" | "Private";

@@ -31,6 +31,7 @@ export function apiToEvent(apiEvent: APIEvent): CCEvent {
     slug: apiEvent.slug,
     id: apiEvent.id,
     type: apiEvent.metadata.event_type.value,
+    otherEventType: apiEvent.metadata.other_event_type,
     dateRange: [
       apiEvent.metadata.date_range.start_day,
       apiEvent.metadata.date_range.end_day ||
@@ -60,6 +61,7 @@ export function apiToNewsfeedPost(
   };
 }
 
+// TODO: verify that this is a useless function
 export function eventTypeToSlug(eventType: EventType): string {
   switch (eventType) {
     case `pollywogs`:
@@ -72,5 +74,7 @@ export function eventTypeToSlug(eventType: EventType): string {
       return `river-schools`;
     case `rappelling`:
       return `rappelling`;
+    default:
+      return `other`;
   }
 }

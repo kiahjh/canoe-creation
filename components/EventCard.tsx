@@ -46,7 +46,8 @@ const EventCard: React.FC<Props> = ({ event, withoutInfoButton }) => {
   const formattedEndDate = `${months[endDate.getMonth()]} ${
     endDate.getDate() + 1
   }`;
-  const eventIsSpecial = !event.title.startsWith(formattedStartDate);
+  const eventIsSpecial =
+    !event.title.startsWith(formattedStartDate) || event.type === `other`;
   const eventAlreadyHappened = endDate < new Date();
   if (eventAlreadyHappened) {
     badgeColors = `bg-slate-100 text-slate-500`;
@@ -77,11 +78,11 @@ const EventCard: React.FC<Props> = ({ event, withoutInfoButton }) => {
       <div className="flex justify-between items-start p-4 pb-2">
         <div className="mr-8">
           <h4 className="capitalize text-xl font-bold">
-            {eventIsSpecial ? event.title : formatEventType(event.type)}
+            {eventIsSpecial ? event.title : formatEventType(event)}
           </h4>
           {event.title && (
             <h5 className="capitalize font-medium text-slate-600">
-              {eventIsSpecial && formatEventType(event.type)}
+              {eventIsSpecial && formatEventType(event)}
             </h5>
           )}
         </div>
