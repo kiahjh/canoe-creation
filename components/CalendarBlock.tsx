@@ -53,12 +53,11 @@ const CalendarBlock: React.FC<Props> = ({ events }) => (
     <h2 className={cx(`text-4xl sm:text-5xl font-raleway`)}>
       Calendar of Events{` `}
       <span className="bg-gradient-to-r from-cyan-700 to-cyan-500 bg-clip-text text-transparent relative sm:whitespace-nowrap">
-        for 2024<span className="absolute -right-10 -bottom-4 -rotate-6 text-pink-500 text-xl w-max animate-pulse hidden sm:block">2025 dates coming soon!</span>
+        for 2025
       </span>
     </h2>
-    <h3 className="font-bold text-pink-500 mt-2 text-xl block sm:hidden">2025 dates coming soon!</h3>
-    <p className="max-w-3xl mt-8 text-lg text-slate-600 mb-12">
-      Below are our currently scheduled events for 2024. To request an aditional
+    <p className="max-w-3xl mt-8 text-lg text-slate-600">
+      Below are our currently scheduled events for 2025. To request an aditional
       trip not already listed, feel free to{` `}
       <Link
         href={`/contact`}
@@ -67,6 +66,18 @@ const CalendarBlock: React.FC<Props> = ({ events }) => (
         contact us
       </Link>
       !
+    </p>
+    <p className="max-w-3xl mt-4 text-lg text-slate-600 mb-12">
+      <b>Note:</b> we are offering several overnight events as well this year, please
+      {" "}
+      <Link
+        href={`/contact`}
+        className="text-emerald-600 font-medium border-b-2 hover:border-b-4 hover:text-emerald-700 [transition:150ms] border-emerald-300"
+      >
+        inquire
+      </Link>
+      {" "}
+      to find out more!
     </p>
     <Calendar events={events} />
   </div>

@@ -39,13 +39,9 @@ const EventCard: React.FC<Props> = ({ event, withoutInfoButton }) => {
   }
 
   const startDate = new Date(event.dateRange[0]);
-  const formattedStartDate = `${months[startDate.getMonth()]} ${
-    startDate.getDate() + 1
-  }`;
+  const formattedStartDate = `${months[startDate.getMonth()]} ${startDate.getDate() + 1}`;
   const endDate = new Date(event.dateRange[1]);
-  const formattedEndDate = `${months[endDate.getMonth()]} ${
-    endDate.getDate() + 1
-  }`;
+  const formattedEndDate = `${months[endDate.getMonth()]} ${endDate.getDate() + 1}`;
   const eventIsSpecial =
     !event.title.startsWith(formattedStartDate) || event.type === `other`;
   const eventAlreadyHappened = endDate < new Date();
@@ -61,20 +57,22 @@ const EventCard: React.FC<Props> = ({ event, withoutInfoButton }) => {
       )}
       ref={ref}
     >
-      <div
-        className={cx(
-          `w-full h-full absolute top-0 left-0 bg-white/80 opacity-0 hover:opacity-100 transition-opacity duration-300 justify-center items-center group`,
-          withoutInfoButton ? `hidden` : `flex`,
-        )}
-      >
-        <Link
-          href={`/programs/${eventTypeToSlug(event.type)}`}
-          className="flex items-center bg-emerald-100 px-6 py-3 rounded-full text-emerald-700 font-medium hover:bg-emerald-200 opacity-0 group-hover:opacity-100 transition duration-500 translate-y-4 group-hover:translate-y-0 shadow-sm"
+      {event.type !== `other` && (
+        <div
+          className={cx(
+            `w-full h-full absolute top-0 left-0 bg-white/80 opacity-0 hover:opacity-100 transition-opacity duration-300 justify-center items-center group`,
+            withoutInfoButton ? `hidden` : `flex`,
+          )}
         >
-          <ArrowRightCircleIcon className="h-6 mr-2" />
-          Find out more
-        </Link>
-      </div>
+          <Link
+            href={`/programs/${eventTypeToSlug(event.type)}`}
+            className="flex items-center bg-emerald-100 px-6 py-3 rounded-full text-emerald-700 font-medium hover:bg-emerald-200 opacity-0 group-hover:opacity-100 transition duration-500 translate-y-4 group-hover:translate-y-0 shadow-sm"
+          >
+            <ArrowRightCircleIcon className="h-6 mr-2" />
+            Find out more
+          </Link>
+        </div>
+      )}
       <div className="flex justify-between items-start p-4 pb-2">
         <div className="mr-8">
           <h4 className="capitalize text-xl font-bold">
