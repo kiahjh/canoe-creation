@@ -56,7 +56,7 @@ const CalendarBlock: React.FC<Props> = ({ events }) => (
         for 2025
       </span>
     </h2>
-    <p className="max-w-3xl mt-8 text-lg text-slate-600">
+    <p className="max-w-3xl mt-6 text-lg text-slate-600 mb-12">
       Below are our currently scheduled events for 2025. To request an aditional
       trip not already listed, feel free to{` `}
       <Link
@@ -66,18 +66,6 @@ const CalendarBlock: React.FC<Props> = ({ events }) => (
         contact us
       </Link>
       !
-    </p>
-    <p className="max-w-3xl mt-4 text-lg text-slate-600 mb-12">
-      <b>Note:</b> we are offering several overnight events as well this year, please
-      {" "}
-      <Link
-        href={`/contact`}
-        className="text-emerald-600 font-medium border-b-2 hover:border-b-4 hover:text-emerald-700 [transition:150ms] border-emerald-300"
-      >
-        inquire
-      </Link>
-      {" "}
-      to find out more!
     </p>
     <Calendar events={events} />
   </div>
