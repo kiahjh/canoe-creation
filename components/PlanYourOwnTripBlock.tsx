@@ -17,6 +17,9 @@ const PlanYourOwnTripBlock: React.FC = () => (
         to talk about how we can help facilitate an event for your youth group,
         scouts, or homeschoolers.
       </p>
+      <p className="text-base xs:text-lg sm:text-xl text-emerald-700 text-center max-w-4xl mt-8 font-bold">
+        First timers get a 20% discount!
+      </p>
     </div>
   </div>
 );

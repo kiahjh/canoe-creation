@@ -53,11 +53,11 @@ const CalendarBlock: React.FC<Props> = ({ events }) => (
     <h2 className={cx(`text-4xl sm:text-5xl font-raleway`)}>
       Calendar of Events{` `}
       <span className="bg-gradient-to-r from-cyan-700 to-cyan-500 bg-clip-text text-transparent relative sm:whitespace-nowrap">
-        for 2025
+        for 2026
       </span>
     </h2>
     <p className="max-w-3xl mt-6 text-lg text-slate-600 mb-12">
-      Below are our currently scheduled events for 2025. To request an aditional
+      Below are our currently scheduled events for 2026. To request an aditional
       trip not already listed, feel free to{` `}
       <Link
         href={`/contact`}
