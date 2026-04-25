@@ -36,7 +36,7 @@ const Newsfeed: React.FC<Props> = ({ newsfeedPosts }) => (
         <span className="relative">Canews Feed</span>
       </h1>
       {newsfeedPosts.map((post, index) => (
-        <div className="flex max-w-3xl" key={post.id}>
+        <div className="flex w-full max-w-3xl" key={post.id}>
           <MegaphoneIcon
             className={cx(
               `h-8 relative top-[96px] text-cyan-500 shrink-0 hidden sm:block`,
@@ -53,7 +53,7 @@ const Newsfeed: React.FC<Props> = ({ newsfeedPosts }) => (
                 `!border-b-4 !rounded-bl-3xl`,
             )}
           />
-          <div key={post.id} className="pt-16">
+          <div key={post.id} className="min-w-0 flex-1 pt-16">
             <h3
               className="font-bold bg-gradient-to-r from-cyan-700 to-cyan-500 w-fit bg-clip-text text-transparent"
               id={post.slug}
@@ -65,7 +65,7 @@ const Newsfeed: React.FC<Props> = ({ newsfeedPosts }) => (
             </h2>
             <p
               dangerouslySetInnerHTML={{ __html: post.content }}
-              className="prose sm:prose-p:text-lg prose-p:text-slate-500 sm:prose-p:leading-8"
+              className="prose max-w-none sm:prose-p:text-lg prose-p:text-slate-500 sm:prose-p:leading-8"
             />
           </div>
         </div>

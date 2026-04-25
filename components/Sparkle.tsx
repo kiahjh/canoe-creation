@@ -9,22 +9,22 @@ interface Props {
 }
 
 const Sparkle: React.FC<Props> = ({ size, position, color, className }) => {
-  let bgColor = "";
+  let bgColor = ``;
   switch (color) {
-    case "emerald":
-      bgColor = "bg-gradient-to-b from-emerald-200 to-emerald-500";
+    case `emerald`:
+      bgColor = `bg-gradient-to-b from-emerald-200 to-emerald-500`;
       break;
-    case "cyan":
-      bgColor = "bg-gradient-to-b from-cyan-200 to-cyan-500";
+    case `cyan`:
+      bgColor = `bg-gradient-to-b from-cyan-200 to-cyan-500`;
       break;
-    case "yellow":
-      bgColor = "bg-gradient-to-b from-yellow-100 to-yellow-400";
+    case `yellow`:
+      bgColor = `bg-gradient-to-b from-yellow-100 to-yellow-400`;
       break;
   }
 
   return (
     <div
-      className={cx("absolute", bgColor, position, className)}
+      className={cx(`absolute`, bgColor, position, className)}
       style={{ width: size, height: size }}
     >
       <div
