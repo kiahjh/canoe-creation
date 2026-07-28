@@ -109,12 +109,23 @@ export type BlogPost = {
   createdAt: string;
 };
 
+export type CanoeCreationVideo = {
+  youtubeId: string;
+  title: string;
+  eyebrow: string;
+  context: string;
+  description: string;
+  thumbnail: string;
+  youtubeUrl: string;
+};
+
 export type NewsfeedPost = {
   title: string;
   content: string;
   slug: string;
   id: string;
   createdAt: string;
+  video?: CanoeCreationVideo;
 };
 
 export type EventType =

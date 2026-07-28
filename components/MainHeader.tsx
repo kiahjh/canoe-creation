@@ -25,14 +25,14 @@ const MainHeader: React.FC<Props> = ({ page, setSidebarOpen }) => {
     >
       <Logo style={{ opacity: `${100 - scrollY * 2}%` }} />
       <button
-        className="p-2 bg-slate-50 hover:bg-slate-100 active:scale-95 active:bg-slate-200 rounded-xl transition duration-100 lg:hidden"
+        className="p-2 bg-slate-50 hover:bg-slate-100 active:scale-95 active:bg-slate-200 rounded-xl transition duration-100 xl:hidden"
         onClick={() => setSidebarOpen(true)}
       >
         <Bars3Icon className="h-8 text-slate-600" />
       </button>
       <nav
         className={cx(
-          `items-center py-2 px-4 space-x-2 rounded-2xl bg-white fixed right-4 transition duration-300 hidden lg:flex`,
+          `items-center py-2 px-4 space-x-2 rounded-2xl bg-white fixed right-4 transition duration-300 hidden xl:flex`,
           scrollY > 0 && `shadow-lg`,
         )}
       >
@@ -48,6 +48,9 @@ const MainHeader: React.FC<Props> = ({ page, setSidebarOpen }) => {
         </NavLink>
         <NavLink to="/calendar" selected={page === `/calendar`}>
           Calendar
+        </NavLink>
+        <NavLink to="/newsfeed" selected={page === `/newsfeed`}>
+          What&apos;s New
         </NavLink>
         <NavLink to="/blog" selected={page === `/blog`}>
           Blog

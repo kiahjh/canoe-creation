@@ -32,7 +32,7 @@ const InfoBlock: React.FC<Props> = ({ mostRecentNewsfeedPost }) => {
             </div>
             <div className="flex flex-col">
               <h4 className="text-cyan-100 font-medium">
-                From the Canews Feed:
+                Latest from What&apos;s New:
               </h4>
               <h3 className="text-xl sm:text-2xl font-inter text-white">
                 {mostRecentNewsfeedPost.title}
@@ -41,13 +41,13 @@ const InfoBlock: React.FC<Props> = ({ mostRecentNewsfeedPost }) => {
           </div>
           <Button
             type="link"
-            to={`/newsfeed`}
+            to={`/newsfeed#${mostRecentNewsfeedPost.slug}`}
             color="secondary"
             size="md"
             icon="arrow-circle-right"
             className="self-end lg:self-center !bg-cyan-200/20 !text-white hover:!bg-cyan-200/30"
           >
-            Read announcement
+            View update
           </Button>
         </div>
         <div className="flex flex-col lg+:flex-row items-stretch lg+:space-x-12 space-y-8 sm:space-y-12 lg+:space-y-0 mt-12">

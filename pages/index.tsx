@@ -7,6 +7,7 @@ import CalendarBlock from "../components/CalendarBlock";
 import { getAllEvents, getAllNewsfeedPosts } from "../lib/getObjects";
 import Chrome from "../components/Chrome";
 import CTABlock from "../components/CTABlock";
+import FeaturedVideo from "../components/FeaturedVideo";
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const events = await getAllEvents();
@@ -32,6 +33,7 @@ const Home: React.FC<Props> = ({ events, mostRecentNewsfeedPost }) => (
   >
     <HeroBlock />
     <div className="z-10 relative">
+      <FeaturedVideo />
       <InfoBlock mostRecentNewsfeedPost={mostRecentNewsfeedPost} />
       <CalendarBlock events={events} />
       <CTABlock />

@@ -71,7 +71,7 @@ const Chrome: React.FC<Props> = ({
         <Transition.Root show={sidebarOpen} as={Fragment}>
           <Dialog
             as="div"
-            className="relative z-50 lg:hidden block"
+            className="relative z-50 xl:hidden block"
             onClose={setSidebarOpen}
           >
             <Transition.Child
@@ -103,8 +103,8 @@ const Chrome: React.FC<Props> = ({
                         <SidebarLink to="/">Home</SidebarLink>
                         <SidebarLink to="/about">About</SidebarLink>
                         <SidebarLink to="/calendar">Calendar</SidebarLink>
+                        <SidebarLink to="/newsfeed">What&apos;s New</SidebarLink>
                         <SidebarLink to="/blog">Blog</SidebarLink>
-                        <SidebarLink to="/newsfeed">Newsfeed</SidebarLink>
                         <SidebarLink to="/gallery">Gallery</SidebarLink>
                         <SidebarLink to="/contact">Contact</SidebarLink>
                       </div>

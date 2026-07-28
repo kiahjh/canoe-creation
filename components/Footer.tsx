@@ -46,8 +46,8 @@ const Footer: React.FC = () => (
             <FooterLink to="/">Home</FooterLink>
             <FooterLink to="/about">About</FooterLink>
             <FooterLink to="/calendar">Calendar</FooterLink>
+            <FooterLink to="/newsfeed">What&apos;s New</FooterLink>
             <FooterLink to="/blog">Blog</FooterLink>
-            <FooterLink to="/newsfeed">Newsfeed</FooterLink>
             <FooterLink to="/gallery">Gallery</FooterLink>
             <FooterLink to="/contact">Contact</FooterLink>
             <FooterLink to="/get-involved">Get Involved</FooterLink>

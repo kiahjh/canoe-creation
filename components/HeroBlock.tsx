@@ -11,6 +11,7 @@ import RappellingDescentImage from "../public/rappelling/rappelling-descent.jpg"
 import CottonwoodFuzziesImage from "../public/river-rangers/cottonwood-fuzzies.jpg";
 import WaterfallImage from "../public/little-solomons/waterfall.jpg";
 import { formatAgeRange } from "../lib/strings";
+import { overviewVideo } from "../lib/videos";
 import Button from "./Button";
 
 const HeroBlock: React.FC = () => {
@@ -56,11 +57,11 @@ const HeroBlock: React.FC = () => {
             color="primary"
             shadow
             size="lg"
-            to="https://www.youtube.com/watch?v=iJgqtlZu6g8"
+            to={overviewVideo.youtubeUrl}
             icon="video-camera"
             openInNewTab
           >
-            Watch the video
+            Watch our overview
           </Button>
           <Button
             type="link"

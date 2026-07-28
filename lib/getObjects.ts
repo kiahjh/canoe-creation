@@ -12,6 +12,7 @@ import {
   apiToEvent,
   apiToNewsfeedPost,
 } from "./data-conversion";
+import { localNewsfeedPosts } from "./videos";
 
 const bucketSlug = process.env.COSMIC_BUCKET_SLUG ?? ``;
 const readKey = process.env.COSMIC_READ_KEY ?? ``;
@@ -42,7 +43,11 @@ export async function getAllNewsfeedPosts(): Promise<NewsfeedPost[]> {
   const url = `${endpoint}/${bucketSlug}/objects?&query=${query}&read_key=${readKey}`;
   const response = await fetch(url);
   const objs: APIResponse<APINewsfeedPost> = await response.json();
-  return objs.objects
+  const localSlugs = new Set(localNewsfeedPosts.map((post) => post.slug));
+  const cosmicPosts = objs.objects
     .map(apiToNewsfeedPost)
-    .sort((a, b) => b.createdAt.localeCompare(a.createdAt));
+    .filter((post) => !localSlugs.has(post.slug));
+  return [...localNewsfeedPosts, ...cosmicPosts].sort((a, b) =>
+    b.createdAt.localeCompare(a.createdAt),
+  );
 }
